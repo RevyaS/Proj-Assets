@@ -1,0 +1,127 @@
+{
+	"House": {
+		"Event0": "It seems there's nothing to do here, try going outside",
+		"Action0" : {
+			"Test Tower of Hanoi Longer Button Test" : {
+				"Event" : "HanoiTest"
+			},
+			"Test Balance" : {
+				"Event" : "BalanceTest"
+			},
+			"Test Hop Over" : {
+				"Event" : "HopOverTest"
+			},
+			"Test Lights Out" : {
+				"Event" : "LightsOutTest"
+			},
+			"Test Maze" : {
+				"Event" : "MazeTest"
+			},			
+			"Test Sliding Puzzle" : {
+				"Event" : "SlidingPuzzleTest"
+			},
+			"Test Peg Solitaire" : {
+				"Event" : "PegSolitaireTest"
+			}
+		},
+		
+		"Event1": "Hilda: You need to go outside",
+		
+			
+		"Event2": "Hilda: POG? What the fuck was that? I'll try to reset the time so, don't fuck it up okay?",
+		
+		"Event3": "Hilda: I think we need to reconsider some things",
+		"Action3": {
+			"Like what?" : {
+				"Event": "HildaUpgrade",
+			}
+		},
+		
+		"Event4" : "Hilda: Let's try going to the shopping street"
+	},
+	
+	
+	"Mall": {
+		"Event0": "There's nothing to do here",
+		
+		"Event1":
+			"Hilda: Talk to that girl over there",
+		"Left1": "HimenoSmile",
+		"Action1": {
+			"Talk to Girl": {
+				"Event" : "Himeno1",
+				"Chars" : {
+					"Himeno" : 1,
+				},
+				"Req" : {
+					"Charm" : 15,
+				}
+			}
+		},
+		
+		"Event2": "Hilda: A young high school student seems out of your league for now",
+		"Right2": "AsukaUniform",
+		
+		"Event3" : "I think we can talk to her now without risking of running away",
+		"Right3" : "AsukaUniform",
+		"Action3" : {
+			"Talk To Girl" : {
+				"Event" : "AsukaIntro",
+				"Req" : {
+					"Charm" : 21,
+				}
+			},
+		}
+
+	},
+	
+	
+	"Downtown": {
+		"Event0": "Where should I go?",
+			
+		"Event1": "Hilda: Let's go somewhere crowded",
+	
+		"Event2": "Hilda: Wouldn't it be nice to have somewhere else to go?"
+	},
+	
+	"ParkOuter" : {
+		"Event0" : "Hilda: This place is larger than I thought",
+	},
+	
+	"MedicalCampus" : {
+		"Event0" : "Hilda: Medical School? That's pretty large for an Entrance huh",
+	},
+	
+	"ShoppingStreet" : {
+		"Event0" : "Hilda: Pretty crowded but we could buy a lot of stuff here",
+		"Action0" : {
+			"Buy Shady Potion" : {
+				"Event" : "BuyPotions",
+				"Req" : {
+					"Money" : 40,
+				}
+			},
+		}
+	},
+	
+	
+	"Park": {
+		"Event0": "What's this?",
+		"Action0": {
+			"Pickup Paper": {
+				"Event": "HildaIntro",
+				"Req" : {
+					"Strength" : 10,
+					"Charm" : 10,
+				},
+				"Chars" : {
+					"Himeno" : 0,
+				}
+			}
+		},
+			
+		"Event1": "Hilda: There's no one here",
+		
+		"Event2": "Hilda: Don't be down, that wasn't half bad"
+	}
+}

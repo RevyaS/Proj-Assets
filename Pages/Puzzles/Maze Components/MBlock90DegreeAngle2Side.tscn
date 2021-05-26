@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Puzzles/Tiles/012.png" type="Texture" id=1]
+[ext_resource path="res://Pages/GUI Components/IconButton.tscn" type="PackedScene" id=2]
+
+[node name="MBlock90DegreeAngle2Side" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="IconButton" parent="." instance=ExtResource( 2 )]
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture_normal = ExtResource( 1 )
+texture_pressed = null
+texture_hover = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 12.6296, 14.9939, 14.9939, 15.005, 14.9939, 12.6406, 13.1378, 12.6627, 12.6627, 13.1488 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 2.34375, 2.9375, 3, 2.375, 15, 2.34375, 15, 0, -0.03125, 0.0625, 0, 15.0313, 2.375, 15.0313 )

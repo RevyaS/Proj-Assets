@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Acme30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/Acme25.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/GUIComponents/DataSlot.cs" type="Script" id=3]
+[ext_resource path="res://Assets/BG/paper background.png" type="Texture" id=4]
+[ext_resource path="res://Assets/BG/paper background (2).png" type="Texture" id=6]
+[ext_resource path="res://Assets/BG/paper background (3).png" type="Texture" id=7]
+
+[node name="DataSlot" type="TextureButton"]
+margin_right = 800.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 50, 110 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HC" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+rect_min_size = Vector2( 50, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataDescription" type="VBoxContainer" parent="HC"]
+margin_right = 600.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 600, 50 )
+
+[node name="SaveNumber" type="Label" parent="HC/DataDescription"]
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Save 1"
+valign = 2
+
+[node name="DataContains" type="HBoxContainer" parent="HC/DataDescription"]
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 104.0
+
+[node name="Day" type="Label" parent="HC/DataDescription/DataContains"]
+margin_right = 80.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 80, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Day: 1"
+valign = 1
+
+[node name="Money" type="Label" parent="HC/DataDescription/DataContains"]
+margin_left = 84.0
+margin_right = 234.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Money: "
+valign = 1
+
+[node name="Text" type="Label" parent="HC/DataDescription/DataContains"]
+margin_left = 238.0
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 250, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Text: "
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Location" type="TextureRect" parent="HC"]
+margin_left = 604.0
+margin_right = 754.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 150, 100 )
+expand = true
+stretch_mode = 6

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pages/GUI Components/ActionButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Components/ButtonComp.cs" type="Script" id=5]
+
+[node name="ActionButtons" type="HBoxContainer"]
+margin_top = 43.0
+margin_right = 225.0
+margin_bottom = 221.0
+rect_min_size = Vector2( 290, 0 )
+size_flags_vertical = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="ScrollContainer" parent="."]
+margin_right = 143.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+
+[node name="Left" type="VBoxContainer" parent="Left"]
+margin_right = 143.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SampleButton" parent="Left/Left" instance=ExtResource( 4 )]
+visible = false
+margin_right = 143.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Right" type="ScrollContainer" parent="."]
+margin_left = 147.0
+margin_right = 290.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+
+[node name="Right" type="VBoxContainer" parent="Right"]
+margin_right = 143.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SampleButton2" parent="Right/Right" instance=ExtResource( 4 )]
+margin_right = 143.0
+size_flags_vertical = 0

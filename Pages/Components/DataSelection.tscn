@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Pages/GUI Components/DataSlot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/ActionButtonTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/BG/Old Paper.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Acme25.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Scripts/Components/DataSelection.cs" type="Script" id=8]
+
+[node name="DataSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 50.0
+margin_right = -100.0
+margin_bottom = -50.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Order" type="VBoxContainer" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveLocations" type="ScrollContainer" parent="BG/Order"]
+margin_right = 760.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 350 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelName" type="VBoxContainer" parent="BG/Order/SaveLocations"]
+margin_right = 748.0
+margin_bottom = 794.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_right = 748.0
+
+[node name="2" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 114.0
+margin_right = 748.0
+margin_bottom = 224.0
+
+[node name="3" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 228.0
+margin_right = 748.0
+margin_bottom = 338.0
+
+[node name="4" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 342.0
+margin_right = 748.0
+margin_bottom = 452.0
+
+[node name="5" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 456.0
+margin_right = 748.0
+margin_bottom = 566.0
+
+[node name="6" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 570.0
+margin_right = 748.0
+margin_bottom = 680.0
+
+[node name="7" parent="BG/Order/SaveLocations/LabelName" instance=ExtResource( 1 )]
+margin_top = 684.0
+margin_right = 748.0
+margin_bottom = 794.0
+
+[node name="Buttons" type="HBoxContainer" parent="BG/Order"]
+margin_top = 354.0
+margin_right = 760.0
+margin_bottom = 410.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Save" type="Button" parent="BG/Order/Buttons"]
+margin_right = 250.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+text = "Save"
+
+[node name="Load" type="Button" parent="BG/Order/Buttons"]
+margin_left = 254.0
+margin_right = 504.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+text = "Load"
+
+[node name="Close" type="Button" parent="BG/Order/Buttons"]
+margin_left = 508.0
+margin_right = 760.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 7 )
+text = "Close"
+[connection signal="pressed" from="BG/Order/Buttons/Save" to="." method="savePressed"]
+[connection signal="pressed" from="BG/Order/Buttons/Load" to="." method="loadPressed"]
+[connection signal="pressed" from="BG/Order/Buttons/Close" to="." method="onClose"]

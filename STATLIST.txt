@@ -1,0 +1,7 @@
+Stats Reference for decision values
+
+Charm - How much an event with a girl is more likely to occur
+Strength - How much an action event would occur
+Intelligence - How much detective events would occur
+Speed - How much close call events would occur
+Amount - Collected points from chars

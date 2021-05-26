@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Icons/Option/Option1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Icons/Option/Option2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Icons/Option/Option3.png" type="Texture" id=3]
+
+[node name="IconButton" type="TextureButton"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

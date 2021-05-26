@@ -1,0 +1,382 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Char/YukariNormal.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GameBG/LivingRoom.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Char/AsukaUniform.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Acme20.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Resources/TetsubinGothic30.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/Components/TopGUI.cs" type="Script" id=6]
+[ext_resource path="res://Assets/Char/HildaSurprised.png" type="Texture" id=7]
+
+[node name="Top" type="Control"]
+margin_right = 960.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." groups=[
+"Test",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGbox" type="TextureRect" parent="HBoxContainer"]
+margin_left = 83.0
+margin_right = 653.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 570, 0 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="TextureRect" parent="HBoxContainer/BGbox"]
+margin_right = 250.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 250, 0 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TextureRect" parent="HBoxContainer/BGbox"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 250, 0 )
+mouse_filter = 2
+size_flags_vertical = 9
+texture = ExtResource( 7 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="TextureRect" parent="HBoxContainer/BGbox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -150.0
+margin_right = 125.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 250, 0 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatBox" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 657.0
+margin_right = 877.0
+margin_bottom = 300.0
+
+[node name="Label" type="Label" parent="HBoxContainer/StatBox"]
+margin_right = 220.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stats"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/StatBox"]
+margin_top = 35.0
+margin_right = 220.0
+margin_bottom = 248.0
+
+[node name="Name" type="VBoxContainer" parent="HBoxContainer/StatBox/HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 120, 0 )
+
+[node name="Day" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_right = 120.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Day"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Charm" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 31.0
+margin_right = 120.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Charm"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strength" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 62.0
+margin_right = 120.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Strength"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 93.0
+margin_right = 120.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Intelligence"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 124.0
+margin_right = 120.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Speed"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 155.0
+margin_right = 120.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Money"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Name"]
+margin_top = 186.0
+margin_right = 120.0
+margin_bottom = 213.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Amount"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="VBoxContainer" parent="HBoxContainer/StatBox/HBoxContainer"]
+margin_left = 124.0
+margin_right = 176.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Day" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_right = 52.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Charm" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 31.0
+margin_right = 52.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strength" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 62.0
+margin_right = 52.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 93.0
+margin_right = 52.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 124.0
+margin_right = 52.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 155.0
+margin_right = 52.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Value"]
+margin_top = 186.0
+margin_right = 52.0
+margin_bottom = 213.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Change" type="VBoxContainer" parent="HBoxContainer/StatBox/HBoxContainer"]
+margin_left = 180.0
+margin_right = 220.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 40, 0 )
+size_flags_horizontal = 3
+
+[node name="Day" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_right = 40.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Charm" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 31.0
+margin_right = 40.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strength" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 62.0
+margin_right = 40.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 93.0
+margin_right = 40.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 124.0
+margin_right = 40.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 155.0
+margin_right = 40.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="HBoxContainer/StatBox/HBoxContainer/Change"]
+margin_top = 186.0
+margin_right = 40.0
+margin_bottom = 213.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

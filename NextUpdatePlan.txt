@@ -1,0 +1,35 @@
+v.015
+//Puzzles
+* Reskin Texture of puzzles based on context
+- Maze
+* Please Change Player.cs class name because it is too misleading
+* Make it follow the mouse completely because it doesn't feel smooth to control
+- Sliding Puzzle
+* Only allow 1 click to move because there is only 1 open tile, so clicking any tile
+next to the open tile will automatically move the tile towards the empty tile
+* Add Difficulty settings
+//General
+* Cleanup the Options menu
+* Resize files
+* Polish visuals
+* Extend storyline?
+* Polish code
+* Proper use of "static" and access modifiers, private out stuff that holds important info or
+	would crash the game when called somewhere also goes for all static functions
+* Comment out unnecessary prints
+* Encrypt save files, savefiles are located at %APPDATA%/Godot/app_userdata/Project Assets/Saves
+
+
+v.010
+//* Fixes
+//* Move Update flags from Routes to Event Data as Location Flag
+//* Map changes dynamically now
+//* Character Flags
+//* Save Function
+//* Load Function
+//* Main Menu
+//* Story Update
+//* Route System
+//* Instant Action System
+//* Money System
+//* Day System

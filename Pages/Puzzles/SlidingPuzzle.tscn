@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Puzzles/SlidingPuzzle.cs" type="Script" id=1]
+[ext_resource path="res://Assets/BG/paper background (3).png" type="Texture" id=2]
+[ext_resource path="res://Assets/BG/paper background.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Puzzles/SlidingPuzzlePic/01/whole.jpg" type="Texture" id=4]
+
+[node name="Control" type="TextureRect"]
+margin_right = 570.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 570, 300 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 14.0527
+margin_top = 16.7443
+margin_right = 554.053
+margin_bottom = 286.744
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Whole" type="TextureRect" parent="."]
+margin_left = 406.71
+margin_top = 104.177
+margin_right = 506.71
+margin_bottom = 204.177
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 116.505
+margin_top = 35.0
+margin_right = 349.505
+margin_bottom = 269.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="timeout" from="Timer" to="." method="disArrangeTiles"]

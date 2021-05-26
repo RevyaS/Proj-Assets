@@ -1,0 +1,24 @@
+KEY LIST (Case Sensitive)
+Location - returns the data that will be read by MapData's loadmap
+Event - returns the data of each event that will be read by the game's function
+
+Keys that returns dialogue event flags of locations (doesn't matter that much
+but keys nonetheless):
+House
+Mall
+Park
+Downtown
+
+Location Keys Subkey:
+[Format: Subkey + Flag eg. Event1]
+Event -> Dialogue flag that will show given a flag
+Action -> List of actions possible at given flag
+	some actions can unlock the next event
+Req -> Required stats to add an Event button
+Stats -> Data of stats to add to current stats
+Update -> New value for flags
+Left/Center/Right -> Char image name on specified location
+Image -> Background image for that specific flag and forward, can be reverted back
+Puzzle -> Puzzle for that specific flag
+
+

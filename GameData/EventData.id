@@ -1,0 +1,314 @@
+{
+	"HildaIntro": {
+		"Image":"HildaLair",
+		"Text0": 
+			"Oh lucky victim, Greetings I'm Hilda, a witch, I was trapped here you see, and I need you to help me",
+		"Actions0":
+		{
+			"Sure": "Text1",
+			"Nope": "Text1"
+		},
+		
+		"Text1":
+			"You're trapped here so you have no choice anyways, now then [Explaining]",
+		"Actions1": {
+			"Ok": "House"
+		},
+		"Stats1": {
+			"Charm": 5,
+		},
+		"Chars1": {
+			"Himeno": 1,
+			"Asuka" : 1,
+		},
+		"Locations1" : {
+			"House": 1,
+			"Mall": 1,
+			"Downtown": 1,
+			"Park": 1
+		}
+	},
+	
+	"HildaUpgrade": {
+		"Image": "HildaLair",
+		"Text0": "Let's see, I could upgrade your appearance, but it takes a 
+			bunch of my power since I can't interact with you physically",
+		"Actions0": {
+			"Even a small amount wouldn't hurt" : "Text1"
+		},
+		"Text1" : "Hilda: I'm tired now, how about we try going somewhere else?",
+		"Actions1" : {
+			"Sure thing" : "House",
+		},
+		"Stats1" : {
+			"Charm" : 5,
+			"Intelligence" : 5,
+		},
+		"Locations1" : {
+			"Mall" : 3,
+			"House" : 4,
+		},
+		"Map1" : 1,
+	},
+	
+	"HanoiTest": {
+		"Puzzle0" : {
+			"Name" : "TowerOfHanoi",
+			"Difficulty" : 2,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: I can see there are 3 buttons on the bottom",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},	
+	
+	"AsukaIntro" : {
+		"Text0" : "You seem to be approaching me with evil intent, yet you feel so harmless",
+		"Right0" : "AsukaUniformAngry",
+		"Actions0" : {
+			"Huh? What are you talking about?" : "Text1",
+		},
+		
+		"Text1" : "Her: There is another soul reeking of dark aura standing beside you, 
+			and it you seem to be aware of her
+			\nHilda: She seems to be aware of me, what kind of girl is she?",
+		"Right1" : "AsukaUniformAngry",
+		"Actions1" : {
+			"I don't understand what you mean" : "Text2",
+		},
+		
+		"Text2" : "Playing dumb huh? Let's see about that",
+		"Right2" : "AsukaUniformAngry",
+		"Actions2" : {
+			"Wait, what are you doing?" : "Mall",
+		},
+		"Locations2" : {
+			"House" : 0,
+			"Mall" : 0,
+			"Park" : 0,
+			"Downtown" : 0,
+		},
+		"Map2" : 2,
+		"Route2" : 1,
+	},
+	
+	"BalanceTest": {
+		"Puzzle0" : {
+			"Name" : "BalancePuzzle",
+			"Difficulty" : 5,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: You need to click any of these columns to transfer 
+			their bars until we get equal bars. The amount of bars maximum is 
+			located at the bottom",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	"HopOverTest": {
+		"Puzzle0" : {
+			"Name" : "HopOver",
+			"Difficulty" : 7,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: It seems that they can only move forward or jump over 
+			a gem to go to the blank space, but red gems only move to the right 
+			and green gems move to the left",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	"PegSolitaireTest": {
+		"Puzzle0" : {
+			"Name" : "PegSolitaire",
+			"Difficulty" : 4,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: I can see there are 3 buttons on the bottom",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	"LightsOutTest": {
+		"Puzzle0" : {
+			"Name" : "LightsOut",
+			"Difficulty" : 4,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: It seems that you can press each tiles",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	"MazeTest": {
+		"Puzzle0" : {
+			"Name" : "Maze",
+			"Difficulty" : 8,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: Try moving a bit",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	"SlidingPuzzleTest" : {
+		"Puzzle0" : {
+			"Name" : "SlidingPuzzle",
+			"Difficulty" : 8,
+			"Solved" : "Text1"
+		},
+		"Text0" : "Hilda: Try moving a bit",
+		"Actions0" : {
+			"Let me rethink for a bit" : "House"
+		},
+		
+		"Text1" : "Hilda: Nothing seems to be happening",
+		"Left1": "HildaWorried",
+		"Actions1": {
+			"WHAT THE FUCK?" : "Text2"
+		},
+		
+		"Text2": " What? Woah!! I can interact with you now",
+		"Left2" : "HildaSurprised",
+		"Actions2" : {
+			"Damn, you look really pretty up close" : "Text2"
+		}
+	},
+	
+	
+	"Himeno1": {
+		"Text0":
+			"Uhm hi? Do I know you?",
+		"Left0": "HimenoSmile",
+		"Actions0":
+		{
+			"Uhm" : "Text1"
+		},
+		
+		"Text1": "Hilda: Come on, I need you to do this for me, think of something",
+		"Left1": "HimenoSmile",
+		"Actions1": {
+			"You look pretty" : "Text2",
+			"POG" : "Text4"
+		},
+		
+		"Text2": "What do you want?",
+		"Left2": "HimenoSurprised",
+		"Actions2": {
+			"Just wanted to know you" : "Text3"
+		},
+		
+		"Text3": "Yeah, I'm not into strangers, bye",
+		"Left3": "HimenoSmile",
+		"Actions3": {
+			"Go to Park" : "Park"
+		},
+		"Locations3": {
+			"House": 3,
+			"Park" : 2,
+			"Mall" : 2,
+			"Downtown": 2
+		},
+		"Stats3": {
+			"Charm": 1,
+			"Strength": 5,
+			"Speed": 5
+		},
+		
+		"Text4": "I need to go",
+		"Left4": "HimenoHmm",
+		"Actions4": {
+			"Go Back" : "House"
+		},
+		"Locations4" : {
+			"House" : 2,
+		}
+	},
+	
+	"BuyPotions" : {
+		"Stats0": {
+			"Charm": 1,
+			"Strength": 5,
+			"Speed": 5,
+			"Money" : -40,
+		},
+	}
+}

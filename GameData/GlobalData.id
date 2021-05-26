@@ -1,0 +1,65 @@
+{
+	"Characters" : {
+		"HimenoSmile" : "res://Assets/Char/HimenoKisaraSmile.png",
+		"HimenoSurprised" : "res://Assets/Char/HimenoKisaraSurprised.png",
+		"HimenoHmm" : "res://Assets/Char/HimenoKisaraHmm.png",
+		"AsukaUniform" : "res://Assets/Char/AsukaUniform.png",
+		"AsukaUniformAngry" : "res://Assets/Char/AsukaUniformAngry.png",
+		"HildaWorried" : "res://Assets/Char/HildaWorried.png",
+		"HildaSurprised" : "res://Assets/Char/HildaSurprised.png",
+		"ShioriNormal" : "res://Assets/Char/ShioriNormal.png",
+		"YukariCasualNormal" : "res://Assets/Char/YukariNormal.png"
+	},
+	
+	"Backgrounds" : {
+		"HildaLair" : "res://Assets/Event/WitchIntro.png",
+		"ParfaitEvent" : "res://Assets/Event/ExtraEvent.png"
+	},
+	
+	"Puzzles" : {
+		"TowerOfHanoi" : "res://Pages/Puzzles/HanoiPuzzle.tscn",
+		"LightsOut" : "res://Pages/Puzzles/LightsOut.tscn",
+		"Maze" : "res://Pages/Puzzles/Maze.tscn",
+		"SlidingPuzzle" : "res://Pages/Puzzles/SlidingPuzzle.tscn",
+		"PegSolitaire" : "res://Pages/Puzzles/PegSolitaire.tscn",
+		"HopOver" : "res://Pages/Puzzles/HopOver.tscn",
+		"BalancePuzzle" : "res://Pages/Puzzles/WaterPuzzle.tscn",
+	},
+
+	"Location": {
+		"House": "res://Assets/GameBG/LivingRoom.png",
+		"Downtown": "res://Assets/GameBG/Downtown.png",
+		"Mall": "res://Assets/GameBG/Mall.png",
+		"Park": "res://Assets/GameBG/Park.png",
+		"ParkOuter": "res://Assets/GameBG/ParkLeft.png",
+		"MedicalCampus" : "res://Assets/GameBG/MedicalCampus.png",
+		"ShoppingStreet" : "res://Assets/GameBG/ShoppingStreet.png",
+	},
+	
+	"Map0" : {
+		"House" : ["Downtown"],
+		"Downtown" : ["House", "Mall", "Park"],
+		"Mall" : ["Downtown", "Park"],
+		"Park" : ["Downtown", "Mall"]
+	},
+	
+	"Map1" : {
+		"House" : ["Downtown", "ShoppingStreet"],
+		"Downtown" : ["House", "Mall", "Park"],
+		"Park" : ["Downtown", "ParkOuter"],
+		"ParkOuter" : ["MedicalCampus", "Park"],
+		"Mall" : ["Downtown", "MedicalCampus", "ShoppingStreet"],
+		"MedicalCampus" : ["Mall", "ParkOuter"],
+		"ShoppingStreet" : ["House", "Mall", "MedicalCampus"],
+	},
+	
+	"Map2" : {
+		"House" : ["Mall", "ShoppingStreet"],
+		"Mall" : ["Downtown", "Park"],
+		"Downtown" : ["House", "MedicalCampus"],
+		"Park" : ["Downtown", "ShoppingStreet"],
+		"ShoppingStreet" : ["Mall", "MedicalCampus"],
+		"MedicalCampus" : ["House", "ParkOuter"],
+		"ParkOuter" : ["Mall", "Park"]
+	}
+}

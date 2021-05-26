@@ -1,0 +1,178 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/BG/Old Paper.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Acme-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/OptionGUI/Options.cs" type="Script" id=4]
+[ext_resource path="res://Resources/ActionButtonTheme.tres" type="Theme" id=5]
+[ext_resource path="res://Resources/Acme20.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+fallback/0 = ExtResource( 2 )
+
+[node name="Data Set" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 50.0
+margin_right = -150.0
+margin_bottom = -50.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionList" type="VBoxContainer" parent="BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -157.5
+margin_top = -194.5
+margin_right = 157.5
+margin_bottom = 194.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="BG/OptionList"]
+margin_right = 315.0
+margin_bottom = 125.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BG/OptionList/GridContainer"]
+margin_right = 83.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Master"
+align = 1
+
+[node name="MasterVol" type="HSlider" parent="BG/OptionList/GridContainer"]
+margin_left = 87.0
+margin_right = 315.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 0.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label2" type="Label" parent="BG/OptionList/GridContainer"]
+margin_top = 43.0
+margin_right = 83.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Music"
+align = 1
+
+[node name="MusicVol" type="HSlider" parent="BG/OptionList/GridContainer"]
+margin_left = 87.0
+margin_top = 43.0
+margin_right = 315.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 0.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label3" type="Label" parent="BG/OptionList/GridContainer"]
+margin_top = 86.0
+margin_right = 83.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sound"
+
+[node name="SfxVol" type="HSlider" parent="BG/OptionList/GridContainer"]
+margin_left = 87.0
+margin_top = 86.0
+margin_right = 315.0
+margin_bottom = 125.0
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 0.0
+
+[node name="SampleCB" type="CheckButton" parent="BG/OptionList"]
+margin_top = 129.0
+margin_right = 315.0
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+text = "Sample1"
+align = 1
+
+[node name="Sample2CB" type="CheckButton" parent="BG/OptionList"]
+margin_top = 180.0
+margin_right = 315.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+pressed = true
+text = "Sample2"
+align = 1
+
+[node name="DataButton" type="Button" parent="BG/OptionList"]
+visible = false
+margin_top = 231.0
+margin_right = 315.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 9
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Save / Load"
+
+[node name="MainMenu" type="Button" parent="BG/OptionList"]
+visible = false
+margin_top = 285.0
+margin_right = 315.0
+margin_bottom = 335.0
+rect_min_size = Vector2( 50, 50 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Return to Title Screen"
+
+[node name="Close" type="Button" parent="BG/OptionList"]
+margin_top = 231.0
+margin_right = 315.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 50, 50 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Close"
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="value_changed" from="BG/OptionList/GridContainer/MasterVol" to="." method="onMasterVolValueChanged"]
+[connection signal="value_changed" from="BG/OptionList/GridContainer/MusicVol" to="." method="onMusicSliderVolValueChanged"]
+[connection signal="value_changed" from="BG/OptionList/GridContainer/SfxVol" to="." method="onSfxSliderVolValueChanged"]
+[connection signal="pressed" from="BG/OptionList/DataButton" to="." method="dataButtonPressed"]
+[connection signal="pressed" from="BG/OptionList/MainMenu" to="." method="returnToMainMenu"]
+[connection signal="pressed" from="BG/OptionList/Close" to="." method="closeMenu"]
