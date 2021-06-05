@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Puzzles/SlidingPuzzle.cs" type="Script" id=1]
 [ext_resource path="res://Assets/BG/paper background (3).png" type="Texture" id=2]
 [ext_resource path="res://Assets/BG/paper background.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Puzzles/SlidingPuzzlePic/01/whole.jpg" type="Texture" id=4]
 
 [node name="Control" type="TextureRect"]
 margin_right = 570.0
@@ -18,10 +17,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 14.0527
-margin_top = 16.7443
-margin_right = 554.053
-margin_bottom = 286.744
+margin_left = 3.0
+margin_top = 17.0
+margin_right = 569.0
+margin_bottom = 287.0
 texture = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -33,7 +32,6 @@ margin_left = 406.71
 margin_top = 104.177
 margin_right = 506.71
 margin_bottom = 204.177
-texture = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,11 +42,19 @@ margin_left = 116.505
 margin_top = 35.0
 margin_right = 349.505
 margin_bottom = 269.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.08
+
+[node name="Delay" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
 [connection signal="timeout" from="Timer" to="." method="disArrangeTiles"]
+[connection signal="timeout" from="Delay" to="." method="onDelayTimeout"]
