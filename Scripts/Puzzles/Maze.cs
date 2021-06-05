@@ -8,11 +8,11 @@ public class Maze : Puzzle {
 //* Initialize methods
 	public override void _Ready(){
 		timer = GetNode<Timer>("Container/Timer");
-		player = GetNode<Player>("Player");
+		godotBox = GetNode<GodotBox>("GodotBox");
 		goldPot = GetNode<Area2D>("GoldPot");
 		container = GetNode<GridContainer>("Container");
 		
-		player.Visible = goldPot.Visible = false;
+		godotBox.Visible = goldPot.Visible = false;
 		ctr = 64;   //* 65 above starts with alphabet letter 'A'
 		
 		tileScene[0] = getTileInstance("res://Pages/Puzzles/Maze Components/MBlock0.tscn");
@@ -21,8 +21,6 @@ public class Maze : Puzzle {
 		tileScene[3] = getTileInstance("res://Pages/Puzzles/Maze Components/MBlock90DegreeAngle2Side.tscn");
 		tileScene[4] = getTileInstance("res://Pages/Puzzles/Maze Components/MBlock3Sides.tscn");
 		tileScene[5] = getTileInstance("res://Pages/Puzzles/Maze Components/MBlock01234.tscn");
-		
-		// init("1", 3);
 	}
 	
 	
@@ -45,7 +43,7 @@ public class Maze : Puzzle {
 		base.initDifficulty(level);
 		
 		levelVal = getLevelScaleDimensions(level);
-		container.RectScale = player.Scale = goldPot.Scale = new Vector2(levelVal[0], levelVal[1]);
+		container.RectScale = godotBox.Scale = goldPot.Scale = new Vector2(levelVal[0], levelVal[1]);
 		button = new StaticBody2D[container.Columns = col = (int)levelVal[3], row = (int)levelVal[2]];
 		
 		setContainerPos(levelVal[8], levelVal[9]);
@@ -54,6 +52,10 @@ public class Maze : Puzzle {
 			for(int j = 0; j < col; ++j)
 				container.AddChild(button[j, i] = initTile(i, j, level));
 		}
+		
+		//*	Autostart generating the maze
+		for(int i = 0; i < 3; ++i)
+			button[i, 0].GetNode<TextureButton>("IconButton").EmitSignal("pressed");
 	}
 	
 //*******************************************************************************************
@@ -141,7 +143,7 @@ public class Maze : Puzzle {
 	private void onPressed(){
 		if(noOfClicks > 2) return;
 		
-		GD.Print("Wait time: ", timer.WaitTime = (noOfClicks > 0) ? timer.WaitTime /= 10 : 0.1F);
+		timer.WaitTime = (noOfClicks > 0) ? timer.WaitTime /= 10 : 0.1F;
 		
 		++noOfClicks;
 		
@@ -156,18 +158,17 @@ public class Maze : Puzzle {
 			timer.Stop();   //* Timer stops after the maze is completely generated
 			GD.Print("Maze Generation done.");
 			
-			player.Position = new Vector2(levelVal[4], levelVal[5]);
+			godotBox.Position = new Vector2(levelVal[4], levelVal[5]);
 			goldPot.Position = new Vector2(levelVal[6], levelVal[7]);
-			player.Visible = goldPot.Visible = true;
+			godotBox.Visible = goldPot.Visible = true;
 		}
 	}
 	
 	//* After reaching the gold pot this methods triggers and solved the maze
 	private void onGoldPotBodyEntered(Node body){
-		GD.Print("SOlved");
 		goldPot.QueueFree();
-		//Disables Player Control
-		player.SetPhysicsProcess(false);
+		//* Disables godotBox Control
+		godotBox.SetPhysicsProcess(false);
 		solved();
 	}
 	
@@ -337,7 +338,7 @@ public class Maze : Puzzle {
 	private StaticBody2D[,] button;
 	private Area2D goldPot;
 	private Timer timer;
-	private Player player;
+	private GodotBox godotBox;
 	private StaticBody2D[] tileScene =  new StaticBody2D[6];
 	private Random rnd = new Random();
 	private bool doChange;
