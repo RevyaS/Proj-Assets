@@ -6,7 +6,7 @@ Current Version: .05a
 [Project documentations and Assets collection link](https://drive.google.com/drive/folders/1svMfYqJbfHz7dFtQRj-TgUTQsn_5sggx)
 
 **Change notes:** 
->Just uploaded half of the progress in case I fuck up the next data redesign
+>Just uploaded half of the progress in case I fuck up the next data redesign, will upload the Assets after storyline is finished
 
 **Planned changes completed so far:**
 - [x] GameData folder arrangement
