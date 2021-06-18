@@ -6,6 +6,15 @@ public class DataManager : Node
 {
 //	Current Data being used by Game.cs
 	private Dictionary currData;
+
+	//Stroy flag
+	public int StoryFlag {
+		get {return Convert.ToInt32(currData["Story"]);}
+	}
+
+	public Dictionary Stats {
+		get {return currData["Stats"] as Dictionary;}
+	}
 	
 //	currNode's property
 	public gNode CurrNode { 
@@ -31,48 +40,50 @@ public class DataManager : Node
 		set {currData["CurrText"] = value;}
 	}
 
-	
-// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		initFlags();
+	public int RouteFlag {
+		get {return (int)currData["Route"];}
+		set {currData["Route"] = (int)value;}
 	}
 	
-	
+	// Init Functions to give references
+	public override void _Ready() {
+		GlobalData.dManager = this;	
+	}
+
+
 //	Process functions
 //	Performs the necessary data process in Game's nextDecision function
 	public void resolveDecision(int flag)
 	{
+		// Get currData
+		Dictionary currEvent = EventData["Event" + flag.ToString()] as Dictionary;
+
 //		Updating Locations
-		String updateKey = "Locations" + flag.ToString();
-		if(EventData.Contains(updateKey)) {
+		if(currEvent.Contains("Locations")) {
 //			Get update dictionary
-			Dictionary update = EventData[updateKey] as Dictionary;
+			Dictionary update = currEvent["Locations"] as Dictionary;
 			updateData("Location", update);	
 		}
 		
 //		Updating character flags
-		String charsKey = "Chars" + flag.ToString();
-		if(EventData.Contains(charsKey)) {
+		if(currEvent.Contains("Chars")) {
 //			Get Image path
-			Dictionary update = EventData[charsKey] as Dictionary;
+			Dictionary update = currEvent["Chars"] as Dictionary;
 			updateData("Chars", update);
 		}
 		
-//		Updating map
-		String mapKey = "Map" + flag.ToString();
-		if(EventData.Contains(mapKey)) {
+//		Updating map;
+		if(currEvent.Contains("Map")) {
 //			Get map flag
-			MapFlag = Convert.ToInt32(EventData[mapKey]);
+			MapFlag = Convert.ToInt32(currEvent["Map"]);
 //			Update map
 			MapData.loadMap(MapFlag);
 		}
 		
 //		Updating route
-		String routeKey = "Route" + flag.ToString();
-		if(EventData.Contains(routeKey)) {
+		if(EventData.Contains("Route")) {
 //			Get map flag
-			currData["Route"] = Convert.ToInt32(EventData[routeKey]);
+			currData["Route"] = Convert.ToInt32(currEvent["Route"]);
 		}
 	}
 	
@@ -95,6 +106,7 @@ public class DataManager : Node
 		save.Add("Route", currData["Route"]);
 		save.Add("CurrNode", CurrNode.name);
 		save.Add("CurrText", CurrText);
+		save.Add("Story", currData["Story"]);
 		return save;
 	}
 	
@@ -112,80 +124,66 @@ public class DataManager : Node
 		GD.Print("Updating " + dictionaryKey + " Data");
 		foreach(string key in updateFlags.Keys)
 			(currData[dictionaryKey] as Dictionary)[key] = updateFlags[key];
-		GD.Print(currData);
 	}
 	
 	
 //	Updates CurrData based on saveData
 	public void loadSaveData(Dictionary saveData)
 	{
+		if(currData == null) initFlags( Convert.ToInt32(saveData["Story"]) );
+		
 		updateData("Location", saveData["Location"] as Dictionary);
-		currData["Stats"] = saveData["Stats"] as Dictionary;
-		currData["Chars"] = saveData["Chars"] as Dictionary;
+		updateData("Stats", saveData["Stats"] as Dictionary);
+		updateData("Chars", saveData["Chars"] as Dictionary);
 		currData["Map"] = Convert.ToInt32(saveData["Map"]);
 		currData["Route"] = Convert.ToInt32(saveData["Route"]);
 		currData["Event"] = null;
 		currData["CurrText"] = saveData["CurrText"].ToString();
+		currData["Story"] = Convert.ToInt32(saveData["Story"]);
 //		Updates map
 		MapData.loadMap(MapFlag);
 		
 		GD.Print("Loaded Data");
-		GD.Print(currData);
+
 	}
 	
 	
 //	INIT FUNCTIONS
-	public void initFlags()
+	public void initFlags(int flag)
 	{
 		currData = new Dictionary();
 //		Load flags
+		currData.Add("Story", flag);
 		currData.Add("Location", initLocationFlags());
 		currData.Add("Stats", initStats());
 		currData.Add("Chars", initChars());
 		currData.Add("Event", null);
 		currData.Add("Map", 0);
 		currData.Add("Route", 0);
+		
 		currData.Add("CurrNode", null);
 		currData.Add("Text", "");
 	}
 
 
-	//*	Resets the flags
-	private Dictionary initLocationFlags(){
-		Dictionary newFlags = new Dictionary();
-		newFlags.Add("House", 0);
-		newFlags.Add("Downtown", 0);
-		newFlags.Add("Mall", 0);
-		newFlags.Add("Park", 0);
-		newFlags.Add("ParkOuter", 0);
-		newFlags.Add("MedicalCampus", 0);
-		newFlags.Add("ShoppingStreet", 0);
-		return newFlags;
-	}
-	
-	
-	//*	Resets the flags, or just mainly returns starting stats
-	private Dictionary initStats(){
-		Dictionary newStats = new Dictionary();
-		newStats.Add("Day", 1);
-		newStats.Add("Strength", 10);
-		newStats.Add("Charm", 10);
-		newStats.Add("Intelligence", 10);
-		newStats.Add("Speed", 10);
-		newStats.Add("Money", 100);
-		newStats.Add("Amount", 0);
+	//Gets the baseStats from GlobalData + flag file but currData must have Story flag first
+	private Dictionary initStats()
+		=> GlobalData.getStoryData("BaseStats");
 		
-		return newStats;
-	}
-	
-	
-	//Init Character Flags for relationship meter
-	//This will be very manual
+	//Gets the baseChars from GlobalData + flag file and required Story flag from currData
 	private Dictionary initChars()
-	{
-		Dictionary chars = new Dictionary();
-		chars.Add("Himeno", 0);
-		chars.Add("Asuka", 0);
-		return chars;
+		=> GlobalData.getStoryData("BaseChars");
+
+
+	//*	Resets the flags based on flags existing in GlobalData + flag, reqyures Story key in currData to exist
+	private Dictionary initLocationFlags(){
+		Godot.Collections.Array keyList = GlobalData.getStoryLocations();
+		
+		Dictionary newFlags = new Dictionary();
+		foreach(String key in keyList)
+		{
+			newFlags.Add(key, 0);
+		}
+		return newFlags;
 	}
 }

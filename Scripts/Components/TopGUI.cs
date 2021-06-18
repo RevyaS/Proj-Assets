@@ -16,6 +16,7 @@ public class TopGUI : Control
 			GetNode<TextureRect>("HBoxContainer/BGbox/Right"),
 		};
 		
+		statNames = GetNode<VBoxContainer>("HBoxContainer/StatBox/HBoxContainer/Name");
 		statValues = GetNode<VBoxContainer>("HBoxContainer/StatBox/HBoxContainer/Value");
 		statChanges = GetNode<VBoxContainer>("HBoxContainer/StatBox/HBoxContainer/Change");
 	}
@@ -27,6 +28,41 @@ public class TopGUI : Control
 		this.dManager = dManager;
 		this.game = game;
 		this.tween = tween;
+		
+		//Clear the ff containers
+		SceneManager.clearChildren(statNames);
+		SceneManager.clearChildren(statValues);
+		SceneManager.clearChildren(statChanges);
+
+		// Font for each label
+		DynamicFont f20 = (DynamicFont)ResourceLoader.Load("res://Resources/Acme20.tres");
+		Color black = new Color("#000000");
+		//Generates the labels needed
+		foreach(String key in dManager.Stats.Keys)
+		{
+			//Label for name
+			Label name = new Label();
+			name.Text = key;
+			name.Name = key;
+			statNames.AddChild(name);
+			name.Set("custom_fonts/font", f20);
+			name.Set("custom_colors/font_color", black);
+
+			//Label for values
+			Label val = new Label();
+			val.Name = key;
+			val.Align = Label.AlignEnum.Right;
+			statValues.AddChild(val);
+			val.Set("custom_fonts/font", f20);
+			val.Set("custom_colors/font_color", black);
+			
+			//Label for changes
+			Label change = new Label();
+			change.Name = key;
+			statChanges.AddChild(change);
+			change.Set("custom_fonts/font", f20);
+			change.Set("custom_colors/font_color", black);
+		}
 	}
 	
 	
@@ -35,19 +71,17 @@ public class TopGUI : Control
 	{
 //		Access EventData
 		Dictionary eventData = dManager.EventData;
-//		Updating Stats
-		String statsKey = "Stats" + flag.ToString();
-		if(eventData.Contains(statsKey)) {
+		Dictionary currData = eventData["Event" + flag.ToString()] as Dictionary;
+
+		if(currData.Contains("Stats")) {
 //			Get update dictionary
-			Dictionary updateStats = eventData[statsKey] as Dictionary;
+			Dictionary updateStats = currData["Stats"] as Dictionary;
 			changeStats(updateStats);
 		}
 		
-//		Check if temp image exists
-		String imageKey = "Image" + flag.ToString();
-		if(eventData.Contains(imageKey)) {
+		if(currData.Contains("Image")) {
 //			Get Image path
-			String key = eventData[imageKey].ToString();
+			String key = currData["Image"].ToString();
 			String path = GlobalData.getBGPath(key);
 //			Load Image from path
 			ImageTexture img = UF.getTexture(path);
@@ -67,13 +101,13 @@ public class TopGUI : Control
 	{
 //		Access eventData
 		Dictionary eventData = dManager.EventData;
-//		Get puzzle key
-		String puzzleKey = "Puzzle" + flag.ToString();
+		Dictionary currData = eventData["Event" + flag.ToString()] as Dictionary;
+
 //		Exit if no puzzle key
-		if(!eventData.Contains(puzzleKey)) return;
+		if(!currData.Contains("Puzzle")) return;
 		
 //		Get Dictionary
-		Dictionary puzzleData = eventData[puzzleKey] as Dictionary;
+		Dictionary puzzleData = currData["Puzzle"] as Dictionary;
 		
 //		Get path
 		String key = puzzleData["Name"].ToString();
@@ -122,19 +156,21 @@ public class TopGUI : Control
 		
 //		Access eventData
 		Dictionary eventData = dManager.EventData;
-		
+		Dictionary currData = eventData["Event" + flag.ToString()] as Dictionary;
 //		Loop the containers {Left, Center, Right}
 		for(int i = 0; i < 3; i++)
 		{
 //			Generate key
-			String key = charNames[i] + flag.ToString();
+			String key = charNames[i];
+			
 //			Check if key exist
-			if(!eventData.Contains(key)) continue;
+			if(!currData.Contains(key)) continue;
 			
 //			Get path value
-			String path = eventData[key].ToString();
+			String path = currData[key].ToString();
+			
 //			Get the imagePath
-			String imagePath = GlobalData.getCharImage(path);
+			String imagePath = GlobalData.getCharImage(path, dManager.StoryFlag);
 			
 			ImageTexture imgText = UF.getTexture(imagePath);
 			charRects[i].Texture = imgText;
@@ -223,7 +259,8 @@ public class TopGUI : Control
 //	References
 	private String[] charNames = {"Left", "Center", "Right"};
 	private VBoxContainer statValues,
-						  statChanges;
+						  statChanges,
+						  statNames;
 //	Char data to be loopable
 	private TextureRect[] charRects;
 }

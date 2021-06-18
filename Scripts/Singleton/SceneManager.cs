@@ -56,7 +56,7 @@ public class SceneManager : Node
 	
 	
 //	Generates a new game and sets location
-	public async void switchToGame(Location newLocation)
+	public void switchToGame(Location newLocation)
 	{		
 		GD.Print("Start");
 //		Create new game instance

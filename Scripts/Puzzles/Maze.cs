@@ -43,6 +43,7 @@ public class Maze : Puzzle {
 		base.initDifficulty(level);
 		
 		levelVal = getLevelScaleDimensions(level);
+
 		container.RectScale = godotBox.Scale = goldPot.Scale = new Vector2(levelVal[0], levelVal[1]);
 		button = new StaticBody2D[container.Columns = col = (int)levelVal[3], row = (int)levelVal[2]];
 		
@@ -52,7 +53,7 @@ public class Maze : Puzzle {
 			for(int j = 0; j < col; ++j)
 				container.AddChild(button[j, i] = initTile(i, j, level));
 		}
-		
+
 		//*	Autostart generating the maze
 		for(int i = 0; i < 3; ++i)
 			button[i, 0].GetNode<TextureButton>("IconButton").EmitSignal("pressed");
@@ -116,13 +117,26 @@ public class Maze : Puzzle {
 //****************************************************************************************
 //* Getter methods
 	//* Returns all the scale, dimension, starting, finish, and container's position values based on what level was given.
-	private float[] getLevelScaleDimensions(int level) => 
-		(level <= 3) ? new float[] { 4, 4, 5, 9, 20, 16, 518, 270, 10, 0} :
-		(level == 4) ? new float[] { 3.4F, 3.4F, 6, 11, 20, 16, 540, 275, 5, -5 } : 
-		(level == 5) ? new float[] { 2.8F, 2.8F, 7, 13, 30, 26, 534, 275, 10, 3 } : 
-		(level == 6) ? new float[] { 2.2F, 2.2F, 9, 17, 20, 20, 550, 282, 5, 1 } : 
-		(level == 7) ? new float[] { 1.6F, 1.6F, 12, 24, 9, 18, 560, 280, -3F, 5 } : 
-					new float[] { 1, 1, 20, 38, 8, 8, 563, 293, 0, 0 };
+	private float[] getLevelScaleDimensions(int level) {
+		int blockSize = 15; //Size of blocks
+		// Determine grid dimensions
+		Vector2 dim = (level <= 3) ? new Vector2(5,9) : 
+					  (level == 4) ? new Vector2(6, 11) :
+					  (level == 5) ? new Vector2(7,13) : 
+					  (level == 6) ? new Vector2(9,17) :
+					  (level == 7) ? new Vector2(12, 24) :
+					  new Vector2(20, 38);
+
+		Vector2 dimTrans = new Vector2(dim.y, dim.x); //Transposed Vector
+		float scale = container.RectSize.y / (blockSize * dim.x);
+		Vector2 halfBlock = (scale/2) * new Vector2(blockSize, blockSize); //Half a block's size
+		Vector2 scaledSize = (dimTrans * blockSize  * scale); //Grid Size after scale
+		Vector2 pos = new Vector2((container.RectSize.x - (scale * blockSize * dim.y))/2, 0); //Container positions
+		Vector2 sPos = halfBlock + pos; //StartPos
+		Vector2 ePos = scaledSize - halfBlock + pos; //EndPos
+		return new float[] {scale, scale, dim.x, dim.y, sPos.x, sPos.y, ePos.x, ePos.y, pos.x, pos.y};
+	}
+
 	
 	//* Returns a scene tile depends of the given number in the parameter
 	private StaticBody2D getSceneTile(string number) => 

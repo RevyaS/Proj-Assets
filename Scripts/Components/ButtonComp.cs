@@ -9,10 +9,11 @@ using UF = UtilityFunctions;
 public class ButtonComp : HBoxContainer
 {
 //	Initializes required references
-	public void init(DataManager dManager, Game game)
+	public void init(DataManager dManager, Game game, Menu menu)
 	{
 		this.dManager = dManager;
 		this.game = game;
+		this.menu = menu;
 	}
 	
 	//*	Generates a list of button of traversal based on MapData's currentNode
@@ -38,10 +39,10 @@ public class ButtonComp : HBoxContainer
 		
 //		Get the dictionary for the currNode
 		String dataKey = dManager.CurrNode.name;
-		GD.Print("Generate action method");
-		Dictionary data = dManager.getRouteData(dataKey);
-		
-		String actionKey = "Action" + flag.ToString();
+		Dictionary routeData = dManager.getRouteData(dataKey);
+		Dictionary data = routeData["Event" + flag.ToString()] as Dictionary;
+
+		String actionKey = "Actions";
 		
 //		Check if actionkey exists
 		if(!data.Contains(actionKey))
@@ -50,11 +51,10 @@ public class ButtonComp : HBoxContainer
 //		Get current stats
 		Dictionary stats = dManager.getData("Stats");
 		Dictionary charFlags = dManager.getData("Chars");
-		
+		GD.Print(charFlags);
 //		Get the action Dictionary
 		Dictionary actionData = (Dictionary)data[actionKey];
 		
-//		GD.Print("Printing Keys");
 //		Generate buttons
 		foreach(String key in actionData.Keys){
 //			GD.Print(key);
@@ -72,9 +72,14 @@ public class ButtonComp : HBoxContainer
 			{
 //				Compare current stats from the req
 				Dictionary req = eventData["Chars"] as Dictionary;
+				GD.Print("Req: " + req);
 				if(!reqMet(req, charFlags)) continue;
 			}
-				
+			
+//			Add route info
+			eventData.Add("Route", dManager.RouteFlag);
+
+			GD.Print(key);
 			ActionButton newButton = addEventButton(eventData, key);
 //			Connect the button's signal
 			newButton.Connect("TriggeredEvent", game, "loadEvent");
@@ -87,13 +92,17 @@ public class ButtonComp : HBoxContainer
 //		Clear everything
 		clearContainer(true, true);
 		
+	// play sfx if SFX key exists
+		Dictionary eventData = dManager.EventData;
+		String eventKey = "Event" + flag;
+		Dictionary currData = eventData[eventKey] as Dictionary;
+
 //		Get key
-		String actionKey = "Actions" + flag.ToString();
-		
+		String actionKey = "Actions";
 //		Get dictionary of actions
-		Dictionary actionData = dManager.EventData[actionKey] as Dictionary;
+		Dictionary actionData = currData[actionKey] as Dictionary;
 		
-		foreach(String key in actionData.Keys){	
+		foreach(String key in actionData.Keys){
 //			Generate an actionButton
 			ActionButton newButton = addDecisionButton(key, actionData[key].ToString());
 //			Connect the button's ChangedLocation signal to the changeLocation function
@@ -108,6 +117,7 @@ public class ButtonComp : HBoxContainer
 		rightActionButtonContainer.AddChild(moveButton);
 		moveButton.init(node);
 		moveButton.setText(UF.extractPascal(node.name));
+		moveButton.Connect("pressed", menu, "playSfx");
 		return moveButton;
 	}
 	
@@ -117,6 +127,7 @@ public class ButtonComp : HBoxContainer
 		ActionButton eventButton = addButton();
 		leftActionButtonContainer.AddChild(eventButton);
 		eventButton.init(data, text);
+		eventButton.Connect("pressed", menu, "playSfx");
 		return eventButton;
 	}
 	
@@ -126,13 +137,13 @@ public class ButtonComp : HBoxContainer
 		ActionButton decisionButton = addButton();
 		leftActionButtonContainer.AddChild(decisionButton);
 		decisionButton.init(name, eventValue);
+		
 		return decisionButton;
 	}
 	
 	//*	Returns a default button instance with connected signalled sound effects.
 	public ActionButton addButton(){
 		ActionButton newButton = SceneManager.getSceneInstance(GlobalData.actionButton) as ActionButton;
-		newButton.Connect("pressed", Menu.menuNode, "playSfx");
 		return newButton;
 	}
 
@@ -173,6 +184,8 @@ public class ButtonComp : HBoxContainer
 	private DataManager dManager;
 //	The Game singleton that owns this component
 	private Game game;
+// Menu reference 
+	private Menu menu;
 	
 	private VBoxContainer rightActionButtonContainer { get; set; }
 	private VBoxContainer leftActionButtonContainer { get; set; }

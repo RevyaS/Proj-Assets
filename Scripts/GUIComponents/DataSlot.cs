@@ -50,6 +50,7 @@ public class DataSlot : TextureButton
 		day.Text = "Day : " + (saveData["Stats"] as Dictionary)["Day"];
 		text.Text = saveData["CurrText"] as String;
 		money.Text = "Money : " + (saveData["Stats"] as Dictionary)["Money"];
+		GD.Print(saveData["CurrNode"].ToString());
 		loc.Texture = (MapData.gameMap.getNode(saveData["CurrNode"].ToString()) as Location).image;
 	
 	}

@@ -3,6 +3,8 @@
 
 using Godot;
 using System;
+using System.Linq;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Godot.Collections;
 using GA = Godot.Collections.Array;
@@ -89,10 +91,10 @@ public class UtilityFunctions : Node
 //	Returns the ImageTexture given a path of the string
 	public static ImageTexture getTexture(String path)
 	{
-//		Change the image
+		StreamTexture newImg = ResourceLoader.Load(ProjectSettings.GlobalizePath(path)) as StreamTexture;
 		Image newImage = new Image();
 //		Load the image filepath
-		newImage.Load(ProjectSettings.GlobalizePath(path));
+		newImage = newImg.GetData();
 //		Generate a texture based on the Image
 		ImageTexture imgText = new ImageTexture();
 		imgText.CreateFromImage(newImage);
@@ -101,4 +103,43 @@ public class UtilityFunctions : Node
 	}
 	
 //*********************************************************************************************
+
+//CLASS HANDLING becuz godotsharp is down
+
+	public static void showMethods(Type type, bool toFile=false)
+	{
+		int i = 0;
+		Dictionary methods = new Dictionary();
+		foreach (var method in type.GetMethods())
+		{
+			var parameters = method.GetParameters();
+			var parameterDescriptions = string.Join
+				(", ", method.GetParameters()
+							 .Select(x => x.ParameterType + " " + x.Name)
+							 .ToArray());
+
+			String combined = method.ReturnType + " " +
+					 method.Name + "(" +
+					 parameterDescriptions + ")";
+			i++;
+			if(toFile)
+			{
+				methods.Add(i + " " + method.Name, combined);
+				continue;
+			}
+			GD.Print(combined);
+		}
+		
+		writeFile("user://methodAsked.txt", methods);
+	}
+	
+	
+	public static void showFields(Type type)
+	{
+		foreach (var field in type.GetFields())
+		{
+			GD.Print(field.FieldType + " " +
+					 field.Name);
+		}
+	}
 }

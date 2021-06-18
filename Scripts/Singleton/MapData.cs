@@ -10,19 +10,14 @@ using UF = UtilityFunctions;
 
 public class MapData : Node
 {
-	
+	static DataManager dManager;
+
 // Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
+		dManager = GetNode<DataManager>("/root/DataManager");
 		initData();
-		loadMap(0);
 	}
-	
-	
-//	Generates the graph (should read a file in the future)
-	private void init()
-	{
-	}
-	
+		
 	
 //	Generates the necessary foundation for the gameMap
 	private void initData()
@@ -31,7 +26,7 @@ public class MapData : Node
 		gameMap = new DsGraph();
 		
 //		Load Location Data
-		GC.Dictionary data = GlobalData.getGlobalData("Location");
+		GC.Dictionary data = GlobalData.getGlobalData("Locations");
 		
 //		Generate the nodes
 //		Loop through each keys
@@ -50,18 +45,17 @@ public class MapData : Node
 //	Loads map and returns a Graph from the path
 //	Also sets the mapData into the data from file
 	public static DsGraph loadMap(int flag)
-	{
-//		GD.Print("Load map" + flag.ToString());
-		
+	{		
 //		Clear edges of gameMap
 		gameMap.removeConnections();
 //		gameMap.print();
 //		Generate the Map Key
 		String mapKey = "Map" + flag;
-		
-//		Read the current map from file
-		GC.Dictionary data = GlobalData.getGlobalData(mapKey);
-		
+		startNode = null;
+
+//		Read the current map from Story file
+		GC.Dictionary data = GlobalData.getStoryData(mapKey);
+	
 //		Loop through all existing names for the map
 		foreach(String area in data.Keys)
 		{
@@ -69,8 +63,10 @@ public class MapData : Node
 			GC.Array neighbors = data[area] as GC.Array;
 		
 //			Get the node from the area (LocationName)
-			Location currNode = gameMap.getNode(area) as Location;
-						
+			Location currNode = gameMap.getNode( area ) as Location;
+			GD.Print(area + " : " + currNode == null);
+			if(startNode == null) startNode = currNode;
+
 //			Loop through each location's neighbor
 			foreach(String neighborName in neighbors)
 			{
@@ -83,9 +79,6 @@ public class MapData : Node
 		}
 		
 		gameMap.print();
-		
-//		Sets the starting node as the first node created
-		startNode = gameMap.nodes.First().Value as Location;
 		
 		return gameMap;
 	}

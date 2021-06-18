@@ -13,15 +13,13 @@ public class Game : TextureRect
 	public override void _Ready(){
 //		Data Manager
 		dManager = GetNode<DataManager>("/root/DataManager");
-
 		tween = GetNode<Tween>("Tween");
-
 		locationText = GetNode<RichTextLabel>("Margin/Bottom/Elements/ScrollContainer/Text");
 		
 //		Components
+		menu = GetNode<Menu>("Margin/Bottom/Elements/MenuContainer/CenterContainer/Menu");
 		btnComp = GetNode<ButtonComp>("Margin/Bottom/Elements/ActionButtons/ActionButtons");
-		btnComp.init(dManager, this); //Initialize references
-		
+		btnComp.init(dManager, this, menu); //Initialize references
 		top = GetNode<TopGUI>("Margin/Top");
 		top.init(dManager, this, tween);
 		
@@ -49,7 +47,6 @@ public class Game : TextureRect
 		
 //		Get Node name
 		String nodeName = newLocation.name;
-
 //		Loads the first event key
 		dManager.EventData = dManager.getRouteData(nodeName);
 		
@@ -57,7 +54,8 @@ public class Game : TextureRect
 		int flagValue = Convert.ToInt32(location[nodeName]);
 		
 //		Get the Event text
-		dManager.CurrText = (string)dManager.EventData["Event" + flagValue.ToString()];
+		Dictionary currData = dManager.EventData["Event" + flagValue.ToString()] as Dictionary;
+		dManager.CurrText = currData["Text"].ToString();
 		eventText(dManager.CurrText);
 
 //		Load Char images
@@ -73,6 +71,7 @@ public class Game : TextureRect
 		top.updateStats();
 	}
 	
+
 	//*	Made the text's character invisible then the timer starts to trigger onTimerTimeout
 	private void eventText(string text){
 		locationText.Text = text;
@@ -80,6 +79,7 @@ public class Game : TextureRect
 		timer.Start();
 	}
 	
+
 	//*	Make the locationText.Text's characters visible every 0.05 seconds
 	private void onTimerTimeout() {
 		if(locationText.Text.Length != locationText.VisibleCharacters)
@@ -94,17 +94,7 @@ public class Game : TextureRect
 		
 //		Set eventData
 		dManager.EventData = eventData;
-		
-//		Check if eventData contains "Text0"
-		if(!eventData.Contains("Text0"))
-		{
-//			Just configure stat changes
-			dManager.resolveDecision(0);
-			top.resolveDecision(0);
-			setLocation(dManager.CurrNode as Location);
-			return;
-		}
-		
+
 //		Change image if Image exists
 		if(eventData.Contains("Image")){
 			GD.Print("LoadEvent method");
@@ -115,7 +105,7 @@ public class Game : TextureRect
 		}
 
 //		Load "Text0" (initial event)
-		nextDecision("Text0");
+		nextDecision("Event0");
 	}
 	
 	
@@ -123,21 +113,45 @@ public class Game : TextureRect
 	private void nextDecision(String decisionValue) {
 //		Access eventData
 		Dictionary eventData = dManager.EventData;
-//		Checks if the decision value contains "Text"
-		if(decisionValue.Find("Text") == -1) {
+
+//		Checks if the decision value contains "Event"
+		if(decisionValue.Find("Event") == -1) {
 //			Doesn't contain "Text" therefore move to location
 			Location moveTo = MapData.gameMap.getNode(decisionValue) as Location;
 			GD.Print("Passed here");
 			setLocation(moveTo);
+			menu.playSfx();
 			return;
 		}
 
+		Dictionary currEvent = eventData[decisionValue] as Dictionary;
+
+//		Check if eventData contains "Text0"
+		if(!currEvent.Contains("Text"))
+		{
+//			Just configure stat changes
+			dManager.resolveDecision(0);
+			top.resolveDecision(0);
+			setLocation(dManager.CurrNode as Location);
+			return;
+		}
+
+
 //		Else change the text
-		eventText(eventData[decisionValue].ToString());
+		eventText(currEvent["Text"].ToString());
 		
 //		Get the flag
-		int flag = Convert.ToInt32(decisionValue.Replace("Text", ""));
+		int flag = Convert.ToInt32(decisionValue.Replace("Event", ""));
 		
+		String sfxKey = "SFX" + flag.ToString();
+		if(eventData.Contains(sfxKey))
+		{
+			String key = eventData[sfxKey].ToString();
+			String sfxPath = GlobalData.getSFXPath(key);
+			menu.playSfx(sfxPath);
+		} else menu.playSfx();
+
+
 //		Resolve data and GUI processes from these 2 components
 		dManager.resolveDecision(flag);
 		top.resolveDecision(flag);
@@ -161,6 +175,7 @@ public class Game : TextureRect
 //	Components
 	private ButtonComp btnComp;
 	private TopGUI top;
+	private Menu menu;
 	
 	//*	For the locationText's text visibility
 	private Timer timer;

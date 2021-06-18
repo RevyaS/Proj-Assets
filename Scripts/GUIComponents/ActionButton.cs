@@ -3,6 +3,7 @@
 
 using Godot;
 using System;
+using System.Text.RegularExpressions;
 using Godot.Collections;
 using UF = UtilityFunctions;
 
@@ -17,7 +18,6 @@ public class ActionButton : TextureButton
 	{
 //		Components
 		lText = (Label)GetNode("Label");
-//		GD.Print(Name);
 		setText(Name);
 	}
 	
@@ -38,14 +38,13 @@ public class ActionButton : TextureButton
 		init();
 		
 		setText(text);
-		
-//		GD.Print(eventInfo);
-		
+				
 //		Get the event key
 		String eventKey = eventInfo["Event"].ToString();
 		
+		GD.Print("DEBUG: " + eventKey);
 //		Get the dictionary of the event
-		this.eventData = GlobalData.getEventData(eventKey);
+		this.eventData = GlobalData.getEventData(eventKey, (int)eventInfo["Route"]);
 	}
 	
 	
@@ -83,15 +82,12 @@ public class ActionButton : TextureButton
 //		Only resize when label is larger by a significant amount (5),
 //		to avoid recursive calls
 		if(lText.RectSize.y < RectSize.y + 7) return;
-//		GD.Print("Resize Action");
 		
 //		Resize the Height of the button
 		float y = lText.RectSize.y + 20;
 		Vector2 sett = new Vector2(RectSize.x, y);
 		RectSize = sett;
 		RectMinSize = sett;
-//		GD.Print(lText.Text + sett);
-//		GD.Print("Resize End");
 	}
 
 
@@ -100,7 +96,7 @@ public class ActionButton : TextureButton
 //	Changes the button's text
 	public void setText(string newText)
 	{
-		lText.Text = newText;
+		lText.Text = Regex.Replace(newText.StripEdges(true, true), "%.*?%", "");
 	}
 
 

@@ -9,9 +9,9 @@ public class SlidingPuzzle : Puzzle{
 //*****************************************************************
 //* Initializer methods
 	public override void _Ready(){
-		container = GetNode<GridContainer>("GridContainer");
+		container = GetNode<GridContainer>("HBoxContainer/GridContainer");
 		timer = GetNode<Timer>("Timer");
-		whole = GetNode<TextureRect>("Whole");
+		whole = GetNode<TextureRect>("HBoxContainer/Whole");
 		//* Sets as 1, 1 to avoid conflict
 		pPos = new int[] { 1, 1 };
 		
@@ -50,6 +50,8 @@ public class SlidingPuzzle : Puzzle{
 			for(int j = 0; j < col; ++j)
 				container.AddChild(tiles[j, i] = getTile(i, j));
 		}
+
+		(container.GetParent() as Control).SetAnchorsAndMarginsPreset(LayoutPreset.Center, LayoutPresetMode.KeepSize);
 		
 	}
 	
@@ -86,7 +88,7 @@ public class SlidingPuzzle : Puzzle{
 		
 		// //* Solved if the puzzle is being solved
 		if(checkWin()){
-		//     solved();
+	 		solved();
 			GD.Print("WIN");
 		}
 	}
@@ -154,7 +156,7 @@ public class SlidingPuzzle : Puzzle{
 		
 		tile.TexturePressed = tile.TextureHover = (i != 0 || j != 0) ? UF.getTexture(ProjectSettings.GlobalizePath(path + $"{i}{j} (2).png")) : null;
 		tile.Expand = true;
-		tile.RectSize = tile.RectMinSize = new Vector2(75, 75);
+		tile.RectSize = tile.RectMinSize = new Vector2(95, 95);
 		tile.EditorDescription = (i != 0 || j !=0 ) ?  $"Tile [{j}, {i}]" : "Way Labot";
 		tile.Connect("pressed", this, nameof(onPressed), new GA { i, j });
 		

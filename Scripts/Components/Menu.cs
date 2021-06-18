@@ -24,7 +24,14 @@ public class Menu : VBoxContainer{
 		onOffTextures(1);
 	}
 	
-	public static void playSfx(){
+	public void playSfx(){
+		sfx.Stream = loadAudio(GlobalData.sfxButton);
+		if(isSfxOn) sfx.Play();
+	}
+
+	// Plays specific Sfx
+	public void playSfx(String sfxPath){
+		sfx.Stream = loadAudio(sfxPath);
 		if(isSfxOn) sfx.Play();
 	}
 	
@@ -52,7 +59,7 @@ public class Menu : VBoxContainer{
 	private Texture loadSomeIconStuffs(string endPath) => GD.Load<Texture>(loadIconPath + endPath);
 	
 	//* Load some audio and return
-	private AudioStream loadSomeAudioStuffs(string path) => GD.Load<AudioStream>(path);
+	private AudioStream loadAudio(string path) => GD.Load<AudioStream>(path);
 	
 	//*	Initialize some texture in buttons
 	private void initTextures(){
@@ -71,11 +78,11 @@ public class Menu : VBoxContainer{
 	
 	//*	Initialize some values of music and sounds
 	private void initAudios(){
-		bgMusic.Stream = loadSomeAudioStuffs(GlobalData.mGymnopedie);
+		bgMusic.Stream = loadAudio(GlobalData.mGymnopedie);
 		bgMusic.VolumeDb = 15;
 		bgMusic.Play();
 		
-		sfx.Stream = loadSomeAudioStuffs(GlobalData.sfxButton);
+		sfx.Stream = loadAudio(GlobalData.sfxButton);
 	}
 	
 	
@@ -93,6 +100,7 @@ public class Menu : VBoxContainer{
 	private delegate void stackSettingScene(Control setting);
 	
 	public static AudioStreamPlayer bgMusic { get; set; }
+	// SFX
 	public static AudioStreamPlayer sfx { get; set; }
 	public static VBoxContainer menuNode { get; set; }
 	public static bool isMusicOn { get; set; }

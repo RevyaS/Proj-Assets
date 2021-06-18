@@ -27,7 +27,6 @@ public class Options : Control{
 	
 //	Use to Open the Data Selection GUI
 	public void dataButtonPressed(){
-		SceneManager.Singleton.DataSelect.Connect("LoadTriggered", this, nameof(closeMenu));
 		SceneManager.Singleton.showDataSelect();
 	}
 	
@@ -77,6 +76,7 @@ public class Options : Control{
 	}
 	
 	public override void _Ready(){
+		SceneManager.Singleton.DataSelect.Connect("LoadTriggered", this, nameof(closeMenu));
 		initValues();
 	}
 	
