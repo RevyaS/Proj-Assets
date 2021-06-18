@@ -1,0 +1,236 @@
+{
+	"Nothing": {
+		"Event0": "Greetings Player",
+		"Actions0": {
+			"Where am I?" : {
+				"Event" : "Intro",
+			}
+		}
+	},
+	
+	"Bedroom" : {
+		"Event0": "What was that about?",
+		"Actions0": {
+			"Someone's knocking" : {
+				"Event" : "IntroTracie",
+			}
+		},
+		
+		"Left1" : "TracieSurprised",
+		"Event1" : "Ahh!!! Don't scare me like that, bad nightmare huh?",
+		"Actions1" : {
+			"I'm sorry" : {
+				"Event" : "IntroDay2", 
+			}
+		},
+		
+		"Center2" : "TracieIdle",
+		"Event2" : "Wake up and get ready, I'll introduce you to the Patrol station",
+		"Actions2" : {
+			"Ok" : {
+				"Event" : "IntroDay3",
+			}
+		},
+	},
+	
+	"House": {
+		"Event0": "I need to survive for 14 days huh? What does that even mean?",
+		
+		"Event1" : "Tracie's out to work now, I should get working as well",
+	},
+	
+	"House%TWI%" : {
+		"Left0" : "TracieIdle",
+		"Event0": "Welcome back, just a few moments, I'll be done cooking",
+		"Actions0" : {
+			"Hey Tracie..." : {
+				"Event" : "TracieDay1",
+			},
+		},
+		
+		"Event1" : "Tracie's not home yet",
+		
+		"Left2" : "TracieIdle",
+		"Event2" : "I'll be cooking dinner just wait",
+		"Actions2" : {
+			"Can I ask you something Tracie?" : {
+				"Event" : "TracieDay1",
+			}
+		},
+	},
+	
+	"House%EVE%" : {
+		"Left0" : "TracieIdle",
+		"Event0": "I prepared dinner, so feel free to eat anytime",
+		"Actions0" : {
+			"Get some rest" : {
+				"Event" : "MessengerDay2",
+			},
+		},
+		
+		"Right1" : "TracieIdle",
+		"Event1" : "Oh you're just in time for dinner",
+		"Actions1" : {
+			"Eat dinner" : {
+				"Event" : "StephDay1Alt",
+			}
+		},
+		
+		"Right2" : "TracieIdle",
+		"Left2" : "StephIdle",
+		"Event2" : "I guess I should rest now",
+		
+		"Right3" : "TracieIdle",
+		"Event3" : "You're late, there's still dinner if you want to eat",
+		
+		"Right4" : "TracieIdle",
+		"Event4" : "Welcome back, I've recently finished cooking, so let's 
+			eat together",
+		"Actions4" : {
+			"*Eat dinner with Tracie*" : {
+				"Event" : "TracieDay2",
+			}
+		},
+		
+		"Right5" : "TracieIdle",
+		"Event5" : "We should rest soon",
+		"Actions5" : {
+			"*Get some rest*" : {
+				"Event" : "Day2Summary",
+				"Chars" : {
+					"Tracie" : 2,
+				},
+			},
+		},
+	},
+	
+	"Barracks%Fantasy%" : {
+		"Center0" : "FionaIdle",
+		"Event0" : "For your first task, you will be with Camilla",
+		"Actions0" : {
+			"Retrieval Mission" : {
+				"Event" : "IntroCamilla",
+			},
+		},
+	},
+	
+	"Downtown": {
+		"Event0": "I guess I should go to work",
+	},
+	
+	"Downtown%TWI%": {
+		"Event0": "Seems to be the time to go home",
+		
+		"Right1" : "StephWorried",
+		"Event1" : "*You saw Steph sitting on the bench*",
+		"Actions1" : {
+			"Talk to her" : {
+				"Event" : "StephDay1",
+			}
+		},
+		
+		"Center2" : "BryanWorried",
+		"Event2" : "Excuse me, do you have a moment?",
+		"Actions2" : {
+			"Sure, what is it?" : {
+				"Event" : "IntroBryan",
+			},
+		},
+		
+		"Event3" : "Huh, that short conversation sure took time",
+	},
+	
+	"Downtown%EVE%": {
+		"Event0": "I need to go home now",
+		
+		"Center1" : "CarlaIdle",
+		"Event1" : "Hey, want to have some good time?",
+		"Actions1" : {
+			"Uhm no" : {
+				"Event" : "IntroCarla",
+				"Req" : {
+					"Money" : 10,
+				},
+			},
+		},
+		
+		"Event2" : "That felt good, I might want to earn 
+			more cash next time",
+	},
+	
+	"ShoppingStreet": {
+		"Center0": "AllanIdle",
+		"Event0": "Morning lad, need some cash? Feel free to help out.",
+		"Actions0": {
+			"Sure thing Allan" : {
+				"Event" : "IntroAllan",
+			}
+		},
+		
+		"Left1" : "AllanIdle",
+		"Event1": "Morning lad",
+		"Actions1" : {
+			"Morning Allan" : {
+				"Event" : "IntroSteph",
+				"Chars" : {
+					"Tracie" : 1,
+				},
+			},
+			"Morning Allan%Alt%" : {
+				"Event" : "IntroStephAlt",
+				"Chars" : {
+					"Sarah" : 1,
+				},
+			},
+		},
+		
+	},
+	
+	"ShoppingStreet%TWI%" : {
+		"Event0": "The store is closed now",
+		"Event1" : "Girlfriend huh? I've never seen her in that sense before",
+	},
+	
+	"ShoppingStreet%EVE%" : {
+		"Event0": "The store is closed now",
+	},
+	
+	"Mall" : {
+		"Event0": "Gym is still closed, might check later",
+	},
+	
+	"Mall%TWI%" : {
+		"Event0": "I'm quite exhausted from that work",
+		"Actions0": {
+			"Maybe I should go to the gym" : {
+				"Event": "IntroJason",
+			}
+		},
+		
+		"Event1" : "Seems like a nice day to go the gym",
+		"Actions1" : {
+			"Go to the gym" : {
+				"Event" : "IntroJasonAlt",
+			}
+		},
+		
+		"Event2": "Jason may be already here",
+		"Actions2" : {
+			"Head to the gym" :  {
+				"Event" : "JasonDay2",
+			}
+		},
+		
+	},
+	
+	"Mall%EVE%" : {
+		"Event0": "Now I'm really exhausted, I should go home now",
+		
+		"Event1": "There's nothing to do here",
+		
+		"Event2" : "Hmm, it's as if the Messenger wants me to take 
+			Jason's offer",
+			
+		"Event3" : "I feel like I'm doing something right",
+	},
+}

@@ -1,0 +1,78 @@
+{
+	"BaseStats" : {
+		"Day" : 1,
+		"Strength" : 10,
+		"Speed" : 5,
+		"Money" : 100,
+	},
+	
+	"BaseChars" : {
+		"Tracie" : 0,
+		"Sarah" : 0,
+		"Steph" : 0,
+		"Carla" : 0,
+		"Eli" : 0,
+	},
+	
+	"Characters" : {
+		"MessengerIdle" : "res://Assets/CharFemale/Messenger/MessengerIdle.png",
+		"TracieIdle" : "res://Assets/CharFemale/Tracie/TracieIdle.png",
+		"TracieSurprised" : "res://Assets/CharFemale/Tracie/TracieSurprised.png",
+		"TracieWorried" : "res://Assets/CharFemale/Tracie/TracieWorried.png",
+		"StephIdle" : "res://Assets/CharFemale/Steph/StephIdle.png",	
+		"StephWorried" : "res://Assets/CharFemale/Steph/StephWorried.png",
+		"CarlaIdle" : "res://Assets/CharFemale/Carla/CarlaIdle.png",
+		"CarlaBJ1" : "res://Assets/CharFemale/Carla/B1.png",
+		"CarlaBJ2" : "res://Assets/CharFemale/Carla/B2.png",
+		"CarlaBJ3" : "res://Assets/CharFemale/Carla/B3.png",
+		"CarlaBJ4" : "res://Assets/CharFemale/Carla/B4.png",
+		"FionaIdle" : "res://Assets/CharFemale/Fiona/Idle.png",
+		"CamillaIdle" : "res://Assets/CharFemale/Camilla/Idle.png",
+		"AllanIdle" : "res://Assets/CharMale/Allan/AllanIdle.png",
+		"JasonIdle" : "res://Assets/CharMale/Jason/JasonIdle.png",
+		"BryanWorried" : "res://Assets/CharMale/Bryan/BryanWorried.png",
+		"KhanIdle" : "res://Assets/CharMale/Khan/Idle.png",
+		"KhanSmile" : "res://Assets/CharMale/Khan/Smile.png",
+	},
+	
+	"Locations" : [
+		"Nothing", "Bedroom", "Barracks%Fantasy%", "Village",
+		"House", "House%TWI%", "House%EVE%", 
+		"Mall", "Mall%TWI%", "Mall%EVE%",
+		"Downtown", "Downtown%TWI%", "Downtown%EVE%", 
+		"ShoppingStreet", "ShoppingStreet%TWI%", "ShoppingStreet%EVE%",
+	],
+	
+	"Map0" : {
+		"Nothing" : [],
+		"Bedroom" : [],
+	},
+	
+	"Map1" : {
+		"House" : ["Downtown"],
+		"Downtown" : ["House", "ShoppingStreet"],
+		"ShoppingStreet": ["Mall", "Downtown"],
+		"Mall": ["ShoppingStreet"],
+	},
+	
+	"Map2" : {
+		"House%TWI%" : ["Downtown%TWI%"],
+		"Downtown%TWI%" : ["House%TWI%", "ShoppingStreet%TWI%"],
+		"ShoppingStreet%TWI%": ["Mall%TWI%", "Downtown%TWI%"],
+		"Mall%TWI%": ["ShoppingStreet%TWI%"],
+	},
+	
+	"Map3" : {
+		"House%EVE%" : ["Downtown%EVE%"],
+		"Downtown%EVE%" : ["House%EVE%", "ShoppingStreet%EVE%"],
+		"ShoppingStreet%EVE%": ["Mall%EVE%", "Downtown%EVE%"],
+		"Mall%EVE%": ["ShoppingStreet%EVE%"],
+	},
+	
+	"Map4" : {
+		"House" : ["Downtown"],
+		"Downtown" : ["House", "ShoppingStreet", "Barracks%Fantasy%"],
+		"ShoppingStreet": ["Mall", "Downtown"],
+		"Mall": ["ShoppingStreet"],
+	},
+}

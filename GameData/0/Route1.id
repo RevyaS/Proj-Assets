@@ -1,0 +1,36 @@
+{
+	"House": {	
+		"Event0" : "Hilda: She only affected the places we've recently been through, so she knows 
+			that much"
+	},
+		
+	"Mall": {
+		"Event0" : "Hilda: What the hell did that girl do? Is she a magical girl or something? 
+			Let's find her"
+	},
+	
+	
+	"Downtown": {
+		"Event0": "Hilda: it seems that we can't go back from where we came from",
+		"Left0" : "ShioriNormal" 
+	},
+	
+	"ParkOuter" : {
+		"Event0" : "Hilda: There she is, talk to her",
+		"Left0" : "AsukaUniformAngry",
+	},
+	
+	"MedicalCampus" : {
+		"Event0" : "Hilda: Where the hell is she?",
+		"Center0" : "YukariCasualNormal",
+	},
+	
+	"ShoppingStreet" : {
+		"Event0" : "Hilda: It feels as if nothing changed yet the places are scrambled",
+	},
+	
+	"Park": {
+		"Event0": "Hilda: She's not here either",
+		"Left0" : "HimenoSmile",
+	}
+}
