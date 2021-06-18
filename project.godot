@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -23,9 +22,9 @@ config/icon="res://icon.png"
 [autoload]
 
 DsGraph="*res://Scripts/Singleton/DsGraph.cs"
+DataManager="*res://Scripts/Singleton/DataManager.cs"
 MapData="*res://Scripts/Singleton/MapData.cs"
 UtilityFunctions="*res://Scripts/Singleton/UtilityFunctions.cs"
-DataManager="*res://Scripts/Singleton/DataManager.cs"
 GlobalData="*res://Scripts/Singleton/GlobalData.cs"
 SceneManager="*res://Scripts/Singleton/SceneManager.cs"
 
