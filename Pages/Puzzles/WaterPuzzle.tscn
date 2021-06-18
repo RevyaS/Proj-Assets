@@ -10,7 +10,7 @@ anchor_right = 0.57
 anchor_bottom = 0.545
 margin_right = -6.10352e-05
 margin_bottom = 0.25
-rect_min_size = Vector2( 570, 300 )
+rect_min_size = Vector2( 650, 350 )
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
@@ -31,9 +31,9 @@ __meta__ = {
 }
 
 [node name="Left" type="TextureButton" parent="HBoxContainer"]
-margin_right = 175.0
-margin_bottom = 240.0
-rect_min_size = Vector2( 175, 200 )
+margin_right = 200.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 200, 200 )
 focus_mode = 1
 enabled_focus_mode = 1
 expand = true
@@ -47,19 +47,19 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Left/Container"]
-margin_top = 190.0
-margin_right = 175.0
-margin_bottom = 240.0
+margin_top = 240.0
+margin_right = 200.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 175, 50 )
 size_flags_vertical = 10
 texture = ExtResource( 3 )
 expand = true
 
 [node name="Center" type="TextureButton" parent="HBoxContainer"]
-margin_left = 179.0
-margin_right = 354.0
-margin_bottom = 240.0
-rect_min_size = Vector2( 175, 200 )
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 200, 200 )
 focus_mode = 0
 enabled_focus_mode = 0
 expand = true
@@ -67,39 +67,41 @@ expand = true
 [node name="Container" type="VBoxContainer" parent="HBoxContainer/Center"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -0.707108
+margin_bottom = -0.707092
 rect_min_size = Vector2( 175, 50 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Center/Container"]
-margin_top = 190.0
-margin_right = 175.0
-margin_bottom = 240.0
+margin_top = 240.0
+margin_right = 200.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 175, 50 )
 size_flags_vertical = 10
 texture = ExtResource( 3 )
 expand = true
 
 [node name="Right" type="TextureButton" parent="HBoxContainer"]
-margin_left = 358.0
-margin_right = 533.0
-margin_bottom = 240.0
-rect_min_size = Vector2( 175, 200 )
+margin_left = 408.0
+margin_right = 608.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 200, 200 )
 expand = true
 
 [node name="Container" type="VBoxContainer" parent="HBoxContainer/Right"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 175, 50 )
+rect_min_size = Vector2( 190, 50 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Right/Container"]
-margin_top = 190.0
-margin_right = 175.0
-margin_bottom = 240.0
+margin_top = 240.0
+margin_right = 200.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 175, 50 )
 size_flags_vertical = 10
 texture = ExtResource( 3 )
@@ -120,7 +122,7 @@ __meta__ = {
 }
 
 [node name="Left" type="Label" parent="Max"]
-margin_right = 174.0
+margin_right = 200.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
@@ -128,8 +130,8 @@ text = "0"
 align = 1
 
 [node name="Center" type="Label" parent="Max"]
-margin_left = 178.0
-margin_right = 352.0
+margin_left = 204.0
+margin_right = 405.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
@@ -137,13 +139,14 @@ text = "0"
 align = 1
 
 [node name="Right" type="Label" parent="Max"]
-margin_left = 356.0
-margin_right = 530.0
+margin_left = 409.0
+margin_right = 610.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "0"
 align = 1
+
 [connection signal="pressed" from="HBoxContainer/Left" to="." method="leftClicked"]
 [connection signal="pressed" from="HBoxContainer/Center" to="." method="centerClicked"]
 [connection signal="pressed" from="HBoxContainer/Right" to="." method="rightClicked"]

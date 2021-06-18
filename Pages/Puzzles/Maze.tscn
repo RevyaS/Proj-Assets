@@ -8,7 +8,7 @@
 [node name="Control" type="TextureRect"]
 margin_right = 570.0
 margin_bottom = 300.0
-rect_min_size = Vector2( 570, 300 )
+rect_min_size = Vector2( 650, 350 )
 mouse_filter = 0
 texture = ExtResource( 2 )
 expand = true
@@ -19,10 +19,8 @@ __meta__ = {
 }
 
 [node name="Container" type="GridContainer" parent="."]
-margin_left = 5.0
-margin_top = 3.0
-margin_right = 570.0
-margin_bottom = 300.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_stretch_ratio = 0.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
@@ -42,5 +40,6 @@ collision_mask = 3
 [node name="GoldPot" parent="." instance=ExtResource( 1 )]
 collision_layer = 2
 collision_mask = 0
+
 [connection signal="timeout" from="Container/Timer" to="." method="onTimerTimeout"]
 [connection signal="body_entered" from="GoldPot" to="." method="onGoldPotBodyEntered"]

@@ -51,36 +51,54 @@ margin_right = 300.0
 margin_bottom = 376.0
 rect_min_size = Vector2( 300, 0 )
 
-[node name="New Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="Select a Story" type="Label" parent="VBoxContainer/Sides/VBoxContainer"]
 margin_right = 300.0
-margin_bottom = 50.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 50, 30 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Select a Story"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Author\'sLabrat" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+margin_top = 34.0
+margin_right = 300.0
+margin_bottom = 84.0
 rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "You are one of the selected few from a famous gaming company to be a beta tester on one of their CYOA games,
+turns out you are subjected to an experiment where the author will try to break you without hurting you physically for
+2 weeks.
+It's part of the contract you just signed and many others did so as well. Will you succumb to the
+author? Will you survive for 2 weeks? Or are you going to press the restart button?"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
-text = "New Game"
+text = "Author's Labrat"
 
 [node name="Load Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 54.0
+margin_top = 88.0
 margin_right = 300.0
-margin_bottom = 104.0
+margin_bottom = 138.0
 rect_min_size = Vector2( 50, 50 )
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
 text = "Load Game"
 
 [node name="\?\?\?\?\?" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 108.0
+margin_top = 142.0
 margin_right = 300.0
-margin_bottom = 158.0
+margin_bottom = 192.0
 rect_min_size = Vector2( 50, 50 )
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
 text = "????????"
 
 [node name="Options" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 162.0
+margin_top = 196.0
 margin_right = 300.0
-margin_bottom = 212.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 50, 50 )
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
@@ -99,6 +117,7 @@ stretch_mode = 6
 __meta__ = {
 "_editor_description_": ""
 }
-[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/New Game" to="." method="newGame"]
+
+[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Author'sLabrat" to="." method="newGame" binds= [ 0 ]]
 [connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Load Game" to="." method="loadGame"]
 [connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Options" to="." method="openOptions"]

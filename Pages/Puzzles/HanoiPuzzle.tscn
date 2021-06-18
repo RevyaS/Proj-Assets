@@ -10,7 +10,7 @@
 [node name="Control" type="TextureRect"]
 margin_right = 570.0
 margin_bottom = 300.0
-rect_min_size = Vector2( 570, 300 )
+rect_min_size = Vector2( 650, 350 )
 mouse_filter = 0
 texture = ExtResource( 2 )
 expand = true
@@ -38,15 +38,16 @@ rect_min_size = Vector2( 0, 25 )
 [node name="Puzzle" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 29.0
 margin_right = 488.0
-margin_bottom = 244.0
+margin_bottom = 296.0
 rect_min_size = Vector2( 480, 215 )
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left" type="TextureRect" parent="VBoxContainer/Puzzle"]
 margin_right = 160.0
-margin_bottom = 215.0
+margin_bottom = 267.0
 rect_min_size = Vector2( 160, 0 )
 texture = ExtResource( 3 )
 expand = true
@@ -62,13 +63,13 @@ __meta__ = {
 }
 
 [node name="1" parent="VBoxContainer/Puzzle/Left/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 191.0
-margin_bottom = 215.0
+margin_top = 243.0
+margin_bottom = 267.0
 
 [node name="Center" type="TextureRect" parent="VBoxContainer/Puzzle"]
 margin_left = 164.0
 margin_right = 324.0
-margin_bottom = 215.0
+margin_bottom = 267.0
 rect_min_size = Vector2( 160, 0 )
 texture = ExtResource( 3 )
 expand = true
@@ -86,7 +87,7 @@ __meta__ = {
 [node name="Right" type="TextureRect" parent="VBoxContainer/Puzzle"]
 margin_left = 328.0
 margin_right = 488.0
-margin_bottom = 215.0
+margin_bottom = 267.0
 rect_min_size = Vector2( 160, 0 )
 texture = ExtResource( 3 )
 expand = true
@@ -102,9 +103,9 @@ __meta__ = {
 }
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 248.0
+margin_top = 300.0
 margin_right = 488.0
-margin_bottom = 298.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 0, 50 )
 custom_constants/separation = 0
 __meta__ = {
@@ -142,6 +143,7 @@ disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 5 )
 expand = true
+
 [connection signal="pressed" from="VBoxContainer/Buttons/Left" to="." method="leftPressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Center" to="." method="centerPressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Right" to="." method="rightPressed"]

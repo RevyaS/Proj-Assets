@@ -1,13 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Puzzles/SlidingPuzzle.cs" type="Script" id=1]
 [ext_resource path="res://Assets/BG/paper background (3).png" type="Texture" id=2]
-[ext_resource path="res://Assets/BG/paper background.png" type="Texture" id=3]
 
 [node name="Control" type="TextureRect"]
 margin_right = 570.0
 margin_bottom = 300.0
-rect_min_size = Vector2( 570, 300 )
+rect_min_size = Vector2( 650, 350 )
 mouse_filter = 0
 texture = ExtResource( 2 )
 expand = true
@@ -16,35 +15,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 3.0
-margin_top = 17.0
-margin_right = 569.0
-margin_bottom = 287.0
-texture = ExtResource( 3 )
-expand = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -125.0
+margin_right = 250.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 500, 250 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Whole" type="TextureRect" parent="."]
-margin_left = 406.71
-margin_top = 104.177
-margin_right = 506.71
-margin_bottom = 204.177
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 116.505
-margin_top = 35.0
-margin_right = 349.505
-margin_bottom = 269.0
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer"]
+margin_right = 230.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 230, 230 )
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Whole" type="TextureRect" parent="HBoxContainer"]
+margin_left = 234.0
+margin_right = 384.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 150, 200 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,5 +58,6 @@ wait_time = 0.08
 wait_time = 3.0
 one_shot = true
 autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="disArrangeTiles"]
 [connection signal="timeout" from="Delay" to="." method="onDelayTimeout"]

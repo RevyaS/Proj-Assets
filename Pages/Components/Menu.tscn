@@ -5,28 +5,37 @@
 
 [node name="Menu" type="VBoxContainer"]
 margin_left = 58.0
-margin_right = 108.0
-margin_bottom = 158.0
+margin_right = 98.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 40, 0 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sound" parent="." instance=ExtResource( 4 )]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
-margin_top = 54.0
-margin_bottom = 104.0
+margin_top = 44.0
+margin_right = 40.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 40, 40 )
 
 [node name="Setting" parent="." instance=ExtResource( 4 )]
-margin_top = 108.0
-margin_bottom = 158.0
+margin_top = 88.0
+margin_right = 40.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 40, 40 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 bus = "Music"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
+
 [connection signal="pressed" from="Sound" to="." method="soundPressed"]
 [connection signal="pressed" from="Music" to="." method="musicPressed"]
 [connection signal="pressed" from="Setting" to="." method="settingPressed"]
