@@ -1,0 +1,155 @@
+{
+	"IntroSteph" : {
+		"Event0" : {
+			"Center" : "AllanIdle",
+			"Right" : "StephIdle",
+			"Text" : "Lad, let me introduce you to your new co-worker Steph",
+			"Actions" : {
+				"Nice to meet you Steph" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "StephIdle",
+			"Left" : "AllanIdle", 
+			"Text" : "Steph: Nice to meet you as well\n
+				Allan: Please guide her lad",
+			"Actions" : {
+				"Okay Allan" : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Left" : "StephIdle",
+			"Text" : "So you've just been waiting for customers at this shop? 
+				Doesn't it bore you that much?",
+			"Actions" : {
+				"It's not that bad" : "Event3",
+			},
+		},
+		
+		"Event3" : {
+			"Left" : "StephIdle",
+			"Right" : "JasonIdle",
+			"Text" : "Hey I'd never thought you work here",
+			"Actions" : {
+				"Oh hi Jason, how can I help you" : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Left" : "StephIdle",
+			"Center" : "JasonIdle",
+			"Text" : "Just some vegetables",
+			"Actions" : {
+				"Thank you, come again" : "Event5",
+			},
+		},
+		
+		"Event5" : {
+			"Left" : "StephIdle",
+			"Center" : "JasonIdle",
+			"Text" : "Say, want to hit the gym later? Here's a protein bar",
+			"Actions" : {
+				"I'll see if I could" : "Event6",
+			},
+		},
+		
+		"Event6" : {
+			"Center" : "StephIdle",
+			"Text" : "No wonder it doesn't bore you, you have friends 
+				visiting you",
+			"Actions" : {
+				"I just met him yesterday" : "Event7",
+			},
+		},
+	
+		"Event7" : {
+			"Center" : "StephIdle",
+			"Text" : "And you befriended him already? You're really 
+				good at this job",
+			"Actions" : {
+				"Not exactly" : "ShoppingStreet%TWI%",
+			},
+			"Locations" : {
+				"ShoppingStreet%TWI%" : 0,
+				"Mall%TWI%" : 2,
+				"House%TWI%" : 1,
+				"Downtown%TWI%" : 1,
+			},
+			"Stats" : {
+				"Money" : 40,
+			},
+			"Map" :2,
+		},		
+	},
+
+	"IntroDay2" : {
+		"Event0" : {
+			"Center" : "TracieIdle",
+			"Text" : "I've been knocking on your door, had to check on you 
+				before I leave",
+			"Actions" : {
+				"I've been having these dreams lately" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "TracieIdle",
+			"Text" : "Poor thing, you must've been tired from work, just relax 
+				I'll be doing the chores as my way of staying here",
+			"Actions" : {
+				"You're right" : "House",
+			},
+			"Map" : 1,
+		},
+	},
+
+	"MessengerDay2" : {
+		"Event0" : {
+			"Image" : "Nothing",
+			"Text" : "13 days left, protect what you have, start earning",
+			"Actions" : {
+				"It's you again" : "Event1",
+			},
+		},
+
+		"Event1" : {
+			"Center" : "MessengerIdle",
+			"Text" : "You won't take me seriously because I'm wearing a 
+				magical girl outfit right?",
+			"Actions" : {
+				"I... uhm" : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Center" : "MessengerIdle",
+			"Text" : "That's alright, just heed my warnings I won't be disturbing 
+				you ever again",
+			"Actions" : {
+				"Wait, wouldn't you mind telling me what's gonna happen?" : "Event3",
+			},
+		},
+		
+		"Event3" : {
+			"Center" : "MessengerIdle",
+			"Text" : "I don't know as well, I'm just a messenger sending messages the 
+				author would like to send, you'll just have to keep it up",
+			"Actions" : {
+				"Who is this author anyway?" : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Text" : "You'll know if you succeeded",
+			"Actions" : {
+				"Is that so?" : "Bedroom",
+			},
+			"Stats" : {
+				"Day" : 1,
+			},
+			"Map" : 0,
+		},
+	},
+}

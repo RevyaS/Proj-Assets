@@ -15,18 +15,18 @@ public class MapData : Node
 // Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
 		dManager = GetNode<DataManager>("/root/DataManager");
-		initData();
+		
 	}
 		
 	
 //	Generates the necessary foundation for the gameMap
-	private void initData()
+	public static void initData(int story)
 	{
 //		Reset GameMap
 		gameMap = new DsGraph();
 		
 //		Load Location Data
-		GC.Dictionary data = GlobalData.getGlobalData("Locations");
+		GC.Dictionary data = GlobalData.getStoryData("Locations");
 		
 //		Generate the nodes
 //		Loop through each keys

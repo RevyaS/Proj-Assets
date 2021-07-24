@@ -162,7 +162,7 @@
 		},
 		
 		"Event17" : {
-			"Image" : "Nothing",
+			"Image" : "BGBlack",
 			"Center" : "KhanIdle",
 			"Text" : "Heya, I want to speak with you a bit",
 			"Actions" : {
@@ -217,7 +217,7 @@
 	
 	"IntroDay3" : {
 		"Event0" : {
-			"Image" : "Barracks%Fantasy%",
+			"Image" : "FantasyBarracks",
 			"Center" : "TracieIdle",
 			"Text" : "You probably didn't know but I hang out with Fiona a lot 
 				before and she's very kind",
@@ -348,7 +348,7 @@
 	
 	"Day2Summary" : {
 		"Event0" : {
-			"Image" : "Nothing",
+			"Image" : "BGBlack",
 			"Text" : "Somehow the idea of earning money with Tracie makes me excited 
 				for some reason",
 			"Actions" : {
@@ -1093,7 +1093,7 @@
 	
 	"MessengerDay2" : {
 		"Event0" : {
-			"Image" : "Nothing",
+			"Image" : "BGBlack",
 			"Text" : "13 days left, protect what you have, start earning, get stronger and better",
 			"Actions" : {
 				"It's you again" : "Event1",
@@ -1186,7 +1186,7 @@
 	},
 	
 	"IntroJason" : {
-		"Event0" : {	
+		"Event0" : {
 			"Image": "Gym",
 			"Text" : "Damn, this felt more heavy than before",
 			"Actions" : {
@@ -1231,7 +1231,6 @@
 	},
 	
 	"IntroAllan": {
-		"BGM" : "Gymnopedie",
 		"Event0" : {
 			"Left": "AllanIdle",
 			"Text": "So how's Tracie going?",
@@ -1241,7 +1240,6 @@
 		},
 		
 		"Event1" : {
-			"BGM" : "Cattails",
 			"Left": "AllanIdle",
 			"Text": "I can't help but feel bad for her, losing everything after her House burned down",
 			"Actions": {

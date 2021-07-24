@@ -1,6 +1,5 @@
 {
 	"Nothing": {
-		"BGM" : "Gymnopedie",
 		"Event0": {
 			"Text" : "Greetings Player",
 			"Actions": {
@@ -9,6 +8,7 @@
 				},
 			}
 		}
+		
 	},
 	
 	"Bedroom" : {
@@ -55,7 +55,6 @@
 	
 	"House%TWI%" : {
 		"Event0" : {
-			"SFX" : "Sizzling",
 			"Left" : "TracieIdle",
 			"Text": "Welcome back, just a few moments, I'll be done cooking",
 			"Actions" : {
@@ -153,7 +152,6 @@
 		
 	"Downtown": {
 		"Event0": {
-			"BGM" : "Cattails",
 			"Text" : "I guess I should go to work",
 		},
 	},

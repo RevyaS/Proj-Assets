@@ -81,10 +81,11 @@ public class DataManager : Node
 		}
 		
 //		Updating route
-		if(EventData.Contains("Route")) {
+		if(currEvent.Contains("Route")) {
 //			Get map flag
 			currData["Route"] = Convert.ToInt32(currEvent["Route"]);
 		}
+		GD.Print("Route: " + currData["Route"]);
 	}
 	
 	
@@ -139,8 +140,10 @@ public class DataManager : Node
 		currData["Route"] = Convert.ToInt32(saveData["Route"]);
 		currData["Event"] = null;
 		currData["CurrText"] = saveData["CurrText"].ToString();
-		currData["Story"] = Convert.ToInt32(saveData["Story"]);
+		int storyVal = Convert.ToInt32(saveData["Story"]);
+		currData["Story"] = storyVal;
 //		Updates map
+		MapData.initData(storyVal);
 		MapData.loadMap(MapFlag);
 		
 		GD.Print("Loaded Data");
@@ -177,10 +180,10 @@ public class DataManager : Node
 
 	//*	Resets the flags based on flags existing in GlobalData + flag, reqyures Story key in currData to exist
 	private Dictionary initLocationFlags(){
-		Godot.Collections.Array keyList = GlobalData.getStoryLocations();
+		Dictionary keyList = GlobalData.getStoryLocations();
 		
 		Dictionary newFlags = new Dictionary();
-		foreach(String key in keyList)
+		foreach(String key in keyList.Keys)
 		{
 			newFlags.Add(key, 0);
 		}

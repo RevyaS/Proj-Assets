@@ -58,6 +58,22 @@ public class Game : TextureRect
 		dManager.CurrText = currData["Text"].ToString();
 		eventText(dManager.CurrText);
 
+		if(currData.Contains("SFX"))
+		{
+			String key = currData["SFX"].ToString();
+			String sfxPath = GlobalData.getSFXPath(key);
+			menu.playSfx(sfxPath);
+		}
+
+
+		String bgmKey = dManager.EventData.Contains("BGM") ? dManager.EventData["BGM"].ToString() : "";
+		bgmKey = currData.Contains("BGM") ? currData["BGM"].ToString() : bgmKey;
+		if(bgmKey != "")
+		{
+			String sfxPath = GlobalData.getBGMPath(bgmKey);
+			menu.playBGM(sfxPath);
+		}		
+
 //		Load Char images
 		top.loadChars(flagValue);
 		
@@ -143,13 +159,22 @@ public class Game : TextureRect
 //		Get the flag
 		int flag = Convert.ToInt32(decisionValue.Replace("Event", ""));
 		
-		String sfxKey = "SFX" + flag.ToString();
-		if(eventData.Contains(sfxKey))
+		
+		if(currEvent.Contains("SFX"))
 		{
-			String key = eventData[sfxKey].ToString();
+			String key = currEvent["SFX"].ToString();
 			String sfxPath = GlobalData.getSFXPath(key);
 			menu.playSfx(sfxPath);
 		} else menu.playSfx();
+
+
+		String bgmKey = eventData.Contains("BGM") ? eventData["BGM"].ToString() : "";
+		bgmKey = currEvent.Contains("BGM") ? currEvent["BGM"].ToString() : bgmKey;
+		if(bgmKey != "")
+		{
+			String sfxPath = GlobalData.getBGMPath(bgmKey);
+			menu.playBGM(sfxPath);
+		}		
 
 
 //		Resolve data and GUI processes from these 2 components

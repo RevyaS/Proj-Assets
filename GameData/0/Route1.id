@@ -1,36 +1,74 @@
 {
-	"House": {	
-		"Event0" : "Hilda: She only affected the places we've recently been through, so she knows 
-			that much"
-	},
-		
-	"Mall": {
-		"Event0" : "Hilda: What the hell did that girl do? Is she a magical girl or something? 
-			Let's find her"
-	},
-	
-	
-	"Downtown": {
-		"Event0": "Hilda: it seems that we can't go back from where we came from",
-		"Left0" : "ShioriNormal" 
+	"Bedroom" : {		
+		"Event0" : {
+			"Left" : "TracieIdle",
+			"Text" : "Geez I've been trying to wake you up, you must've been 
+				exhausted yesterday huh?",
+			"Actions" : {
+				"I'm sorry" : {
+					"Event" : "IntroDay2", 
+				}
+			},
+		},
 	},
 	
-	"ParkOuter" : {
-		"Event0" : "Hilda: There she is, talk to her",
-		"Left0" : "AsukaUniformAngry",
+	"House" : {
+		"Event0" : {
+			"Text" : "Tracie's out to work now, I should get working as well",
+		},
 	},
 	
-	"MedicalCampus" : {
-		"Event0" : "Hilda: Where the hell is she?",
-		"Center0" : "YukariCasualNormal",
+	"House%EVE%" : {
+		"Event0" : {
+			"Left" : "TracieIdle",
+			"Text": "I prepared dinner, so feel free to eat anytime",
+			"Actions" : {
+				"Get some rest" : {
+					"Event" : "MessengerDay2",
+				},
+			},
+		},
+	},
+	
+	"Downtown" : {
+		"Event0": {
+			"Text" : "I really was exhausted yesterday",
+		},
+	},
+	
+	"Downtown%EVE%" : {
+		"Event0": {
+			"Text" : "I'm exhausted",
+		},
 	},
 	
 	"ShoppingStreet" : {
-		"Event0" : "Hilda: It feels as if nothing changed yet the places are scrambled",
+		"Event0" : {
+			"Left" : "AllanIdle",
+			"Text": "Morning lad",
+			"Actions" : {
+				"Morning Allan" : {
+					"Event" : "IntroSteph",
+				},
+			},
+		},
 	},
 	
-	"Park": {
-		"Event0": "Hilda: She's not here either",
-		"Left0" : "HimenoSmile",
-	}
+	"ShoppingStreet%EVE%": {
+		"Event0": {
+			"Text" : "The store is closed now",
+		},
+	},
+	
+	"Mall": {
+		"Event0": {
+			"Text" : "Gym is still closed, might check later",
+		},
+	},
+	
+	"Mall%EVE%" : {
+		"Event0" : {
+			"Text": "Now I'm really exhausted, I should go home now",
+		},
+	},
 }

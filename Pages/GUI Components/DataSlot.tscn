@@ -51,31 +51,7 @@ margin_top = 54.0
 margin_right = 600.0
 margin_bottom = 104.0
 
-[node name="Day" type="Label" parent="HC/DataDescription/DataContains"]
-margin_right = 80.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 80, 50 )
-size_flags_horizontal = 0
-size_flags_vertical = 5
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Day: 1"
-valign = 1
-
-[node name="Money" type="Label" parent="HC/DataDescription/DataContains"]
-margin_left = 84.0
-margin_right = 234.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 150, 50 )
-size_flags_horizontal = 0
-size_flags_vertical = 5
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Money: "
-valign = 1
-
 [node name="Text" type="Label" parent="HC/DataDescription/DataContains"]
-margin_left = 238.0
 margin_right = 600.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 250, 50 )

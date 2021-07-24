@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public enum StoryLine {AuthorsLabrat};
+public enum StoryLine {AuthorsLabrat, AchingDreams};
 
 public class MainMenu : TextureRect
 {
@@ -20,8 +20,9 @@ public class MainMenu : TextureRect
 //		Switch to game
 		GD.Print("New Game");
 //		Reset data
-		dManager.initFlags(0);
-		MapData.loadMap(0);
+		dManager.initFlags((int)story);
+		MapData.initData((int)story);
+		MapData.loadMap((int)story);
 		SceneManager.Singleton.switchToGame(MapData.startNode);
 //		QueueFree();
 	}

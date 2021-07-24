@@ -29,10 +29,21 @@ public class Menu : VBoxContainer{
 		if(isSfxOn) sfx.Play();
 	}
 
+
 	// Plays specific Sfx
 	public void playSfx(String sfxPath){
 		sfx.Stream = loadAudio(sfxPath);
 		if(isSfxOn) sfx.Play();
+	}
+	
+	
+	//*	Initialize some values of music and sounds
+	public void playBGM(String bgmPath){
+		if(currentBGMPath == bgmPath) return;
+
+		currentBGMPath = bgmPath;
+		bgMusic.Stream = loadAudio(bgmPath);
+		bgMusic.Play();
 	}
 	
 	
@@ -76,15 +87,6 @@ public class Menu : VBoxContainer{
 		musicButton.TextureHover = loadSomeIconStuffs("/Music/Music2.png");
 	}
 	
-	//*	Initialize some values of music and sounds
-	private void initAudios(){
-		bgMusic.Stream = loadAudio(GlobalData.mGymnopedie);
-		bgMusic.VolumeDb = 15;
-		bgMusic.Play();
-		
-		sfx.Stream = loadAudio(GlobalData.sfxButton);
-	}
-	
 	
 	public override void _Ready(){
 		sfx = GetNode<AudioStreamPlayer>("SFX");
@@ -92,7 +94,8 @@ public class Menu : VBoxContainer{
 		
 		isSfxOn = isMusicOn = true;	//*	default value
 		initTextures();
-		initAudios();
+		
+		sfx.Stream = loadAudio(GlobalData.sfxButton);
 		menuNode = GetParent().GetNode<VBoxContainer>("Menu");
 	}
 
@@ -105,6 +108,8 @@ public class Menu : VBoxContainer{
 	public static VBoxContainer menuNode { get; set; }
 	public static bool isMusicOn { get; set; }
 	public static bool isSfxOn { get; set; }
+	
+	private string currentBGMPath = "";
 	private string loadIconPath = "res://Assets/Icons";
 	public static string menuNodePath = "Margin/Bottom/Elements/MenuContainer/CenterContainer/Menu";
 	private TextureButton soundButton, musicButton;

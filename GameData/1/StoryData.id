@@ -7,11 +7,7 @@
 	},
 	
 	"BaseChars" : {
-		"Tracie" : 0,
-		"Sarah" : 0,
-		"Steph" : 0,
-		"Carla" : 0,
-		"Eli" : 0,
+		"Taioh" : 0,
 	},
 	
 	"Characters" : {
@@ -36,31 +32,8 @@
 	},
 	
 	"Locations" : {
-		"House": "res://Assets/GameBG/LivingRoom.png",
-		"House%TWI%" : "res://Assets/GameBG/LivingRoomTwilight.png",
-		"House%EVE%" : "res://Assets/GameBG/LivingRoomEvening.png",
-		"Downtown": "res://Assets/GameBG/Downtown.png",
-		"Downtown%TWI%" : "res://Assets/GameBG/DowntownTwilight.png",
-		"Downtown%EVE%" : "res://Assets/GameBG/DowntownEvening.png",
-		"Mall": "res://Assets/GameBG/Mall.png",
-		"Mall%TWI%" : "res://Assets/GameBG/MallTwilight.png",
-		"Mall%EVE%" : "res://Assets/GameBG/MallEvening.png",
-		"Park": "res://Assets/GameBG/Park.png",
-		"ParkOuter": "res://Assets/GameBG/ParkLeft.png",
-		"MedicalCampus" : "res://Assets/GameBG/MedicalCampus.png",
-		"ShoppingStreet" : "res://Assets/GameBG/ShoppingStreet.png",
-		"ShoppingStreet%TWI%" : "res://Assets/GameBG/ShoppingStreetTwilight.png",
-		"ShoppingStreet%EVE%" : "res://Assets/GameBG/ShoppingStreetEvening.png",
-		"Barracks%Fantasy%" : "res://Assets/GameBG/FantasyBarracks.png",
-		"Bedroom" : "res://Assets/GameBG/Bedroom.png",
 		"Nothing" : "res://Assets/BG/BGBlack.png",
-		
-		"Gym" : "res://Assets/GameBG/Gym.png",
-		"Kitchen" : "res://Assets/GameBG/Kitchen.png",
-		"Alley" : "res://Assets/GameBG/Alley.png",
-		"Field" : "res://Assets/GameBG/Field.png",
-		"Village" : "res://Assets/GameBG/Village.png",
-		"FantasyHouse" : "res://Assets/GameBG/FantasyHouse.png",
+		"Town" : "res://Assets/GameBG/FantasyBarracks.png",
 	},
 	
 	"Map0" : {

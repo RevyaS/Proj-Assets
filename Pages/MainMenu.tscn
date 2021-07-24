@@ -68,37 +68,43 @@ margin_top = 34.0
 margin_right = 300.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 50, 50 )
-hint_tooltip = "You are one of the selected few from a famous gaming company to be a beta tester on one of their CYOA games,
-turns out you are subjected to an experiment where the author will try to break you without hurting you physically for
-2 weeks.
-It's part of the contract you just signed and many others did so as well. Will you succumb to the
-author? Will you survive for 2 weeks? Or are you going to press the restart button?"
+hint_tooltip = "14 days. you will be in different situations no matter how uncomfortable and it's up to you to make a decision. The question is if you'll regret it or not"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
-text = "Author's Labrat"
+text = "Author's Labrat (INC)"
 
-[node name="Load Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="AchingDreams" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
 margin_top = 88.0
 margin_right = 300.0
 margin_bottom = 138.0
 rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "Based on the original Aching Dreams game, have fun"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
-text = "Load Game"
+text = "Aching Dreams"
 
-[node name="\?\?\?\?\?" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="Load Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
 margin_top = 142.0
 margin_right = 300.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 50, 50 )
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
-text = "????????"
+text = "Load Game"
 
-[node name="Options" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="\?\?\?\?\?" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
 margin_top = 196.0
 margin_right = 300.0
 margin_bottom = 246.0
+rect_min_size = Vector2( 50, 50 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "????????"
+
+[node name="Options" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+margin_top = 250.0
+margin_right = 300.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 50, 50 )
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
@@ -119,5 +125,6 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Author'sLabrat" to="." method="newGame" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/AchingDreams" to="." method="newGame" binds= [ 1 ]]
 [connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Load Game" to="." method="loadGame"]
 [connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Options" to="." method="openOptions"]

@@ -12,15 +12,11 @@ public class DataSlot : TextureButton
 		selected = UF.getTexture("res://Assets/BG/paper background (3) (Darker).png");
 		
 		title = GetNode<Label>("HC/DataDescription/SaveNumber");
-		day = GetNode<Label>("HC/DataDescription/DataContains/Day");
 		text = GetNode<Label>("HC/DataDescription/DataContains/Text");
-		money = GetNode<Label>("HC/DataDescription/DataContains/Money");
 		loc = GetNode<TextureRect>("HC/Location");
 	
 		title.Text = "Empty Slot";
-		day.Text = "";
 		text.Text = "";
-		money.Text = "";
 		loc.Texture = null;
 		
 		init();
@@ -45,14 +41,16 @@ public class DataSlot : TextureButton
 		
 //		Get data from slotNumber
 		saveData = UF.readFile(saveFileLocation);
-		
-		title.Text = "Save Slot " + slot.ToString();
-		day.Text = "Day : " + (saveData["Stats"] as Dictionary)["Day"];
 		text.Text = saveData["CurrText"] as String;
-		money.Text = "Money : " + (saveData["Stats"] as Dictionary)["Money"];
 		GD.Print(saveData["CurrNode"].ToString());
-		loc.Texture = (MapData.gameMap.getNode(saveData["CurrNode"].ToString()) as Location).image;
-	
+		//Get data from story file
+		int storyVal = Convert.ToInt32(saveData["Story"]);
+		//Show story
+		title.Text = slot.ToString() + ". " + GlobalData.stories[storyVal];
+		//Show Image
+		Dictionary storyData = GlobalData.getStoryData(storyVal, "Locations");
+		String nodeTexLoc = storyData[ saveData["CurrNode"].ToString() ].ToString();
+		loc.Texture = UF.getTexture(nodeTexLoc);
 	}
 	
 	
@@ -63,7 +61,7 @@ public class DataSlot : TextureButton
 	}
 	
 //	Components
-	Label title, day, text, money;
+	Label title, text;
 	TextureRect loc;
 	ImageTexture normal, selected;
 	

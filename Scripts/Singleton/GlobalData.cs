@@ -36,10 +36,15 @@ public class GlobalData : Node{
 		return getData(key, globalPath);
 	}
 
-	public static Godot.Collections.Array getStoryLocations()
+	public static Dictionary getStoryData(int storyFlag, string key)
 	{
-		String globalPath =  "res://GameData/" + dManager.StoryFlag + "/StoryData.id";
-		return getList("Locations", globalPath);
+		String globalPath =  "res://GameData/" + storyFlag + "/StoryData.id";
+		return getData(key, globalPath);
+	}
+
+	public static Dictionary getStoryLocations()
+	{
+		return getStoryData("Locations");
 	}
 	
 	public static Dictionary getStoryCharacters(int flag)
@@ -62,10 +67,14 @@ public class GlobalData : Node{
 	
 	//*	Gets the bg image path
 	public static String getBGPath(String key) 
-		=> getGlobalData("Backgrounds")[key].ToString();
+		=> getStoryLocations()[key].ToString();
 
 	public static String getSFXPath(String key) 
 		=> getGlobalData("SFX")[key].ToString();
+
+	
+	public static String getBGMPath(String key) 
+		=> getGlobalData("BGM")[key].ToString();
 	
 	
 	//* Called when the node enters the scene tree for the first time.
@@ -97,6 +106,12 @@ public class GlobalData : Node{
 	// References
 	public static DataManager dManager;
 
+	// StoryList
+	public static string[] stories = {
+		"14 Days",
+		"Aching Dreams",
+	};
+
 //	Pages
 	public static string optionPath = "res://Pages/GUI Components/Option.tscn";
 	public static string gamePath = "res://Pages/Game.tscn";
@@ -115,8 +130,6 @@ public class GlobalData : Node{
 	
 	public static string iconButton = "res://Pages/GUI Components/IconButton.tscn";
 	
-	//*	Music
-	public static string mGymnopedie = "res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg";
 	//*	SFX
 	public static string sfxButton = "res://Assets/SFX/click.wav";
 }
