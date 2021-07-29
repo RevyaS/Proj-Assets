@@ -23,3 +23,4 @@ Current Version: .05a
 - [ ] New Storyline 
 - [x] Flexible use of assets on every story
 - [x] Save slots show the Story it belongs to
+- [x] Right click to open and close Options menu (In Game)
