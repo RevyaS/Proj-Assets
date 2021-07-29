@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sizzling.wav-b92833fe8416f55baf3e186b9616811a.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/sizzling.wav"
+dest_files=[ "res://.import/sizzling.wav-b92833fe8416f55baf3e186b9616811a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

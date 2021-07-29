@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kevin MacLeodCattails.ogg-e3b398815a912f5385c802bca2c6a4d3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Kevin MacLeodCattails.ogg"
+dest_files=[ "res://.import/Kevin MacLeodCattails.ogg-e3b398815a912f5385c802bca2c6a4d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

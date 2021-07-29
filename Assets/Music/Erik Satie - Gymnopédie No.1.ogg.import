@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Erik Satie - Gymnopédie No.1.ogg-245fac5d28d734276c611463efc1fb45.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg"
+dest_files=[ "res://.import/Erik Satie - Gymnopédie No.1.ogg-245fac5d28d734276c611463efc1fb45.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
