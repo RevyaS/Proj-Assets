@@ -185,6 +185,19 @@ public class Game : TextureRect
 		btnComp.generateDecisions(flag);
 	}
 	
+
+	//For Mouse events
+	public override void _Input(InputEvent @event)
+	{
+		if(@event is InputEventMouseButton)
+		{
+			InputEventMouseButton ev = @event as InputEventMouseButton;
+			if(ev.ButtonIndex == 2 && ev.IsPressed())
+			{
+				menu.settingPressed();	
+			}
+		}
+	}
 	
 //*	Global Variables
 //	For data

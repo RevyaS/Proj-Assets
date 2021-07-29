@@ -1,4 +1,391 @@
 {
+	"TracieDay1" : {
+		"Event0" : {
+			"Center" : "TracieIdle",
+			"Text" : "What is it?",
+			"Actions" : {
+				"Mind telling me where you work now?" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "TracieIdle",
+			"Text" : "Not yet, is it because you talked to Allan? That guy is such 
+				a worrywart, don't worry about me",
+			"Actions" : {
+				"But..." : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Center" : "TracieIdle",
+			"Text" : "And besides, I'm not gonna do something shady or something, 
+			just trust me okay? Trust your best friend.",
+			"Actions" : {
+				"Okay, sorry for bringing that up" : "Event3",
+			},
+		},
+		
+		"Event3" : {
+			"Center" : "TracieIdle",
+			"Text" : "Good, now sit down dinner's almost ready",
+			"Actions" : {
+				"Okay" : "House%EVE%",
+			},
+			"Locations" : {
+				"Mall%EVE%" : 1,
+			},
+			"Chars" : {
+				"Tracie" : 1,
+			},
+			"Map" : 3,
+		},
+	},
+
+	"StephDay1Alt" : {
+		"Event0" : {
+			"Image" : "Kitchen",
+			"Left" : "StephIdle",
+			"Right" : "TracieIdle",
+			"Text" : "Steph: It's almost done Tracie, eh?!",
+			"Actions" : {
+				"What are you doing here?" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Left" : "StephIdle",
+			"Center" : "TracieIdle",
+			"Text" : "I found her downtown collecting newspapers, she seemed to 
+				have left her wallet so she haven't eaten all day and can't walk home, 
+				I took her because some co-worker haven't noticed",
+			"Actions" : {
+				"Co-worker? Wait what?" : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Left" : "StephWorried",
+			"Center" : "TracieIdle",
+			"Text" : "Steph: I... I'm sorry for intruding\n
+				Tracie: No no don't worry about it, anyways Allan told me about 
+				your new co-worker this morning and to think I'll take her here",
+			"Actions" : {
+				"Steph, why didn't you tell me earlier?" : "Event3",
+			},
+		},
+		
+		"Event3" : {
+			"Left" : "TracieIdle",
+			"Center" : "StephWorried",
+			"Text" : "I... don't want to bother the mood, I don't want to be seen 
+				as needy, I'm sorry, I'm sorry",
+			"Actions" : {
+				"That's alright" : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Right" : "TracieIdle",
+			"Center" : "StephIdle",
+			"Text" : "Tracie: Alright, I'll be taking the dishes now",
+			"Actions" : {
+				"Here you go" : "Event5",
+			},
+		},
+		
+		"Event5" : {
+			"Center" : "StephIdle",
+			"Text" : "*whispers* I admire your girlfriend, she's very kind",
+			"Actions" : {
+				"She's not my girlfriend you know" : "Event6",
+			},
+		},
+		
+		"Event6" : {
+			"Center" : "StephIdle",
+			"Text" : "Oh my god, I'm so sorry for assuming",
+			"Actions" : {
+				"Hahaha, huh" : "House%EVE%",
+			},
+			"Locations" : {
+				"House%EVE%" : 2,
+				"Mall%EVE%" : 1,
+				"Downtown%EVE%" : 0,
+			},
+			"Chars" : {
+				"Steph" : 1,
+			},
+		},
+	},
+	
+	"IntroCarla" : {
+		"Event0" : {
+			"Center" : "CarlaIdle",
+			"Text" : "Oh don't be shy you may even have a dime or two to spare",
+			"Actions" : {
+				"Uhh, I don't have any to spare" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "CarlaIdle",
+			"Text" : "That's too bad, but tell you what I'll give you a large discount 
+				for your first time, a blowjob for only need 10 bucks",
+			"Actions" : {
+				"I uhh, I need to go home now" : "Event2",
+				"It doesn't hurt to try I guess" : "Event3",
+			},
+			"Locations" : {
+				"Mall%EVE%" : 1,
+				"Downtown%EVE%" : 0,
+			},
+		},
+		
+		"Event2" : {
+			"Center" : "CarlaIdle",
+			"Text" : "That's fine, we'll see each other someday and I'll remember the discount",
+			"Actions" : {
+				"*Go away*" : "Downtown%EVE%",
+			},
+		},
+		
+		"Event3" : {
+			"Image" : "Alley",
+			"Center" : "CarlaIdle",
+			"Text" : "You ready? It'll be worth your time",
+			"Actions" : {
+				"Uhm..." : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Center" : "CarlaBJ1",
+			"Text" : "*My hands are fucking cold right now*",
+			"Actions" : {
+				"*Continue*" : "Event5",
+			},
+
+		},
+		
+		"Event5" : {
+			"Center" : "CarlaBJ2",
+			"Text" : "*Ugh, this feels good*",
+			"Actions" : {
+				"*Continue*" : "Event6",
+			},
+		},
+
+		"Event6" : {
+			"Center" : "CarlaBJ3",
+			"Text" : "*Too good, this is way too good*",
+			"Actions" : {
+				"*Continue*" : "Event7",
+			},
+		},
+		
+		"Event7" : {
+			"Center" : "CarlaBJ4",
+			"Text" : "*Pant* *Pant*",
+			"Actions" : {
+				"*Continue*" : "Event8",
+			},
+		},
+
+		"Event8" : {
+			"Center" : "CarlaIdle",
+			"Text" : "That was pleasant for 10 bucks right?",
+			"Actions" : {
+				"Yeah" : "Event9",
+			},
+			"Stats" : {
+				"Money" : -10,
+			},
+		},
+
+		"Event9" : {
+			"Center" : "CarlaIdle",
+			"Text" : "That was actually 50 bucks without the discount, 
+				you can just meet me here every night if you want some action",
+			"Actions" : {
+				"Sure thing" : "Downtown%EVE%",
+			},
+			"Locations" : {
+				"Downtown%EVE%" : 2,
+				"House%EVE%" : 3,
+			},
+			"Chars" : {
+				"Carla" : 1,
+			},
+		},
+	},
+	
+	"JasonDay2" : {
+		"Event0" : {
+			"Image" : "Gym",
+			"Center" : "JasonIdle",
+			"Text" : "Took you long enough",
+			"Actions" : {
+				"I got really busy" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "JasonIdle",
+			"Text" : "Hahaha, I understand how that feels, wait you're gonna 
+				lift that much?",
+			"Actions" : {
+				"I was just tired yesterday" : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Center" : "JasonIdle",
+			"Text" : "Damn, you're pretty strong than you look, I never thought 
+				you'll be able to lift that after seeing you yesterday",
+			"Actions" : {
+				"I get that a lot" : "Event3",
+			},
+			"Stats" : {
+				"Strength" : 8,
+				"Money" : -10,
+			},
+		},
+		
+		"Event3" : {
+			"Center" : "JasonIdle",
+			"Text" : "Say you want to learn a fighting technique?",
+			"Actions" : {
+				"What for? I don't want to fight" : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Center" : "JasonIdle",
+			"Text" : "You never know, there might be malicious people 
+				that will take what you love",
+			"Actions" : {
+				"*That sounds pretty familiar*" : "Event5",
+			},
+		},
+		
+		"Event5" : {
+			"Center" : "JasonIdle",
+			"Text" : "Though this place had been peaceful for long with different, 
+				races coexisting with one another I am still preparing when 
+				something goes wrong, you will lose nothing and just gain more 
+				strength that you will use in time, so you're in?",
+			"Actions" : {
+				"I decline" : "Event6",
+				"I'll give it a shot" : "Event7",
+			},
+			"Locations" : {
+				"Downtown%EVE%" : 1,
+				"House%EVE%" : 1,
+			},
+			"Map" : 3,
+		},
+		
+		"Event6" : {
+			"Center" : "JasonIdle",
+			"Text" : "That's alright, you can just talk to me if you changed your mind, 
+				I'll just be here everyday within this time period",
+			"Actions" : {
+				"Okay Jason" : "Mall%EVE%",
+			},
+			"Locations" : {
+				"Mall%EVE%" : 1, 
+			},
+		},
+		
+		"Event7" : {
+			"Center" : "JasonIdle",
+			"Text" : "Nice, let's begin tomorrow, I'll take you to my place",
+			"Actions" : {
+				"Okay Jason" : "Mall%EVE%",
+			},
+			"Locations" : {
+				"Mall%EVE%" : 2,
+			},
+			"Chars" : {
+				"Sarah" : 1,
+			},
+		},
+	},
+
+	"StephDay1" : {
+		"Event0" : {
+			"Center" : "StephWorried",
+			"Text" : "Oh hi",
+			"Actions" : {
+				"Why do you look so sad?" : "Event1",
+			},
+		},
+		
+		"Event1" : {
+			"Center" : "StephWorried",
+			"Text" : "*Sigh* there's no point in hiding it, I 
+				left my wallet at home so I can't pay for transport, 
+				and I haven't eaten the whole day so I can't walk home",
+			"Actions" : {
+				"Why didn't you told me that earlier" : "Event2",
+			},
+		},
+		
+		"Event2" : {
+			"Center" : "StephWorried",
+			"Text" : "I don't want to bother you or I don't want you to look
+				at me as some kind of girl who always asks things after meeting
+				me for the first time",
+			"Actions": {
+				"Don't worry about it, here take this" : "Event3",
+			},
+		},
+		
+		"Event3" : {
+			"Center" : "StephWorried",
+			"Text" : "Are you sure about this? This is more than half of your pay?",
+			"Actions" : {
+				"It's alright" : "Event4",
+			},
+		},
+		
+		"Event4" : {
+			"Center" : "StephWorried",
+			"Text" : "Thank you so much, I promise I will repay you back",
+			"Actions" : {
+				"Don't sweat about it" : "Event5",
+			},
+			"Stats" : {
+				"Money" : -30,
+			},
+			"Chars" : {
+				"Steph" : 1,
+			},
+		},
+		
+		"Event5" : {
+			"Left" : "TracieIdle",
+			"Text" : "That's so kind of you, to give money to a co-worker you just met",
+			"Actions" : {
+				"Tracie!?" : "Event6",
+			},
+		},
+		
+		"Event6" : {
+			"Center" : "TracieIdle",
+			"Text" : "Just came from buying Groceries, Allan told me about it let's go home now",
+			"Actions" : {
+				"Okay" : "House%TWI%",
+			},
+			"Locations" : {
+				"House%EVE%" : 2,
+				"House%TWI%" : 1,
+				"Downtown%TWI%" : 1,
+			},
+		},
+	},
+		
 	"IntroSteph" : {
 		"Event0" : {
 			"Center" : "AllanIdle",
@@ -71,14 +458,11 @@
 			"Actions" : {
 				"Not exactly" : "ShoppingStreet%TWI%",
 			},
-			"Locations" : {
-				"ShoppingStreet%TWI%" : 0,
-				"Mall%TWI%" : 2,
-				"House%TWI%" : 1,
-				"Downtown%TWI%" : 1,
-			},
 			"Stats" : {
 				"Money" : 40,
+			},
+			"Chars" : {
+				"Steph" : 1,
 			},
 			"Map" :2,
 		},		

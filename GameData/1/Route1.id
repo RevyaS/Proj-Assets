@@ -1,6 +1,5 @@
 {
 	"Nothing": {
-		"BGM" : "Gymnopedie",
 		"Event0": {
 			"Text" : "Greetings Player",
 			"Actions": {
@@ -9,6 +8,7 @@
 				},
 			}
 		}
+		
 	},
 	
 	"Bedroom" : {
@@ -48,14 +48,13 @@
 			"Text" : "I need to survive for 14 days huh? What does that even mean?",
 		},
 		
-		"Event1" : {			
+		"Event1" : {
 			"Text" : "Tracie's out to work now, I should get working as well",
 		},
 	},
 	
 	"House%TWI%" : {
 		"Event0" : {
-			"SFX" : "Sizzling",
 			"Left" : "TracieIdle",
 			"Text": "Welcome back, just a few moments, I'll be done cooking",
 			"Actions" : {
@@ -67,6 +66,16 @@
 
 		"Event1" : {
 			"Text" : "Tracie's not home yet",
+		},
+
+		"Event2" : {
+			"Left" : "TracieIdle",
+			"Text" : "I'll be cooking dinner just wait",
+			"Actions" : {
+				"Can I ask you something Tracie?" : {
+					"Event" : "TracieDay1",
+				}
+			},
 		},
 	},
 	
@@ -112,6 +121,19 @@
 				}
 			},
 		},
+
+		"Event5" : {
+			"Right" : "TracieIdle",
+			"Text" : "We should rest soon",
+			"Actions" : {
+				"*Get some rest*" : {
+					"Event" : "Day2Summary",
+					"Chars" : {
+						"Tracie" : 2,
+					},
+				},
+			},
+		},
 	},
 	
 	"Barracks%Fantasy%" : {
@@ -130,7 +152,6 @@
 		
 	"Downtown": {
 		"Event0": {
-			"BGM" : "Cattails",
 			"Text" : "I guess I should go to work",
 		},
 	},
@@ -162,6 +183,11 @@
 		
 		"Event3" : {
 			"Text" : "Huh, that short conversation sure took time",
+		},
+		
+		"Event4" : {
+			"Right" : "CarlaIdle",
+			"Text" : "Steph already left",
 		},
 	},
 	

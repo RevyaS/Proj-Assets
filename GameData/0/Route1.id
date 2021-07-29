@@ -1,5 +1,6 @@
 {
-	"Bedroom" : {		
+	"Bedroom" : {
+		"BGM" : "Gymnopedie",
 		"Event0" : {
 			"Left" : "TracieIdle",
 			"Text" : "Geez I've been trying to wake you up, you must've been 
@@ -13,8 +14,25 @@
 	},
 	
 	"House" : {
+		"BGM" : "Gymnopedie",
 		"Event0" : {
 			"Text" : "Tracie's out to work now, I should get working as well",
+		},
+	},
+	
+	"House%TWI%" : {
+		"Event0" : {
+			"Text" : "Tracie's not home yet",
+		},
+		
+		"Event1" : {
+			"Left" : "TracieIdle",
+			"Text" : "I'll be cooking dinner just wait",
+			"Actions" : {
+				"Can I ask you something Tracie?" : {
+					"Event" : "TracieDay1",
+				}
+			},
 		},
 	},
 	
@@ -28,11 +46,49 @@
 				},
 			},
 		},
+		
+		"Event1" : {
+			"Right" : "TracieIdle",
+			"Text" : "Oh you're just in time for dinner",
+			"Actions" : {
+				"Eat dinner" : {
+					"Event" : "StephDay1Alt",
+				}
+			},
+		},
+		
+		"Event2" : {
+			"Right" : "TracieIdle",
+			"Text" : "We should rest soon",
+		},
+		
+		"Event3" : {
+			"Right" : "TracieIdle",
+			"Text" : "You're late, there's still dinner if you want to eat",
+		},
 	},
 	
 	"Downtown" : {
+		"BGM" : "Gymnopedie",
 		"Event0": {
 			"Text" : "I really was exhausted yesterday",
+		},
+	},
+	
+	"Downtown%TWI%": {
+		"Event0" : {
+			"Right" : "StephWorried",
+			"Text" : "*You saw Steph sitting on the bench*",
+			"Actions" : {
+				"Talk to her" : {
+					"Event" : "StephDay1",
+				}
+			},
+		},
+		
+		"Event1" : {
+			"Right" : "CarlaIdle",
+			"Text" : "Steph already left",
 		},
 	},
 	
@@ -40,9 +96,28 @@
 		"Event0": {
 			"Text" : "I'm exhausted",
 		},
+		
+		"Event1" : {
+			"Center" : "CarlaIdle",
+			"Text" : "Hey, want to have some good time?",
+			"Actions" : {
+				"Uhm no" : {
+					"Event" : "IntroCarla",
+					"Req" : {
+						"Money" : 10,
+					},
+				},
+			},
+		},
+		
+		"Event2" : {
+			"Text" : "That felt good, I might want to earn 
+			more cash next time",
+		},
 	},
 	
 	"ShoppingStreet" : {
+		"BGM" : "Gymnopedie",
 		"Event0" : {
 			"Left" : "AllanIdle",
 			"Text": "Morning lad",
@@ -51,6 +126,13 @@
 					"Event" : "IntroSteph",
 				},
 			},
+		},
+	},
+	
+	"ShoppingStreet%TWI%" : {
+		"BGM" : "Gymnopedie",
+		"Event0": {
+			"Text" : "The store is closed now",
 		},
 	},
 	
@@ -66,9 +148,31 @@
 		},
 	},
 	
+	"Mall%TWI%" : {
+		"BGM" : "Gymnopedie",
+		"Event0" : {
+			"Text": "Jason may be already here",
+			"Actions" : {
+				"Head to the gym" :  {
+					"Event" : "JasonDay2",
+				}
+			},
+		},
+	},
+	
 	"Mall%EVE%" : {
+		"BGM" : "Gymnopedie",
 		"Event0" : {
 			"Text": "Now I'm really exhausted, I should go home now",
+		},
+		
+		"Event1" : {
+			"Text" : "Hmm, it feels like it's something the Messenger 
+			told me about",
+		},
+			
+		"Event2" : {
+			"Text" : "I feel like I'm doing something right",
 		},
 	},
 }

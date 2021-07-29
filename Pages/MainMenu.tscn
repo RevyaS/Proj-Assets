@@ -71,7 +71,7 @@ rect_min_size = Vector2( 50, 50 )
 hint_tooltip = "14 days. you will be in different situations no matter how uncomfortable and it's up to you to make a decision. The question is if you'll regret it or not"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
-text = "Author's Labrat (INC)"
+text = "14 Days (In Progress)"
 
 [node name="AchingDreams" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
 margin_top = 88.0
@@ -81,6 +81,7 @@ rect_min_size = Vector2( 50, 50 )
 hint_tooltip = "Based on the original Aching Dreams game, have fun"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
+disabled = true
 text = "Aching Dreams"
 
 [node name="Load Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]

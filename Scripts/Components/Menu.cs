@@ -12,10 +12,27 @@ public class Menu : VBoxContainer{
 		Options opt = SceneManager.getSceneInstance(GlobalData.optionPath) as Options;
 //		Activate Main menu screen since we're in game
 		opt.enableMainMenuButton();
+		Connect("closeMenu", opt, "closeMenu");
+		//Update when closed
+		opt.Connect("closed", this, nameof(optionMenuClosed));
 //		Activate Data Button when not in eventMode
 		if(!SceneManager.Game.eventMode)
 			opt.enableDataButton();
-		SceneManager.Singleton.stackPage(opt);
+
+		if(!opened)
+		{
+			SceneManager.Singleton.stackPage(opt);
+			opened = true;
+			return;
+		}
+
+		EmitSignal("closeMenu");
+		opened = false;
+	}
+
+	private void optionMenuClosed()
+	{
+		opened = false;
 	}
 	
 	//* When sound button is being pressed, the sfx will be off or on otherwise
@@ -101,6 +118,9 @@ public class Menu : VBoxContainer{
 
 	[Signal]
 	private delegate void stackSettingScene(Control setting);
+
+	[Signal]
+	private delegate void closeMenu();
 	
 	public static AudioStreamPlayer bgMusic { get; set; }
 	// SFX
@@ -108,7 +128,7 @@ public class Menu : VBoxContainer{
 	public static VBoxContainer menuNode { get; set; }
 	public static bool isMusicOn { get; set; }
 	public static bool isSfxOn { get; set; }
-	
+	private bool opened = false;
 	private string currentBGMPath = "";
 	private string loadIconPath = "res://Assets/Icons";
 	public static string menuNodePath = "Margin/Bottom/Elements/MenuContainer/CenterContainer/Menu";

@@ -60,6 +60,7 @@ public class Options : Control{
 		GD.Print("Music: ", musicDb);
 		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), sfxDb);
 		GD.Print("Sfx: ", sfxDb);
+		EmitSignal("closed");
 		QueueFree();
 	}
 	
@@ -79,6 +80,9 @@ public class Options : Control{
 		SceneManager.Singleton.DataSelect.Connect("LoadTriggered", this, nameof(closeMenu));
 		initValues();
 	}
+
+	[Signal]
+	public delegate void closed();
 	
 	
 	private float masterDb, musicDb, sfxDb;
