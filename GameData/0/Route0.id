@@ -112,6 +112,16 @@
 				}
 			},
 		},
+		
+		"Event5" : {
+			"Right" : "TracieIdle",
+			"Text" : "We should rest soon",
+			"Actions" : {
+				"*Go to Sleep*" : {
+					"Event" : "Day2Summary",
+				}
+			},
+		},
 	},
 	
 	"Barracks%Fantasy%" : {
@@ -130,7 +140,6 @@
 		
 	"Downtown": {
 		"Event0": {
-			"BGM" : "Cattails",
 			"Text" : "I guess I should go to work",
 		},
 	},

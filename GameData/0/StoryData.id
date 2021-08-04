@@ -28,11 +28,11 @@
 		"CarlaBJ4" : "res://Assets/CharFemale/Carla/B4.png",
 		"FionaIdle" : "res://Assets/CharFemale/Fiona/Idle.png",
 		"CamillaIdle" : "res://Assets/CharFemale/Camilla/Idle.png",
-		"AllanIdle" : "res://Assets/CharMale/Allan/AllanIdle.png",
-		"JasonIdle" : "res://Assets/CharMale/Jason/JasonIdle.png",
-		"BryanWorried" : "res://Assets/CharMale/Bryan/BryanWorried.png",
-		"KhanIdle" : "res://Assets/CharMale/Khan/Idle.png",
-		"KhanSmile" : "res://Assets/CharMale/Khan/Smile.png",
+		"AllanIdle" : "res://Assets/CharMale/14 Days/Allan/AllanIdle.png",
+		"JasonIdle" : "res://Assets/CharMale/14 Days/Jason/JasonIdle.png",
+		"BryanWorried" : "res://Assets/CharMale/14 Days/Bryan/BryanWorried.png",
+		"KhanIdle" : "res://Assets/CharMale/14 Days/Khan/Idle.png",
+		"KhanSmile" : "res://Assets/CharMale/14 Days/Khan/Smile.png",
 	},
 	
 	"Locations" : {

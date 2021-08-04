@@ -213,6 +213,16 @@
 				"Okay" : "Event22",
 			},
 		},
+		
+		"Event23" : {
+			"Right": "CamillaIdle",
+			"Center" : "TracieIdle",
+			"Left" : "FionaIdle",
+			"Text" : "I'm glad you're safe",
+			"Actions" : {
+				
+			},
+		},
 	},
 	
 	"IntroDay3" : {
