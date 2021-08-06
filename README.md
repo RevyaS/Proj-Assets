@@ -1,26 +1,23 @@
 # Proj-Assets 
 Project Assets, a CYOA, simulator or generic game that can be used to tell a story
 
-Current Version: .05a
+Current Version: .05
 
 [Project documentations and Assets collection link](https://drive.google.com/drive/folders/1svMfYqJbfHz7dFtQRj-TgUTQsn_5sggx)
 
 **Change notes:** 
->Almost done, just needed to complete the story
+>You know what? Fuck it, I'll just add features while working on the story, I don't need to complete the story for the entire version, I'm a discovery writer afterall
+>.05 is now done, I'll update the next changes while writing to see which parts I feel are missing
 
-**Planned changes completed so far:**
-- [x] GameData folder arrangement
-- [x] Separate Story files arrangement and ease of implementation
-- [x] Separate EventData files per Route
-- [x] StoryData folder that stores data for that specific story only
-- [x] New EventData and Route data file format
-- [x] Sfx system for Events
-- [x] Sfx system for Locations
-- [x] Bgm system for Locations and Events
-- [x] Changeable background during Event
-- [x] Customizable starting stats and character flags
-- [x] Event and Route key modifier % : (Adding a % modifier like this "%Text%" makes Event and Route keys unique though it presents the same text)
-- [ ] New Storyline 
-- [x] Flexible use of assets on every story
-- [x] Save slots show the Story it belongs to
-- [x] Right click to open and close Options menu (In Game)
+**Planned changes completed  for v0.1:**
+- [ ] Default Music for every story becuz I'm too lazy to write the "BGM" key on every Location registered
+- [ ] Transition System like an array of images to be registered in StoryData.id files, or probably a registered animation in the AnimationPlayer Node I already attached inside TopGUI Node, I can't decide which is better
+- [ ] Animation System, similar to Transition System but I think it's better fit to utilize an array of images instead
+- [ ] Conditional Events like there are 2 "Event2" keys wherein 1 will override the default "Event2" key if being triggered
+- [ ] Default Events, read Conditional Events for more details
+- [ ] A new main menu GUI that shows the Plot of the story along with it's cover image while hovered by mouse
+- [ ] Cover image for every story, read above description of new main menu GUI for more details
+- [ ] Faster Save file reading, I think there's like a 0.4s detail when opening the Data Selection page for the 1st time
+- [ ] Hidden Stats, unlike Chars stats in StoryData.id that is update based, I'm thinking of a HiddenStats key that is incremental instead of updateable
+
+More features to be added later
