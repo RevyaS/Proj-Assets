@@ -20,4 +20,4 @@ Current Version: .05
 - [ ] Faster Save file reading, I think there's like a 0.4s detail when opening the Data Selection page for the 1st time
 - [ ] Hidden Stats, unlike Chars stats in StoryData.id that is update based, I'm thinking of a HiddenStats key that is incremental instead of updateable
 
-More features to be added later
+More features to be added later, I'm considering switching the format of .id files to YAML though I'm scared of the potential file reading speed drop
