@@ -17,7 +17,7 @@ Current Version: .05
 - [ ] Default Events, read Conditional Events for more details
 - [ ] A new main menu GUI that shows the Plot of the story along with it's cover image while hovered by mouse
 - [ ] Cover image for every story, read above description of new main menu GUI for more details
-- [ ] Faster Save file reading, I think there's like a 0.4s detail when opening the Data Selection page for the 1st time
+- [ ] Faster Save file reading, I think there's like a 0.4s delay when opening the Data Selection page for the 1st time
 - [ ] Hidden Stats, unlike Chars stats in StoryData.id that is update based, I'm thinking of a HiddenStats key that is incremental instead of updateable
 
 More features to be added later, I'm considering switching the format of .id files to YAML though I'm scared of the potential file reading speed drop
