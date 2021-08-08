@@ -5,6 +5,7 @@ using Godot;
 using System;
 using UF = UtilityFunctions;
 using Godot.Collections;
+using YamlDotNet.RepresentationModel;
 public class GlobalData : Node{
 	
 	//*	returns data from globalData.id in Dictionary type via key
@@ -12,42 +13,43 @@ public class GlobalData : Node{
 	public static Dictionary getData(String key, string dataPath) 
 		=> UF.readFile(dataPath)[key] as Dictionary;
 
+	public static YamlMappingNode getYamlData(String key, string dataPath)
+		=> UF.readYAML(dataPath).Children[key] as YamlMappingNode;
+
 	public static Godot.Collections.Array getList(String key, string dataPath) 
 		=> UF.readFile(dataPath)[key] as Godot.Collections.Array;
 	
 	//*	Gets the Dictionary data from route0
-	public static Dictionary getRouteData(int routeNumber, string key)
+	public static YamlMappingNode getRouteData(int routeNumber, string key)
 	{
 		String routeLocation = "res://GameData/" + dManager.StoryFlag + "/Route" +  routeNumber + ".id";
-		return getData(key, routeLocation);
+		return getYamlData(key, routeLocation);
 	}
 	
 	//*	Gets the global data
-	public static Dictionary getGlobalData(string key)
+	public static YamlMappingNode getGlobalData(string key)
 	{
 		String globalPath =  "res://GameData/GlobalData.id";
-		return getData(key, globalPath);
+		return getYamlData(key, globalPath);
 	}
 
 	//*	Gets the story data based from story flag
-	public static Dictionary getStoryData(string key)
+	public static YamlMappingNode getStoryData(string key)
 	{
 		String globalPath =  "res://GameData/" + dManager.StoryFlag + "/StoryData.id";
-		return getData(key, globalPath);
+		return getYamlData(key, globalPath);
 	}
 
-	public static Dictionary getStoryData(int storyFlag, string key)
+	public static YamlMappingNode getStoryData(int storyFlag, string key)
 	{
 		String globalPath =  "res://GameData/" + storyFlag + "/StoryData.id";
-		return getData(key, globalPath);
+		return getYamlData(key, globalPath);
 	}
 
-	public static Dictionary getStoryLocations()
-	{
-		return getStoryData("Locations");
-	}
+	public static YamlMappingNode getStoryLocations() 
+		=> getStoryData("Locations");
 	
-	public static Dictionary getStoryCharacters(int flag)
+	public static YamlMappingNode getStoryCharacters(int flag)
 	{
 		return getStoryData("Characters");
 	}

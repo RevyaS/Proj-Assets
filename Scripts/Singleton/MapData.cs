@@ -5,7 +5,7 @@
 using Godot;
 using System;
 using GC = Godot.Collections;
-using System.Linq;
+using YamlDotNet.RepresentationModel;
 using UF = UtilityFunctions;
 
 public class MapData : Node
@@ -26,11 +26,11 @@ public class MapData : Node
 		gameMap = new DsGraph();
 		
 //		Load Location Data
-		GC.Dictionary data = GlobalData.getStoryData("Locations");
+		YamlMappingNode data = GlobalData.getStoryData("Locations");
 		
 //		Generate the nodes
 //		Loop through each keys
-		foreach(String locationName in data.Keys)
+		foreach(String locationName in data.Children.Keys)
 		{
 //			Load location image
 			ImageTexture imgTxt = UF.getTexture(data[locationName].ToString());
@@ -44,7 +44,7 @@ public class MapData : Node
 	
 //	Loads map and returns a Graph from the path
 //	Also sets the mapData into the data from file
-	public static DsGraph loadMap(int flag)
+	public static DsGraph loadMap(int flag, int story)
 	{		
 //		Clear edges of gameMap
 		gameMap.removeConnections();
@@ -52,15 +52,13 @@ public class MapData : Node
 //		Generate the Map Key
 		String mapKey = "Map" + flag;
 		startNode = null;
-
 //		Read the current map from Story file
-		GC.Dictionary data = GlobalData.getStoryData(mapKey);
-	
+		YamlMappingNode data = GlobalData.getStoryData(story, mapKey);
 //		Loop through all existing names for the map
-		foreach(String area in data.Keys)
+		foreach(String area in data.Children.Keys)
 		{
 //			Access the array as List<String>
-			GC.Array neighbors = data[area] as GC.Array;
+			YamlSequenceNode neighbors = data[area] as YamlSequenceNode;
 		
 //			Get the node from the area (LocationName)
 			Location currNode = gameMap.getNode( area ) as Location;

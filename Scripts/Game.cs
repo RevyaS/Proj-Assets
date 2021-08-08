@@ -33,8 +33,6 @@ public class Game : TextureRect
 	
 	//*	This Function must be connected to the action buttons' ChangedLocation signal
 	public void setLocation(Location newLocation){
-		GD.Print("Updating Location");
-
 		eventMode = false;
 //		Sets currNode for button generation
 		dManager.CurrNode = newLocation;
@@ -57,7 +55,6 @@ public class Game : TextureRect
 		Dictionary currData = dManager.EventData["Event" + flagValue.ToString()] as Dictionary;
 		dManager.CurrText = currData["Text"].ToString();
 		eventText(dManager.CurrText);
-
 		if(currData.Contains("SFX"))
 		{
 			String key = currData["SFX"].ToString();
@@ -113,7 +110,6 @@ public class Game : TextureRect
 
 //		Change image if Image exists
 		if(eventData.Contains("Image")){
-			GD.Print("LoadEvent method");
 //			Get the image path
 			String imagePath = GData.getBGPath(eventData["Image"].ToString());
 //			Change the image
@@ -174,7 +170,7 @@ public class Game : TextureRect
 		{
 			String sfxPath = GlobalData.getBGMPath(bgmKey);
 			menu.playBGM(sfxPath);
-		}		
+		}
 
 
 //		Resolve data and GUI processes from these 2 components

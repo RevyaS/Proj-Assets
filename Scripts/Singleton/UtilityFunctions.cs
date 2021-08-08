@@ -4,10 +4,9 @@
 using Godot;
 using System;
 using System.Linq;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Godot.Collections;
-using GA = Godot.Collections.Array;
+using YamlDotNet.RepresentationModel;
 
 public class UtilityFunctions : Node
 {
@@ -39,6 +38,35 @@ public class UtilityFunctions : Node
 		fileLoader.Close();
 		return data;
 	}
+
+
+	//Returns a somewhat dictionary from a YAML file
+	public static YamlMappingNode readYAML(String filePath)
+	{
+//		Open the File
+		File fileLoader = new File();
+		fileLoader.Open(filePath, File.ModeFlags.Read);
+//		Get the contents
+		YamlMappingNode data = null;
+		try
+		{
+//			Collect the text from the entire file and turn it into 1 line
+			String contents = fileLoader.GetAsText();
+//			Parse the one line string into Dictionary
+			System.IO.StringReader sr = new System.IO.StringReader(contents);
+			YamlStream stream = new YamlStream();
+			stream.Load(sr);
+			data = stream.Documents[0].RootNode as YamlMappingNode;
+		} catch (Exception e)
+		{
+			GD.Print(e);
+			GD.Print("File is empty, returning null");
+		}
+
+		fileLoader.Close();
+		return data;
+	}
+
 	
 //	Writes the data from the dictionary into the filePath, generates file, if file doesn't exist
 	public static void writeFile(String filePath, Dictionary data)

@@ -22,7 +22,7 @@ public class MainMenu : TextureRect
 //		Reset data
 		dManager.initFlags((int)story);
 		MapData.initData((int)story);
-		MapData.loadMap((int)story);
+		MapData.loadMap(0, (int)story);
 		SceneManager.Singleton.switchToGame(MapData.startNode);
 //		QueueFree();
 	}

@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.Text.RegularExpressions;
 using Godot.Collections;
+using YamlDotNet.RepresentationModel;
 
 public class DataManager : Node
 {
@@ -77,7 +79,7 @@ public class DataManager : Node
 //			Get map flag
 			MapFlag = Convert.ToInt32(currEvent["Map"]);
 //			Update map
-			MapData.loadMap(MapFlag);
+			MapData.loadMap(MapFlag, StoryFlag);
 		}
 		
 //		Updating route
@@ -85,7 +87,6 @@ public class DataManager : Node
 //			Get map flag
 			currData["Route"] = Convert.ToInt32(currEvent["Route"]);
 		}
-		GD.Print("Route: " + currData["Route"]);
 	}
 	
 	
@@ -114,9 +115,7 @@ public class DataManager : Node
 	
 //	Gets value from current route based on key
 	public Dictionary getRouteData(String key)
-	{
-		return GlobalData.getRouteData(Convert.ToInt32(currData["Route"]), key);
-	}
+		=> YamlToDict(GlobalData.getRouteData(Convert.ToInt32(currData["Route"]), key));	
 
 
 //	SETTER (UPDATE) FUNCTIONS
@@ -144,7 +143,7 @@ public class DataManager : Node
 		currData["Story"] = storyVal;
 //		Updates map
 		MapData.initData(storyVal);
-		MapData.loadMap(MapFlag);
+		MapData.loadMap(MapFlag, storyVal);
 		
 		GD.Print("Loaded Data");
 
@@ -163,7 +162,6 @@ public class DataManager : Node
 		currData.Add("Event", null);
 		currData.Add("Map", 0);
 		currData.Add("Route", 0);
-		
 		currData.Add("CurrNode", null);
 		currData.Add("Text", "");
 	}
@@ -171,22 +169,41 @@ public class DataManager : Node
 
 	//Gets the baseStats from GlobalData + flag file but currData must have Story flag first
 	private Dictionary initStats()
-		=> GlobalData.getStoryData("BaseStats");
+		=> YamlToDict(GlobalData.getStoryData("BaseStats"));
 		
 	//Gets the baseChars from GlobalData + flag file and required Story flag from currData
 	private Dictionary initChars()
-		=> GlobalData.getStoryData("BaseChars");
+		=> YamlToDict(GlobalData.getStoryData("BaseChars"));
 
 
 	//*	Resets the flags based on flags existing in GlobalData + flag, reqyures Story key in currData to exist
 	private Dictionary initLocationFlags(){
-		Dictionary keyList = GlobalData.getStoryLocations();
+		YamlMappingNode keyList = GlobalData.getStoryLocations();
 		
 		Dictionary newFlags = new Dictionary();
-		foreach(String key in keyList.Keys)
+		foreach(String key in keyList.Children.Keys)
 		{
 			newFlags.Add(key, 0);
 		}
 		return newFlags;
+	}
+
+
+	//Converts YmamlMappingNode to Dictionary
+	private Dictionary YamlToDict(YamlMappingNode yamlData)
+	{
+		Dictionary data = new Dictionary();
+		//GD.Print(yamlData.ToString());
+		foreach(YamlScalarNode key in yamlData.Children.Keys)
+		{
+			object output = null;
+			if(yamlData.Children[key] is YamlMappingNode)
+				output = YamlToDict(yamlData.Children[key] as YamlMappingNode);
+			else 
+				output = (yamlData.Children[key] as YamlScalarNode).Value;
+			data.Add(key.Value, output);
+		}
+		//GD.Print(data);
+		return data;
 	}
 }

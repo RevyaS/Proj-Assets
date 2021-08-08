@@ -1,2 +1,3 @@
-Route 0: Tracie's Route
-Route 1: Sarah's Route via Jason 
+Route 0: Tracie's Route Only
+Route 1: Sarah's Route via Jason Only
+Route 2: Tracie Route then Ellie's Route via Bryan

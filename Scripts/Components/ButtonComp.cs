@@ -20,8 +20,6 @@ public class ButtonComp : HBoxContainer
 	public void generateButtons(List<gNode> neighbors){
 		SceneManager.clearChildren(rightActionButtonContainer);
 		
-		GD.Print("Generating Buttons");
-		
 		foreach(gNode neighbor in neighbors){
 			
 			ActionButton newButton = addMoveButton(neighbor);
@@ -51,7 +49,6 @@ public class ButtonComp : HBoxContainer
 //		Get current stats
 		Dictionary stats = dManager.getData("Stats");
 		Dictionary charFlags = dManager.getData("Chars");
-		GD.Print(charFlags);
 //		Get the action Dictionary
 		Dictionary actionData = (Dictionary)data[actionKey];
 		
@@ -79,7 +76,6 @@ public class ButtonComp : HBoxContainer
 //			Add route info
 			eventData.Add("Route", dManager.RouteFlag);
 
-			GD.Print(key);
 			ActionButton newButton = addEventButton(eventData, key);
 //			Connect the button's signal
 			newButton.Connect("TriggeredEvent", game, "loadEvent");

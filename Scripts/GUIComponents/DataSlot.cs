@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 using UF= UtilityFunctions;
+using YamlDotNet.RepresentationModel;
 
 public class DataSlot : TextureButton
 {
@@ -48,7 +49,7 @@ public class DataSlot : TextureButton
 		//Show story
 		title.Text = slot.ToString() + ". " + GlobalData.stories[storyVal];
 		//Show Image
-		Dictionary storyData = GlobalData.getStoryData(storyVal, "Locations");
+		YamlMappingNode storyData = GlobalData.getStoryData(storyVal, "Locations");
 		String nodeTexLoc = storyData[ saveData["CurrNode"].ToString() ].ToString();
 		loc.Texture = UF.getTexture(nodeTexLoc);
 	}

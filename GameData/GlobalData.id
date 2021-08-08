@@ -1,23 +1,15 @@
-{	
-	"SFX" : {
-		"DoorOpen": "res://Assets/SFX/doorOpen.ogg",
-		"Sizzling" : "res://Assets/SFX/sizzling.wav",
-	},
-	
-	"BGM" : {
-		"Cattails" : "res://Assets/Music/Kevin MacLeodCattails.ogg",
-		"Gymnopedie" : "res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg",
-	},
-	
-	"Puzzles" : {
-		"TowerOfHanoi" : "res://Pages/Puzzles/HanoiPuzzle.tscn",
-		"LightsOut" : "res://Pages/Puzzles/LightsOut.tscn",
-		"Maze" : "res://Pages/Puzzles/Maze.tscn",
-		"SlidingPuzzle" : "res://Pages/Puzzles/SlidingPuzzle.tscn",
-		"PegSolitaire" : "res://Pages/Puzzles/PegSolitaire.tscn",
-		"HopOver" : "res://Pages/Puzzles/HopOver.tscn",
-		"BalancePuzzle" : "res://Pages/Puzzles/WaterPuzzle.tscn",
-	},
-
-
-}
+---	
+SFX:
+    DoorOpen: res://Assets/SFX/doorOpen.ogg
+    Sizzling: res://Assets/SFX/sizzling.wav
+BGM:
+    Cattails: res://Assets/Music/Kevin MacLeodCattails.ogg
+    Gymnopedie: res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg
+Puzzles:
+    TowerOfHanoi: res://Pages/Puzzles/HanoiPuzzle.tscn
+    LightsOut: res://Pages/Puzzles/LightsOut.tscn
+    Maze: res://Pages/Puzzles/Maze.tscn
+    SlidingPuzzle: res://Pages/Puzzles/SlidingPuzzle.tscn
+    PegSolitaire: res://Pages/Puzzles/PegSolitaire.tscn
+    HopOver: res://Pages/Puzzles/HopOver.tscn
+    BalancePuzzle: res://Pages/Puzzles/WaterPuzzle.tscn

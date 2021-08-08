@@ -33,6 +33,7 @@
 				"Okay" : "House%EVE%",
 			},
 			"Locations" : {
+				"House%EVE%" : 2,
 				"Mall%EVE%" : 1,
 			},
 			"Chars" : {
@@ -379,7 +380,6 @@
 				"Okay" : "House%TWI%",
 			},
 			"Locations" : {
-				"House%EVE%" : 2,
 				"House%TWI%" : 1,
 				"Downtown%TWI%" : 1,
 			},

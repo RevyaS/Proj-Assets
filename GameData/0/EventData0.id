@@ -172,7 +172,7 @@
 		
 		"Event18" : {
 			"Center" : "KhanSmile",
-			"Text" : "You're in your mind, and we're talking, that girl won't hear us here, 
+			"Text" : "We're in your mind, and we're talking, that girl won't hear us here, 
 				and I won't hurt you not like I can anyways hahahaha",
 			"Actions" : {
 				"What do want?" : "Event19",
@@ -210,17 +210,40 @@
 			"Center" : "CamillaIdle",
 			"Text" : "Let's go back now",
 			"Actions" : {
-				"Okay" : "Event22",
+				"Okay" : "Event23",
 			},
 		},
 		
 		"Event23" : {
+			"Image" : "Barracks%Fantasy%",
 			"Right": "CamillaIdle",
 			"Center" : "TracieIdle",
 			"Left" : "FionaIdle",
-			"Text" : "I'm glad you're safe",
+			"Text" : "I'm glad you're safe, I was worried",
 			"Actions" : {
-				
+				"Oh hi Tracie" : "Event24",
+			},
+		},
+		
+		"Event24" : {
+			"Image" : "Barracks%Fantasy%",
+			"Right": "CamillaIdle",
+			"Left" : "TracieIdle",
+			"Center" : "FionaIdle",
+			"Text" : "See I told you, quit worrying about your boyfriend",
+			"Actions" : {
+				"..." : "Event25",
+			},
+		},
+		
+		"Event25" : {
+			"Image" : "Barracks%Fantasy%",
+			"Right": "CamillaIdle",
+			"Center" : "TracieIdle",
+			"Left" : "FionaIdle",
+			"Text" : "Very funny Fiona, anyways let's go home now",
+			"Actions" : {
+				"Sure" : "Event25",
 			},
 		},
 	},
@@ -460,7 +483,7 @@
 				"But I insist" : "Event11",
 			},
 			"Locations" : {
-				"House%EVE%" : 5,
+				"House%EVE%" : 3,
 			},
 		},
 		
@@ -659,7 +682,7 @@
 			},
 			"Locations" : {
 				"Downtown%EVE%" : 2,
-				"House%EVE%" : 3,
+				"House%EVE%" : 1,
 			},
 			"Chars" : {
 				"Carla" : 1,
@@ -819,8 +842,8 @@
 				"ShoppingStreet%TWI%" : 1,
 				"Mall%TWI%" : 1,
 				"House%TWI%" : 1,
-				"House%EVE%" : 4,
-				"Downtown%TWI%" : 2,
+				"House%EVE%" : 2,
+				"Downtown%TWI%" : 1,
 			},
 			"Chars" : {
 				"Steph" : 1,
@@ -986,9 +1009,6 @@
 			"Text" : "Jason, it's Jason",
 			"Actions" : {
 				"Thanks Jason" : "Mall%EVE%",
-			},
-			"Chars" : {
-				"Sarah" : 1,
 			},
 			"Map" : 3,
 			"Route" : 1,
