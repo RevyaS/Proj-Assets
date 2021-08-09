@@ -51,8 +51,21 @@ public class Game : TextureRect
 //		Get Flag value
 		int flagValue = Convert.ToInt32(location[nodeName]);
 		
-//		Get the Event text
-		Dictionary currData = dManager.EventData["Event" + flagValue.ToString()] as Dictionary;
+		//Check for alternatives
+		int alt = 0;
+		bool altExists = false;
+		String altKey;
+		for(altKey = "Event" + flagValue.ToString() + "_" + alt++; dManager.EventData.Contains(altKey);altKey = "Event" + flagValue.ToString() + "_" + alt++)
+		{
+			Dictionary data = dManager.EventData[altKey] as Dictionary;
+			if(!dManager.flagsReqMet(data)) continue;
+			alt--; //Revert to previous alt
+			altExists = true;
+			break;
+		}
+		//Get the Event text
+		String eventKey = (altExists) ? altKey : "Event" + flagValue.ToString();
+		Dictionary currData = dManager.EventData[eventKey] as Dictionary;
 		dManager.CurrText = currData["Text"].ToString();
 		eventText(dManager.CurrText);
 		if(currData.Contains("SFX"))
@@ -70,15 +83,14 @@ public class Game : TextureRect
 			String sfxPath = GlobalData.getBGMPath(bgmKey);
 			menu.playBGM(sfxPath);
 		}		
-
 //		Load Char images
-		top.loadChars(flagValue);
+		top.loadChars(flagValue, (altExists) ? alt : -1);
 		
 //		Generate buttons for new locations
 		btnComp.generateButtons(dManager.CurrNode.Neighbors);
 		
 //		Generate possible actions
-		btnComp.generateActions(flagValue);
+		btnComp.generateActions(flagValue, (altExists) ? alt : -1);
 		
 //		Update stats
 		top.updateStats();

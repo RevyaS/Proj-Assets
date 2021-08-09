@@ -149,20 +149,21 @@ public class TopGUI : Control
 	
 	
 //	Loads the char images given a flag
-	public void loadChars(int flag)
+	public void loadChars(int flag, int alt = -1)
 	{
 //		Clear images
 		clearChars();
 		
 //		Access eventData
 		Dictionary eventData = dManager.EventData;
-		Dictionary currData = eventData["Event" + flag.ToString()] as Dictionary;
+		String currDataKey = "Event" + flag.ToString();
+		if(alt != -1) currDataKey = "Event" + flag.ToString() + "_" + alt.ToString();
+		Dictionary currData = eventData[currDataKey] as Dictionary;
 //		Loop the containers {Left, Center, Right}
 		for(int i = 0; i < 3; i++)
 		{
 //			Generate key
 			String key = charNames[i];
-			
 //			Check if key exist
 			if(!currData.Contains(key)) continue;
 			

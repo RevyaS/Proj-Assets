@@ -31,14 +31,16 @@ public class ButtonComp : HBoxContainer
 	
 //	Generate Button variations for different scenarios
 //*	Similar to generateButtons but this one is for actions, and it requires a flag
-	public void generateActions(int flag){
+	public void generateActions(int flag, int alt = -1){
 //		Get the requirements if it exists
 		clearContainer(true, false);
 		
 //		Get the dictionary for the currNode
 		String dataKey = dManager.CurrNode.name;
 		Dictionary routeData = dManager.getRouteData(dataKey);
-		Dictionary data = routeData["Event" + flag.ToString()] as Dictionary;
+		String routeKey = "Event" + flag.ToString();
+		if(alt != -1) routeKey = "Event" + flag.ToString() + "_" + alt.ToString();
+		Dictionary data = routeData[routeKey] as Dictionary;
 
 		String actionKey = "Actions";
 		
@@ -46,9 +48,6 @@ public class ButtonComp : HBoxContainer
 		if(!data.Contains(actionKey))
 			return;
 		
-//		Get current stats
-		Dictionary stats = dManager.getData("Stats");
-		Dictionary charFlags = dManager.getData("Chars");
 //		Get the action Dictionary
 		Dictionary actionData = (Dictionary)data[actionKey];
 		
@@ -57,22 +56,8 @@ public class ButtonComp : HBoxContainer
 //			GD.Print(key);
 //			Get event data of the action button
 			Dictionary eventData = actionData[key] as Dictionary;
-//			Check if eventData contains "Req"
-			if(eventData.Contains("Req"))
-			{
-//				Compare current stats from the req
-				Dictionary req = eventData["Req"] as Dictionary;
-				if(!reqMet(req, stats)) continue;
-			}
-			
-			if(eventData.Contains("Chars"))
-			{
-//				Compare current stats from the req
-				Dictionary req = eventData["Chars"] as Dictionary;
-				GD.Print("Req: " + req);
-				if(!reqMet(req, charFlags)) continue;
-			}
-			
+
+			if(!dManager.flagsReqMet(eventData)) continue;
 //			Add route info
 			eventData.Add("Route", dManager.RouteFlag);
 
@@ -143,20 +128,6 @@ public class ButtonComp : HBoxContainer
 		return newButton;
 	}
 
-//*********************************************************************************************
-
-//	Utility Methods
-//	Returns true if values meet the requirements (req)
-	private bool reqMet(Dictionary req, Dictionary values)
-	{
-		foreach(String key in req.Keys)
-		{
-			int reqValue = Convert.ToInt32(req[key]);
-			int compValue = Convert.ToInt32(values[key]);
-			if(compValue < reqValue) return false;
-		}
-		return true;
-	}
 	
 //*********************************************************************************************
 	

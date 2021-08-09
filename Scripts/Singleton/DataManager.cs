@@ -167,6 +167,46 @@ public class DataManager : Node
 	}
 
 
+	//Utility Functions
+//	Returns True if all flags are met
+	public bool flagsReqMet(Dictionary eventData)
+	{
+//		Get current stats
+		Dictionary stats = getData("Stats");
+		Dictionary charFlags = getData("Chars");
+
+		// Check if eventData contains "Req"
+		if(eventData.Contains("Req"))
+		{
+			// Compare current stats from the req
+			Dictionary req = eventData["Req"] as Dictionary;
+			if(!reqMet(req, stats)) return false;
+		}
+		
+		if(eventData.Contains("Chars"))
+		{
+			// Compare current stats from the req
+			Dictionary req = eventData["Chars"] as Dictionary;
+			GD.Print("Req: " + req);
+			if(!reqMet(req, charFlags)) return false;
+		}
+
+		return true;
+	}
+
+//	Returns true if values meet the requirements (req)
+	private bool reqMet(Dictionary req, Dictionary values)
+	{
+		foreach(String key in req.Keys)
+		{
+			int reqValue = Convert.ToInt32(req[key]);
+			int compValue = Convert.ToInt32(values[key]);
+			if(compValue < reqValue) return false;
+		}
+		return true;
+	}
+
+
 	//Gets the baseStats from GlobalData + flag file but currData must have Story flag first
 	private Dictionary initStats()
 		=> YamlToDict(GlobalData.getStoryData("BaseStats"));
@@ -190,7 +230,7 @@ public class DataManager : Node
 
 
 	//Converts YmamlMappingNode to Dictionary
-	private Dictionary YamlToDict(YamlMappingNode yamlData)
+	public Dictionary YamlToDict(YamlMappingNode yamlData)
 	{
 		Dictionary data = new Dictionary();
 		//GD.Print(yamlData.ToString());

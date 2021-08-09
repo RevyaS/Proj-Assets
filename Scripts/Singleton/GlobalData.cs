@@ -57,7 +57,7 @@ public class GlobalData : Node{
 	
 	//*	Gets the Dictionary data from Event
 	//*	The key is based on the Event's name
-	public static Dictionary getEventData(String key, int route) => getData(key, "res://GameData/" + dManager.StoryFlag + "/EventData" + route + ".id");	
+	public static Dictionary getEventData(String key, int route) => dManager.YamlToDict(getYamlData(key, "res://GameData/" + dManager.StoryFlag + "/EventData" + route + ".id"));
 	
 	//*	Gets the char's image from dictionary
 	public static String getCharImage(String key, int flag) 
