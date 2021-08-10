@@ -1,4 +1,3 @@
----
 Nothing:
     BGM: Gymnopedie
     Event0:
@@ -14,127 +13,127 @@ Bedroom:
                 Event: IntroTracie
     Event1:
         Left: TracieSurprised
-        Text: Ahh!!! Don't scare me like that, bad nightmare huh?
+        Text: "Ahh!!! Don't scare me like that, bad nightmare huh?"
         Actions:
-            I'm sorry:
+            I'm sorry: null
             Event: IntroDay2
     Event2:
         Center: TracieIdle
-        Text: Wake up and get ready, I'll introduce you to the Patrol station
+        Text: "Wake up and get ready, I'll introduce you to the Patrol station"
         Actions:
             Ok:
                 Event: IntroDay3
 House:
-  Event0:
-    Text: I need to survive for 14 days huh? What does that even mean?
-  Event1:
-    Text: Tracie's out to work now, I should get working as well
+    Event0:
+        Text: I need to survive for 14 days huh? What does that even mean?
+    Event1:
+        Text: "Tracie's out to work now, I should get working as well"
 House%TWI%:
-  Event0:
-    SFX: Sizzling
-    Left: TracieIdle
-    Text: Welcome back, just a few moments, I'll be done cooking
-    Actions:
-      Hey Tracie...:
-        Event: TracieDay1
-  Event1:
-    Text: Tracie's not home yet
+    Event0:
+        SFX: Sizzling
+        Left: TracieIdle
+        Text: "Welcome back, just a few moments, I'll be done cooking"
+        Actions:
+            Hey Tracie...:
+                Event: TracieDay1
+    Event1:
+        Text: Tracie's not home yet
 House%EVE%:
-  Event0:
-    Left: TracieIdle
-    Text: I prepared dinner, so feel free to eat anytime
-    Actions:
-      Get some rest:
-        Event: MessengerDay2
-  Event1:
-    Right: TracieIdle
-    Text: You're late, there's still dinner if you want to eat
-  Event2:
-    Right: TracieIdle
-    Text: Welcome back, I've recently finished cooking, so let's eat together
-    Actions:
-      '*Eat dinner with Tracie*':
-        Event: TracieDay2
-  Event3:
-    Right: TracieIdle
-    Text: We should rest soon
-    Actions:
-      '*Go to Sleep*':
-        Event: Day2Summary
+    Event0:
+        Left: TracieIdle
+        Text: 'I prepared dinner, so feel free to eat anytime'
+        Actions:
+            Get some rest:
+                Event: MessengerDay2
+    Event1:
+        Right: TracieIdle
+        Text: "You're late, there's still dinner if you want to eat"
+    Event2:
+        Right: TracieIdle
+        Text: "Welcome back, I've recently finished cooking, so let's eat together"
+        Actions:
+            '*Eat dinner with Tracie*':
+                Event: TracieDay2
+    Event3:
+        Right: TracieIdle
+        Text: We should rest soon
+        Actions:
+            '*Go to Sleep*':
+                Event: Day2Summary
 Barracks%Fantasy%:
-  Event0:
-    Center: FionaIdle
-    Left: CamillaIdle
-    Text: >-
-      For your first task, you will be looking for the heirloom an elf left from
-      her village, Camilla already know what it looks like
-    Actions:
-      Retrieval Mission:
-        Event: IntroCamilla
+    Event0:
+        Center: FionaIdle
+        Left: CamillaIdle
+        Text: >-
+            For your first task, you will be looking for the heirloom an elf left from
+            her village, Camilla already know what it looks like
+        Actions:
+            Retrieval Mission:
+                Event: IntroCamilla
 Downtown:
-  Event0:
-    Text: I guess I should go to work
+    Event0:
+        Text: I guess I should go to work
 Downtown%TWI%:
-  Event0:
-    Text: Seems to be the time to go home
-  Event1:
-    Center: BryanWorried
-    Text: Excuse me, do you have a moment?
-    Actions:
-      Sure, what is it?:
-        Event: IntroBryan
-  Event2:
-    Text: Huh, that short conversation sure took time
+    Event0:
+        Text: Seems to be the time to go home
+    Event1:
+        Center: BryanWorried
+        Text: 'Excuse me, do you have a moment?'
+        Actions:
+            'Sure, what is it?':
+                Event: IntroBryan
+    Event2:
+        Text: 'Huh, that short conversation sure took time'
 Downtown%EVE%:
-  Event0:
-    Text: I need to go home now
-  Event1:
-    Center: CarlaIdle
-    Text: Hey, want to have some good time?
-    Actions:
-      Uhm no:
-        Event: IntroCarla
-        Req:
-          Money: 10
-  Event2:
-    Text: That felt good, I might want to earn more cash next time
+    Event0:
+        Text: I need to go home now
+    Event1:
+        Center: CarlaIdle
+        Text: 'Hey, want to have some good time?'
+        Actions:
+            Uhm no:
+                Event: IntroCarla
+                Req:
+                    Money: 10
+    Event2:
+        Text: 'That felt good, I might want to earn more cash next time'
 ShoppingStreet:
-  Event0:
-    Center: AllanIdle
-    Text: Morning lad, need some cash? Feel free to help out.
-    Actions:
-      Sure thing Allan:
-        Event: IntroAllan
-  Event1:
-    Left: AllanIdle
-    Text: Morning lad
-    Actions:
-      Morning Allan:
-        Event: IntroSteph
+    Event0:
+        Center: AllanIdle
+        Text: 'Morning lad, need some cash? Feel free to help out.'
+        Actions:
+            Sure thing Allan:
+                Event: IntroAllan
+    Event1:
+        Left: AllanIdle
+        Text: Morning lad
+        Actions:
+            Morning Allan:
+                Event: IntroSteph
 ShoppingStreet%TWI%:
-  Event0:
-    Text: The store is closed now
-  Event1:
-    Text: Girlfriend huh? I've never seen her in that sense before
+    Event0:
+        Text: The store is closed now
+    Event1:
+        Text: Girlfriend huh? I've never seen her in that sense before
 ShoppingStreet%EVE%:
-  Event0:
-    Text: The store is closed now
+    Event0:
+        Text: The store is closed now
 Mall:
-  Event0:
-    Text: Gym is still closed, might check later
+    Event0:
+        Text: 'Gym is still closed, might check later'
 Mall%TWI%:
-  Event0:
-    Text: I'm quite exhausted from that work
-    Actions:
-      Maybe I should go to the gym:
-        Event: IntroJason
-  Event1:
-    Text: Seems like a nice day to go the gym
-    Actions:
-      Go to the gym:
-        Event: IntroJasonAlt
+    Event0:
+        Text: I'm quite exhausted from that work
+        Actions:
+            Maybe I should go to the gym:
+                Event: IntroJason
+    Event1:
+        Text: Seems like a nice day to go the gym
+        Actions:
+            Go to the gym:
+                Event: IntroJasonAlt
 Mall%EVE%:
-  Event0:
-    Text: Now I'm really exhausted, I should go home now
-  Event1:
-    Text: There's nothing to do here
+    Event0:
+        Text: "Now I'm really exhausted, I should go home now"
+    Event1:
+        Text: There's nothing to do here
