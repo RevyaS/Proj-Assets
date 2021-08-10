@@ -1,4 +1,3 @@
----
 BaseStats:
     Day: 1
     Strength: 10
@@ -11,94 +10,94 @@ BaseChars:
     Carla: 0
     Eli: 0
 Characters:
-    MessengerIdle: res://Assets/CharFemale/Messenger/MessengerIdle.png
-    TracieIdle: res://Assets/CharFemale/Tracie/TracieIdle.png
-    TracieSurprised: res://Assets/CharFemale/Tracie/TracieSurprised.png
-    TracieWorried: res://Assets/CharFemale/Tracie/TracieWorried.png
-    StephIdle: res://Assets/CharFemale/Steph/StephIdle.png
-    StephWorried: res://Assets/CharFemale/Steph/StephWorried.png
-    CarlaIdle: res://Assets/CharFemale/Carla/CarlaIdle.png
-    CarlaBJ1: res://Assets/CharFemale/Carla/B1.png
-    CarlaBJ2: res://Assets/CharFemale/Carla/B2.png
-    CarlaBJ3: res://Assets/CharFemale/Carla/B3.png
-    CarlaBJ4: res://Assets/CharFemale/Carla/B4.png
-    FionaIdle: res://Assets/CharFemale/Fiona/Idle.png
-    CamillaIdle: res://Assets/CharFemale/Camilla/Idle.png
-    AllanIdle: res://Assets/CharMale/14 Days/Allan/AllanIdle.png
-    JasonIdle: res://Assets/CharMale/14 Days/Jason/JasonIdle.png
-    BryanWorried: res://Assets/CharMale/14 Days/Bryan/BryanWorried.png
-    KhanIdle: res://Assets/CharMale/14 Days/Khan/Idle.png
-    KhanSmile: res://Assets/CharMale/14 Days/Khan/Smile.png
+    MessengerIdle: 'res://Assets/CharFemale/Messenger/MessengerIdle.png'
+    TracieIdle: 'res://Assets/CharFemale/Tracie/TracieIdle.png'
+    TracieSurprised: 'res://Assets/CharFemale/Tracie/TracieSurprised.png'
+    TracieWorried: 'res://Assets/CharFemale/Tracie/TracieWorried.png'
+    StephIdle: 'res://Assets/CharFemale/Steph/StephIdle.png'
+    StephWorried: 'res://Assets/CharFemale/Steph/StephWorried.png'
+    CarlaIdle: 'res://Assets/CharFemale/Carla/CarlaIdle.png'
+    CarlaBJ1: 'res://Assets/CharFemale/Carla/B1.png'
+    CarlaBJ2: 'res://Assets/CharFemale/Carla/B2.png'
+    CarlaBJ3: 'res://Assets/CharFemale/Carla/B3.png'
+    CarlaBJ4: 'res://Assets/CharFemale/Carla/B4.png'
+    FionaIdle: 'res://Assets/CharFemale/Fiona/Idle.png'
+    CamillaIdle: 'res://Assets/CharFemale/Camilla/Idle.png'
+    AllanIdle: 'res://Assets/CharMale/14 Days/Allan/AllanIdle.png'
+    JasonIdle: 'res://Assets/CharMale/14 Days/Jason/JasonIdle.png'
+    BryanWorried: 'res://Assets/CharMale/14 Days/Bryan/BryanWorried.png'
+    KhanIdle: 'res://Assets/CharMale/14 Days/Khan/Idle.png'
+    KhanSmile: 'res://Assets/CharMale/14 Days/Khan/Smile.png'
 Locations:
-    House: res://Assets/GameBG/LivingRoom.png
-    House%TWI%: res://Assets/GameBG/LivingRoomTwilight.png
-    House%EVE%: res://Assets/GameBG/LivingRoomEvening.png
-    Downtown: res://Assets/GameBG/Downtown.png
-    Downtown%TWI%: res://Assets/GameBG/DowntownTwilight.png
-    Downtown%EVE%: res://Assets/GameBG/DowntownEvening.png
-    Mall: res://Assets/GameBG/Mall.png
-    Mall%TWI%: res://Assets/GameBG/MallTwilight.png
-    Mall%EVE%: res://Assets/GameBG/MallEvening.png
-    Park: res://Assets/GameBG/Park.png
-    ParkOuter: res://Assets/GameBG/ParkLeft.png
-    MedicalCampus: res://Assets/GameBG/MedicalCampus.png
-    ShoppingStreet: res://Assets/GameBG/ShoppingStreet.png
-    ShoppingStreet%TWI%: res://Assets/GameBG/ShoppingStreetTwilight.png
-    ShoppingStreet%EVE%: res://Assets/GameBG/ShoppingStreetEvening.png
-    Barracks%Fantasy%: res://Assets/GameBG/FantasyBarracks.png
-    Bedroom: res://Assets/GameBG/Bedroom.png
-    Nothing: res://Assets/BG/BGBlack.png
-    Gym: res://Assets/GameBG/Gym.png
-    Kitchen: res://Assets/GameBG/Kitchen.png
-    Alley: res://Assets/GameBG/Alley.png
-    Field: res://Assets/GameBG/Field.png
-    Village: res://Assets/GameBG/Village.png
-    FantasyHouse: res://Assets/GameBG/FantasyHouse.png
+    House: 'res://Assets/GameBG/LivingRoom.png'
+    House%TWI%: 'res://Assets/GameBG/LivingRoomTwilight.png'
+    House%EVE%: 'res://Assets/GameBG/LivingRoomEvening.png'
+    Downtown: 'res://Assets/GameBG/Downtown.png'
+    Downtown%TWI%: 'res://Assets/GameBG/DowntownTwilight.png'
+    Downtown%EVE%: 'res://Assets/GameBG/DowntownEvening.png'
+    Mall: 'res://Assets/GameBG/Mall.png'
+    Mall%TWI%: 'res://Assets/GameBG/MallTwilight.png'
+    Mall%EVE%: 'res://Assets/GameBG/MallEvening.png'
+    Park: 'res://Assets/GameBG/Park.png'
+    ParkOuter: 'res://Assets/GameBG/ParkLeft.png'
+    MedicalCampus: 'res://Assets/GameBG/MedicalCampus.png'
+    ShoppingStreet: 'res://Assets/GameBG/ShoppingStreet.png'
+    ShoppingStreet%TWI%: 'res://Assets/GameBG/ShoppingStreetTwilight.png'
+    ShoppingStreet%EVE%: 'res://Assets/GameBG/ShoppingStreetEvening.png'
+    Barracks%Fantasy%: 'res://Assets/GameBG/FantasyBarracks.png'
+    Bedroom: 'res://Assets/GameBG/Bedroom.png'
+    Nothing: 'res://Assets/BG/BGBlack.png'
+    Gym: 'res://Assets/GameBG/Gym.png'
+    Kitchen: 'res://Assets/GameBG/Kitchen.png'
+    Alley: 'res://Assets/GameBG/Alley.png'
+    Field: 'res://Assets/GameBG/Field.png'
+    Village: 'res://Assets/GameBG/Village.png'
+    FantasyHouse: 'res://Assets/GameBG/FantasyHouse.png'
 Map0:
     Nothing: []
     Bedroom: []
 Map1:
     House:
-    - Downtown
+        - Downtown
     Downtown:
-    - House
-    - ShoppingStreet
+        - House
+        - ShoppingStreet
     ShoppingStreet:
-    - Mall
-    - Downtown
+        - Mall
+        - Downtown
     Mall:
-    - ShoppingStreet
+        - ShoppingStreet
 Map2:
     House%TWI%:
-    - Downtown%TWI%
+        - Downtown%TWI%
     Downtown%TWI%:
-    - House%TWI%
-    - ShoppingStreet%TWI%
+        - House%TWI%
+        - ShoppingStreet%TWI%
     ShoppingStreet%TWI%:
-    - Mall%TWI%
-    - Downtown%TWI%
+        - Mall%TWI%
+        - Downtown%TWI%
     Mall%TWI%:
-    - ShoppingStreet%TWI%
+        - ShoppingStreet%TWI%
 Map3:
     House%EVE%:
-    - Downtown%EVE%
+        - Downtown%EVE%
     Downtown%EVE%:
-    - House%EVE%
-    - ShoppingStreet%EVE%
+        - House%EVE%
+        - ShoppingStreet%EVE%
     ShoppingStreet%EVE%:
-    - Mall%EVE%
-    - Downtown%EVE%
+        - Mall%EVE%
+        - Downtown%EVE%
     Mall%EVE%:
-    - ShoppingStreet%EVE%
+        - ShoppingStreet%EVE%
 Map4:
     House:
-    - Downtown
+        - Downtown
     Downtown:
-    - House
-    - ShoppingStreet
-    - Barracks%Fantasy%
+        - House
+        - ShoppingStreet
+        - Barracks%Fantasy%
     ShoppingStreet:
-    - Mall
-    - Downtown
+        - Mall
+        - Downtown
     Mall:
-    - ShoppingStreet
+        - ShoppingStreet
