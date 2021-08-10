@@ -1,1114 +1,789 @@
-{
-	"IntroCamilla" : {
-		"Event0" : {
-			"Image" : "Field",
-			"Left" : "CamillaIdle",
-			"Text" : "Nice view isn't it?, though there are lots of people here who dislike 
-				the concept of coexisting with other races and might attack us somewhere",
-			"Actions" : {
-				"Why don't they want to coexist?" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Left" : "CamillaIdle",
-			"Text" : "There are different reasons actually it could be culture, some can't let 
-				go what other races did to their ancestors from the past, some are afraid 
-				that the people will grow weak",
-			"Actions" : {
-				"Weak? How come?" : "Event2",
-			},
-		},
-
-		"Event2" : {
-			"Left" : "CamillaIdle",
-			"Text" : "Because we made things convenient and safe for others they don't need to learn 
-				how to protect themselves, and as a result our defense forces can't protect the 
-				population, ever wonder why Fiona wouldn't hesistate to recruit you?",
-			"Actions" : {
-				"That makes sense" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Left" : "CamillaIdle",
-			"Text" : "But I find that as a good thing, it proves that there is no bound of what people 
-				can do, and even our recruits will become better and stronger in time, we just need patience",
-			"Actions" : {
-				"Ohhh" : "Event4",
-			},
-		},
-		
-		"Event4" : {
-			"Left" : "CamillaIdle",
-			"Text" : "But enough chit chat, let's retrieve the heirloom an elf left from her home before 
-				she moved here",
-			"Actions" : {
-				"Ok" : "Event5",
-			},
-		},
-		
-		"Event5" : {
-			"Image" : "Village",
-			"Left" : "CamillaIdle",
-			"Text" : "This place seems abandoned",
-			"Actions" : {
-				"Is this the right village?" : "Event6",
-			},
-		},
-		
-		"Event6" : {
-			"Center" : "CamillaIdle",
-			"Text" : "This is the right place no doubt, I'll cast myself 
-				to you first and I'll stay here, talk to me with your mind",
-			"Actions" : {
-				"*Like this*" : "Event7",
-			},
-		},
-		
-		"Event7" : {
-			"Center" : "CamillaIdle",
-			"Text" : "Yeah exactly like that, get going now, I'll point you 
-				where to go",
-			"Actions" : {
-				"Okay" : "Event8",
-			},
-		},
-		
-		"Event8" : {
-			"Image" : "FantasyHouse",
-			"Text" : "There must be a necklace here somewhere",
-			"Actions" : {
-				"*Continue Looking*" : "Event9",
-			},
-		},
-		
-		"Event9" : {
-			"Right" : "KhanIdle",
-			"Text" : "Looking for a necklace lad?",
-			"Actions" : {
-				"Woah!!?" : "Event10",
-			},
-		},
-		
-		"Event10" : {
-			"Right" : "KhanIdle",
-			"Text" : "Orc: You seem to be in a fighting stance\n
-				Camilla: I'll buff you, it seems he know the necklace",
-			"Actions" : {
-				"Woah!!?" : "Event11",
-			},
-			"Stats" : {
-				"Strength" : 50,
-				"Speed" : 50,
-			},
-		},
-		
-		"Event11" : {
-			"Right" : "KhanSmile",
-			"Text" : "Hahahaha, no need to be hostile I didn't came here to fight, 
-				here you can even take this necklace",
-			"Actions" : {
-				"What?" : "Event12",
-			},
-		},
-		
-		"Event12" : {
-			"Right" : "KhanIdle",
-			"Text" : "My name is Khan, I figured someone will take the necklace she left\n
-				Camilla: He seems to know something, does he also know the elf?",
-			"Actions" : {
-				"So you know its owner?" : "Event13",
-			},
-		},
-		
-		"Event13" : {
-			"Right" : "KhanIdle",
-			"Text" : "Of course I do, anyways you two should get going now or you won't make 
-				it to your city before dusk\n
-				Camilla: He knows I'm here, who is this orc?",
-			"Actions" : {
-				"What? How?" : "Event14",
-			},
-		},
-
-		"Event14" : {
-			"Right" : "KhanSmile",
-			"Text" : "Sorry if I made you feel uncomfortable hahaha, now get going",
-			"Actions" : {
-				"Uhm... Ok I guess? And thanks" : "Event15",
-			},
-		},
-		
-		"Event15" : {
-			"Right" : "KhanSmile",
-			"Text" : "Hahaha no worries",
-			"Actions" : {
-				"*Leave*" : "Event16",
-			},
-		},
-
-		"Event16" : {
-			"Image" : "Village",
-			"Right" : "CamillaIdle",
-			"Text" : "That orc seems to know a lot, and he is also well mannered",
-			"Actions" : {
-				"Yeah" : "Event17",
-			},
-			"Stats" : {
-				"Strength" : -50,
-				"Speed" : -50,
-			},
-		},
-		
-		"Event17" : {
-			"Image" : "Nothing",
-			"Center" : "KhanIdle",
-			"Text" : "Heya, I want to speak with you a bit",
-			"Actions" : {
-				"Wait, where am I?" : "Event18",
-			},
-		},
-		
-		"Event18" : {
-			"Center" : "KhanSmile",
-			"Text" : "We're in your mind, and we're talking, that girl won't hear us here, 
-				and I won't hurt you not like I can anyways hahahaha",
-			"Actions" : {
-				"What do want?" : "Event19",
-			},
-		},
-		
-		"Event19" : {
-			"Center" : "KhanIdle",
-			"Text" : "I just want to tell you that we will meet again someday, and at that 
-				time, I would need your help. You're a kind lad so you'll understand",
-			"Actions" : {
-				"What do you need help for?" : "Event20",
-			},
-		},
-		
-		"Event20" : {
-			"Center" : "KhanIdle",
-			"Text" : "I'll explain to you when we meet, I have to bring you back to that girl, 
-				see ya",
-			"Actions" : {
-				"Uhm... ok" : "Event21",
-			},
-		},
-		
-		"Event21" : {
-			"Image" : "Field",
-			"Center" : "CamillaIdle",
-			"Text" : "Hey!!! You just spaced out of a sudden. You're tired?",
-			"Actions" : {
-				"I'm sorry" : "Event22",
-			},
-		},
-		
-		"Event22" : {
-			"Center" : "CamillaIdle",
-			"Text" : "Let's go back now",
-			"Actions" : {
-				"Okay" : "Event23",
-			},
-		},
-		
-		"Event23" : {
-			"Image" : "Barracks%Fantasy%",
-			"Right": "CamillaIdle",
-			"Center" : "TracieIdle",
-			"Left" : "FionaIdle",
-			"Text" : "I'm glad you're safe, I was worried",
-			"Actions" : {
-				"Oh hi Tracie" : "Event24",
-			},
-		},
-		
-		"Event24" : {
-			"Image" : "Barracks%Fantasy%",
-			"Right": "CamillaIdle",
-			"Left" : "TracieIdle",
-			"Center" : "FionaIdle",
-			"Text" : "See I told you, quit worrying about your boyfriend",
-			"Actions" : {
-				"..." : "Event25",
-			},
-		},
-		
-		"Event25" : {
-			"Image" : "Barracks%Fantasy%",
-			"Right": "CamillaIdle",
-			"Center" : "TracieIdle",
-			"Left" : "FionaIdle",
-			"Text" : "Very funny Fiona, anyways let's go home now",
-			"Actions" : {
-				"Sure" : "Event25",
-			},
-		},
-	},
-	
-	"IntroDay3" : {
-		"Event0" : {
-			"Image" : "Barracks%Fantasy%",
-			"Center" : "TracieIdle",
-			"Text" : "You probably didn't know but I hang out with Fiona a lot 
-				before and she's very kind",
-			"Actions" : {
-				"Fiona? You mean?" : "Event1",
-			},
-		},
-
-		"Event1" : {
-			"Center" : "TracieIdle",
-			"Text" : "Yes, the legendary Fiona who owns this place",
-			"Actions" : {
-				"I never knew that" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Right" : "FionaIdle",
-			"Center" : "TracieIdle",
-			"Text" : "Oh hi there Tracie, how can I help you?",
-			"Actions" : {
-				"*That's the legendary Fiona*" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "FionaIdle",
-			"Left" : "TracieIdle",
-			"Text" : "Tracie: Uhm yes actually, I want you to give him a job 
-				as a patrol, he needs a higher pay",
-			"Actions" : {
-				"Uhm, hi" : "Event4",
-			},
-		},
-
-		"Event4" : {
-			"Center" : "FionaIdle",
-			"Left" : "TracieIdle",
-			"Text" : "Fiona: Hmm, you doesn't look to be capable. Hahaha, don't 
-				worry everyone isn't capable in their first job, leave it to me 
-				you'll become splendid in time",
-			"Actions" : {
-				"Thanks" : "Event5",
-			},
-		},
-
-		"Event5" : {
-			"Center" : "FionaIdle",
-			"Left" : "TracieIdle",
-			"Text" : "Fiona: Call me Captain now, I'll be providing you simple tasks 
-				for now, you'll take on heavier tasks the more you get better",
-			"Actions" : {
-				"Ok" : "Event6",
-			},
-		},
-
-		"Event6" : {
-			"Left" : "FionaIdle",
-			"Center" : "TracieIdle",
-			"Text" : "Tracie: That's settled then, good luck. I'll be going now bye",
-			"Actions" : {
-				"Bye Tracie" : "Event7",
-			},
-		},
-		
-		"Event7" : {
-			"Center" : "FionaIdle",
-			"Text" : "For now your tasks are supervised by someone I truly trust, treat 
-				them with upmost respect",
-			"Actions" : {
-				"Yes Captain" : "Event8",
-			},
-		},
-		
-		"Event8" : {
-			"Center" : "FionaIdle",
-			"Text" : "Wait for a bit, I'll find some tasks for you",
-			"Actions" : {
-				"Yes Captain" : "Event9",
-			},
-		},
-		
-		"Event9" : {
-			"Text" : "I wonder if I'll be okay",
-			"Actions" : {
-				"*Continue*" : "Event10",
-			},
-		},
-
-		"Event10" : {
-			"Center" : "FionaIdle",
-			"Left" : "CamillaIdle",
-			"Text" : "Sorry for the wait, meet Camilla, you'll be joining her retrieval task",
-			"Actions" : {
-				"Yes Captain" : "Event11",
-			},
-		},
-		
-		"Event11" : {
-			"Right" : "FionaIdle",
-			"Center" : "CamillaIdle",
-			"Text" : "Nice to meet you, I'm Camilla",
-			"Actions" : {
-				"Nice to meet you as well" : "Event12",
-			},
-		},
-		
-		"Event12" : {
-			"Right" : "FionaIdle",
-			"Center" : "CamillaIdle",
-			"Text" : "As you can see by my physique and clothes, I'm only a support and you'll 
-				be acting as my body",
-			"Actions" : {
-				"Your body?" : "Event13",
-			},
-		},
-		
-		"Event13" : {
-			"Right" : "FionaIdle",
-			"Center" : "CamillaIdle",
-			"Text" : "You'll be the one entering the action, I'll have your vision, I'll 
-				use my powers to make you temporarily stronger depending on the situation",
-			"Actions" : {
-				"Oh I get it" : "Barracks%Fantasy%",
-			},
-		},
-	},
-	
-	"Day2Summary" : {
-		"Event0" : {
-			"Image" : "Nothing",
-			"Text" : "Somehow the idea of earning money with Tracie makes me excited 
-				for some reason",
-			"Actions" : {
-				"*Wake Up*" : "Bedroom",
-			},
-			"Locations" : {
-				"Bedroom" : 2,
-			},
-		},
-	},
-	
-	"TracieDay2" : {
-		"Event0" : {
-			"Image" : "Kitchen",
-			"Center" : "TracieIdle",
-			"Text" : "Huh? You're still wondering about my job? 
-				Yes I do have lunch breaks but I'm not as close to the 
-				Shopping street I just finished my task there in time for 
-				lunch",
-			"Actions" : {
-				"That makes me more confused" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "TracieIdle",
-			"Text" : "Hahaha, jeez I can't even keep a secret now",
-			"Actions" : {
-				"Sorry it just bothers me" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "TracieIdle",
-			"Text" : "Of what? I don't seem to be sick now do I?",
-			"Actions" : {
-				"You might be overexerting yourself" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "TracieSurprised",
-			"Text" : "You're worried about that? Hmm I guess my actions do 
-				make you worry that much huh?",
-			"Actions" : {
-				"I wish I could help" : "Event4",
-			},
-		},
-		
-		"Event4" : {
-			"Center" : "TracieIdle",
-			"Text" : "Oh, you're already providing me a place to stay, and that is too 
-				much I could ask for, you did a lot already",
-			"Actions" : {
-				"But I don't want to see you taking a lot of responsibilities" : "Event5",
-			},
-		},
-
-		"Event5" : {
-			"Center" : "TracieIdle",
-			"Text" : "I can assure you, I'm not overexerting myself, my job doesn't 
-				tire me than what Allan puts you through and it pays a lot",
-			"Actions" : {
-				"So what's your job then" : "Event6",
-			},
-		},
-
-		"Event6" : {
-			"Center" : "TracieWorried",
-			"Text" : "I.. I'm working at a maid cafe",
-			"Actions" : {
-				"Wait what?!" : "Event7",
-			},
-		},
-
-		"Event7" : {
-			"Center" : "TracieIdle",
-			"Text" : "I.. it's not shady or anything, I work as a chef there, I was going 
-				to buy ingredients that afternoon but decided to eat first",
-			"Actions" : {
-				"Why didn't you tell me that earlier?" : "Event8",
-			},
-		},
-		
-		"Event8" : {
-			"Center" : "TracieIdle",
-			"Text" : "I can't have you visiting me everytime, and besides if I earn enough 
-				I can take a culinary course and work at a better place",
-			"Actions" : {
-				"I want to help you earn faster" : "Event9",
-			},
-		},
-		
-		"Event9" : {
-			"Center" : "TracieIdle",
-			"Text" : "You don't have to, you can keep the money yourself",
-			"Actions" : {
-				"Ok" : "Event10",
-				"But I insist" : "Event11",
-			},
-			"Locations" : {
-				"House%EVE%" : 3,
-			},
-		},
-		
-		"Event10" : {
-			"Center" : "TracieIdle",
-			"Text" : "Don't worry, it'll be over soon just relax",
-			"Actions" : {
-				"Will do" : "House%EVE%",
-			},
-		},
-
-		"Event11" : {
-			"Center" : "TracieIdle",
-			"Text" : "*Sigh*, I can't stop you I guess, fine but you need 
-				to work elsewhere than Allan, I'm trying to save 50 bucks a day",
-			"Actions" : {
-				"50 bucks huh" : "Event12",
-			},
-		},
-
-		"Event12" : {
-			"Center" : "TracieIdle",
-			"Text" : "I have an idea and the place, though you need to be fast",
-			"Actions" : {
-				"What is it?" : "Event13",
-			},
-		},
-		
-		"Event13" : {
-			"Center" : "TracieIdle",
-			"Text" : "You can work at the Barracks, I hear they pay 
-				large even for beginners because you would risk your life",
-			"Actions" : {
-				"Are you sure about that?" : "Event14",
-			},
-		},
-		
-		"Event14" : {
-			"Center" : "TracieIdle",
-			"Text" : "Yeah, I know someone to get you hired as fast and she even 
-				assured that beginners would be protected, you would only take 
-				riskier jobs when you're experienced, come with me tomorrow, 
-				I'll get you started",
-			"Actions" : {
-				"Okay, but what about Allan?" : "Event15",
-			},
-		},
-
-		"Event15" : {
-			"Center" : "TracieIdle",
-			"Text" : "Oh don't worry, Steph is now working there, I'll talk to Allan about it",
-			"Actions" : {
-				"Thanks" : "House%EVE%",
-			},
-			"Chars" : {
-				"Tracie" : 2,
-			},
-		},
-	},
-	
-	"IntroBryan" : {
-		"Event0" : {
-			"Center" : "BryanWorried",
-			"Text" : "Uhm, I'm looking for my daughter, have you 
-				seen a small blonde girl with twintails and blue eyes, 
-				she's also wearing a green and yellow colored clothes",
-			"Actions" : {
-				"Hmm, I haven't seen such yet" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "BryanWorried",
-			"Text" : "Really, if you do find her, please contact this number, 
-				I'll pay you 1000 bucks for the trouble",
-			"Actions" : {
-				"1000 bucks? You sure" : "Event2",
-			},
-		},
-
-		"Event2" : {
-			"Center" : "BryanWorried",
-			"Text" : "Yes, I'm really worried now, I haven't seen her for 2 
-				days now I'll pay anything just to find her",
-			"Actions" : {
-				"Ok, I'll tell you if I found her" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "BryanWorried",
-			"Text" : "Thank you so much, sorry for disturbing you",
-			"Actions" : {
-				"It's alright" : "Downtown%EVE%",
-			},
-			"Locations" : {
-				"Downtown%EVE%" : 1,
-			},
-			"Chars" : {
-				"Eli" : 1,
-			},
-			"Map" : 3,
-		},
-	},
-	
-	"IntroCarla" : {
-		"Event0" : {
-			"Center" : "CarlaIdle",
-			"Text" : "Oh don't be shy you may even have a dime or two to spare",
-			"Actions" : {
-				"Uhh, I don't have any to spare" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "CarlaIdle",
-			"Text" : "That's too bad, but tell you what I'll give you a large discount 
-				for your first time, a blowjob for only need 10 bucks",
-			"Actions" : {
-				"I uhh, I need to go home now" : "Event2",
-				"It doesn't hurt to try I guess" : "Event3",
-			},
-			"Locations" : {
-				"Mall%EVE%" : 1,
-				"Downtown%EVE%" : 0,
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "CarlaIdle",
-			"Text" : "That's fine, we'll see each other someday and I'll remember the discount",
-			"Actions" : {
-				"*Go away*" : "Downtown%EVE%",
-			},
-		},
-		
-		"Event3" : {
-			"Image" : "Alley",
-			"Center" : "CarlaIdle",
-			"Text" : "You ready? It'll be worth your time",
-			"Actions" : {
-				"Uhm..." : "Event4",
-			},
-		},
-		
-		"Event4" : {
-			"Center" : "CarlaBJ1",
-			"Text" : "*My hands are fucking cold right now*",
-			"Actions" : {
-				"*Continue*" : "Event5",
-			},
-
-		},
-		
-		"Event5" : {
-			"Center" : "CarlaBJ2",
-			"Text" : "*Ugh, this feels good*",
-			"Actions" : {
-				"*Continue*" : "Event6",
-			},
-		},
-
-		"Event6" : {
-			"Center" : "CarlaBJ3",
-			"Text" : "*Too good, this is way too good*",
-			"Actions" : {
-				"*Continue*" : "Event7",
-			},
-		},
-		
-		"Event7" : {
-			"Center" : "CarlaBJ4",
-			"Text" : "*Pant* *Pant*",
-			"Actions" : {
-				"*Continue*" : "Event8",
-			},
-		},
-
-		"Event8" : {
-			"Center" : "CarlaIdle",
-			"Text" : "That was pleasant for 10 bucks right?",
-			"Actions" : {
-				"Yeah" : "Event9",
-			},
-			"Stats" : {
-				"Money" : -10,
-			},
-		},
-
-		"Event9" : {
-			"Center" : "CarlaIdle",
-			"Text" : "That was actually 50 bucks without the discount, 
-				you can just meet me here every night if you want some action",
-			"Actions" : {
-				"Sure thing" : "Downtown%EVE%",
-			},
-			"Locations" : {
-				"Downtown%EVE%" : 2,
-				"House%EVE%" : 1,
-			},
-			"Chars" : {
-				"Carla" : 1,
-			},
-		},
-	},
-	
-	"IntroJasonAlt" : {
-		"Event0" : {
-			"Image": "Gym",
-			"Text" : "It's a good time to work out when I'm not tired 
-				from work",
-			"Actions" : {
-				"*Start Lifting*" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "JasonIdle",
-			"Text" : "Excuse me, you're done with those weights?",
-			"Actions" : {
-				"Sure, you can take them" : "Event2",
-			},
-			"Stats" : {
-				"Strength" : 8,
-				"Money" : -10,
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "JasonIdle",
-			"Text" : "Wow, these are heavier than I thought, I never 
-				thought your physique can lift this kind of weight",
-			"Actions" : {
-				"I get that a lot" : "Event3",
-			},
-		},
-
-		"Event3" : {
-			"Center" : "JasonIdle",
-			"Text" : "Say, can you spot me for a moment?",
-			"Actions" : {
-				"Sure thing" : "Event4",
-			},
-			"Locations" : {
-				"Mall" : 2,
-				"House" : 3,
-			},
-			"Chars" : {
-				"Sarah" : 1,
-			},
-		},
-		
-		"Event4" : {
-			"Center" : "JasonIdle",
-			"Text" : "Thanks man",
-			"Actions" : {
-				"You're welcome uhm..." : "Event5",
-			},
-		},
-
-		"Event5" : {
-			"Center" : "JasonIdle",
-			"Text" : "It's Jason, nice to meet you, oh before you go, 
-				take this protein bar",
-			"Actions" : {
-				"Thanks" : "Mall%EVE%",
-			},
-			"Locations" : {
-				"Mall%EVE%":0,
-				"Downtown%EVE%" : 1,
-			},
-			"Map" : 3,
-		},		
-	},
-	
-	"IntroSteph" : {
-		"Event0" : {
-			"Center" : "AllanIdle",
-			"Right" : "StephIdle",
-			"Text" : "Lad, let me introduce you to your new co-worker Steph",
-			"Actions" : {
-				"Nice to meet you Steph" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "StephIdle",
-			"Left" : "AllanIdle", 
-			"Text" : "Steph: Nice to meet you as well\n
-				Allan: Please guide her lad",
-			"Actions" : {
-				"Okay Allan" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Left" : "StephIdle",
-			"Text" : "It's lunch time now, you go first I'll wait for you",
-			"Actions" : {
-				"How about you? You can go first" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Left" : "StephIdle",
-			"Text" : "I uhh *grumbles*, uhhhh",
-			"Actions" : {
-				"You don't have lunch ready?" : "Event4",
-			},
-		},
-		
-		"Event4" : {
-			"Left" : "StephIdle",
-			"Text" : "I actually left my wallet, I'm such an idiot",
-			"Actions" : {
-				"Oh, you can have some of my lunch" : "Event5",
-			},
-		},
-		
-		"Event5" : {
-			"Center" : "TracieIdle",
-			"Left" : "StephIdle",
-			"Text" : "Heya! It seems you had a new co-worker, want to eat 
-				lunch together?",
-			"Actions": {
-				"Of course" : "Event6",
-			},
-		},
-		
-		"Event6" : {
-			"Left" : "StephIdle",
-			"Center" : "TracieIdle",
-			"Text" : "Tracie: I see, so you left your wallet huh, we'll share 
-				some food with you Steph\n
-				Steph: Really?! thank you so much",
-			"Actions" : {
-				"*Start Eating*" : "Event7",
-			},
-		},
-		
-		"Event7" : {
-			"Center" : "StephIdle",
-			"Text" : "Your girlfriend is very kind",
-			"Actions" : {
-				"She's not my girlfriend" : "Event8",
-			},
-		},
-		
-		"Event8" : {
-			"Center" : "StephIdle",
-			"Text" : "Oh, I'm so sorry, anyways thank you for today",
-			"Actions" : {
-				"Bye" : "ShoppingStreet%TWI%",
-			},
-			"Locations" : {
-				"ShoppingStreet%TWI%" : 1,
-				"Mall%TWI%" : 1,
-				"House%TWI%" : 1,
-				"House%EVE%" : 2,
-				"Downtown%TWI%" : 1,
-			},
-			"Chars" : {
-				"Steph" : 1,
-			},
-			"Stats" : {
-				"Money" : 40,
-			},
-			"Map" : 2,
-		},
-	},
-	
-	"IntroDay2" : {
-		"Event0" : {
-			"Center" : "TracieIdle",
-			"Text" : "You're room had been noisy, I had to check on you",
-			"Actions" : {
-				"I've been having these dreams lately" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "TracieIdle",
-			"Text" : "Poor thing, you must've been tired from work, just relax 
-				I'll be doing the chores as my way of staying here",
-			"Actions" : {
-				"You're right" : "House",
-			},
-			"Locations": {
-				"House" : 1,
-				"ShoppingStreet" : 1,
-			},
-			"Map" : 1,
-		},
-	},
-	
-	"MessengerDay2" : {
-		"Event0" : {
-			"Image" : "Nothing",
-			"Text" : "13 days left, protect what you have, start earning, get stronger and better",
-			"Actions" : {
-				"It's you again" : "Event1",
-			},
-		},
-
-		"Event1" : {
-			"Center" : "MessengerIdle",
-			"Text" : "You won't take me seriously because I'm wearing a 
-				magical girl outfit right?",
-			"Actions" : {
-				"I... uhm" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "MessengerIdle",
-			"Text" : "That's alright, just heed my warnings I won't be disturbing 
-				you ever again",
-			"Actions" : {
-				"Wait, wouldn't you mind telling me what's gonna happen?" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "MessengerIdle",
-			"Text" : "I don't know as well, I'm just a messenger sending messages the 
-				author would like to send",
-			"Actions" : {
-				"Who is this author anyway?" : "Event4",
-			},
-		},
-		
-		"Event4" : {
-			"Text" : "You'll know if you succeeded",
-			"Actions" : {
-				"Wait!!!" : "Bedroom",
-			},
-			"Locations" : {
-				"Bedroom" : 1,
-			},
-			"Stats" : {
-				"Day" : 1,
-			},
-			"Map" : 0,
-		},
-	},
-	
-	"TracieDay1" : {
-		"Event0" : {
-			"Center" : "TracieIdle",
-			"Text" : "What is it?",
-			"Actions" : {
-				"Mind telling me where you work now?" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "TracieIdle",
-			"Text" : "Not yet, is it because you talked to Allan? That guy is such 
-				a worrywart, don't worry about me",
-			"Actions" : {
-				"But..." : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "TracieIdle",
-			"Text" : "And besides, I'm not gonna do something shady or something, 
-			just trust me okay? Trust your best friend.",
-			"Actions" : {
-				"Okay, sorry for bringing that up" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "TracieIdle",
-			"Text" : "Good, now sit down dinner's almost ready",
-			"Actions" : {
-				"Okay" : "House%EVE%",
-			},
-			"Locations" : {
-				"Mall%EVE%" : 1,
-			},
-			"Chars" : {
-				"Tracie" : 1,
-			},
-			"Map" : 3,
-		},
-	},
-	
-	"IntroJason" : {
-		"Event0" : {	
-			"Image": "Gym",
-			"Text" : "Damn, this felt more heavy than before",
-			"Actions" : {
-				"I'm starting to regret my decision" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Center" : "JasonIdle",
-			"Text" : "Hey, you don't seem to be in the condition to lift,
-				need a spot?",
-			"Actions" : {
-				"I'd appreciate that" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Center" : "JasonIdle",
-			"Text" : "Don't push yourself next time, I know you want to be buff 
-				sooner but you have to take time",
-			"Actions" : {
-				"Thanks, uhm" : "Event3",
-			},
-			"Stats" : {
-				"Strength" : 4,
-				"Money" : -10,
-			},
-		},
-		
-		"Event3" : {
-			"Center" : "JasonIdle",
-			"Text" : "Jason, it's Jason",
-			"Actions" : {
-				"Thanks Jason" : "Mall%EVE%",
-			},
-			"Map" : 3,
-			"Route" : 1,
-		},
-	},
-	
-	"IntroAllan": {
-		"BGM" : "Gymnopedie",
-		"Event0" : {
-			"Left": "AllanIdle",
-			"Text": "So how's Tracie going?",
-			"Actions": {
-				"She's somewhat recovering I guess" : "Event1",
-			},
-		},
-		
-		"Event1" : {
-			"Left": "AllanIdle",
-			"Text": "I can't help but feel bad for her, losing everything after her House burned down",
-			"Actions": {
-				"She had a pretty strong heart, even after such tragedy" : "Event2",
-			},
-		},
-		
-		"Event2" : {
-			"Left": "AllanIdle",
-			"Text": "It's a good thing she had you, providing a House for her. I also offered her to 
-				work here but she declined saying that she needs a higher pay, seems she doesn't want to 
-				burden you for long",
-			"Actions": {
-				"She doesn't even want to tell me where she works" : "Event3",
-			},
-		},
-		
-		"Event3" : {
-			"Right": "AllanIdle",
-			"Text": "Hahahaha, that's so Tracie, well you can tell her that she's always welcome here",
-			"Actions" : {
-				"Sure thing" : "ShoppingStreet%TWI%",
-			},
-			"Stats": {
-				"Money" : 40,
-			},
-			"Map" : 2,
-		},
-	},
-	
-	"IntroTracie": {
-		"Event0" : {
-			"SFX": "DoorOpen",
-			"Right": "TracieIdle",
-			"Text": "You alright? I took you home after fainting yesterday",
-			"Actions": {
-				"Oh, is that so?" : "Event1",
-			},
-		},
-
-		"Event1" : {
-			"Right": "TracieIdle",
-			"Text" : "Take care, I left you some breakfast I'll get to work now",
-			"Actions": {
-				"Thanks Tracie" : "House",
-			},
-			"Map" : 1,
-		},
-	},
-	
-	"Intro": {
-		"Event0" : {
-			"Left": "MessengerIdle",
-			"Text": "I'm the Author's messenger, you are tasked to survive in this world within 14 days",
-			"Actions":{
-				"What's going on?" : "Event1"
-			},
-		},
-		
-		"Event1" : {
-			"Left": "MessengerIdle",
-			"Text": "I'll answer all your questions after 14 days and you'll remember everything",
-			"Actions": {
-				"Why?" : "Event2"
-			},
-		},
-		
-		"Event2" : {
-			"Text": "You'll see",
-			"Actions" : {
-				"Wait, I don't get you" : "Bedroom"
-			},
-		},
-	},
-
-	"BuyPotions" : {
-		"Event0" : {
-			"Stats" : {
-				"Charm": 1,
-				"Strength": 5,
-				"Speed": 5,
-				"Money" : -40,
-			},
-		},
-	},
-}
+IntroCamilla:
+    Event0:
+        Image: Field
+        Left: CamillaIdle
+        Text: >-
+            Nice view isn't it?, though there are lots of people here who dislike  the
+            concept of coexisting with other races and might attack us somewhere
+        Actions:
+            Why don't they want to coexist?: Event1
+    Event1:
+        Left: CamillaIdle
+        Text: >-
+            There are different reasons actually it could be culture, some can't let 
+            go what other races did to their ancestors from the past, some are afraid 
+            that the people will grow weak
+        Actions:
+            Weak? How come?: Event2
+    Event2:
+        Left: CamillaIdle
+        Text: >-
+            Because we made things convenient and safe for others they don't need to
+            learn  how to protect themselves, and as a result our defense forces can't
+            protect the  population, ever wonder why Fiona wouldn't hesistate to
+            recruit you?
+        Actions:
+            That makes sense: Event3
+    Event3:
+        Left: CamillaIdle
+        Text: >-
+            But I find that as a good thing, it proves that there is no bound of what
+            people  can do, and even our recruits will become better and stronger in
+            time, we just need patience
+        Actions:
+            Ohhh: Event4
+    Event4:
+        Left: CamillaIdle
+        Text: >-
+            But enough chit chat, let's retrieve the heirloom an elf left from her
+            home before  she moved here
+        Actions:
+            Ok: Event5
+    Event5:
+        Image: Village
+        Left: CamillaIdle
+        Text: This place seems abandoned
+        Actions:
+            Is this the right village?: Event6
+    Event6:
+        Center: CamillaIdle
+        Text: >-
+            This is the right place no doubt, I'll cast myself  to you first and I'll
+            stay here, talk to me with your mind
+        Actions:
+            '*Like this*': Event7
+    Event7:
+        Center: CamillaIdle
+        Text: "Yeah exactly like that, get going now, I'll point you  where to go"
+        Actions:
+            Okay: Event8
+    Event8:
+        Image: FantasyHouse
+        Text: There must be a necklace here somewhere
+        Actions:
+            '*Continue Looking*': Event9
+    Event9:
+        Right: KhanIdle
+        Text: Looking for a necklace lad?
+        Actions:
+            Woah!!?: Event10
+    Event10:
+        Right: KhanIdle
+        Text: |-
+            Orc: You seem to be in a fighting stance
+             Camilla: I'll buff you, it seems he know the necklace
+        Actions:
+            Woah!!?: Event11
+        Stats:
+            Strength: 50
+            Speed: 50
+    Event11:
+        Right: KhanSmile
+        Text: >-
+            Hahahaha, no need to be hostile I didn't came here to fight,  here you can
+            even take this necklace
+        Actions:
+            What?: Event12
+    Event12:
+        Right: KhanIdle
+        Text: |-
+            My name is Khan, I figured someone will take the necklace she left
+             Camilla: He seems to know something, does he also know the elf?
+        Actions:
+            So you know its owner?: Event13
+    Event13:
+        Right: KhanIdle
+        Text: >-
+            Of course I do, anyways you two should get going now or you won't make  it
+            to your city before dusk
+             Camilla: He knows I'm here, who is this orc?
+        Actions:
+            What? How?: Event14
+    Event14:
+        Right: KhanSmile
+        Text: 'Sorry if I made you feel uncomfortable hahaha, now get going'
+        Actions:
+            Uhm... Ok I guess? And thanks: Event15
+    Event15:
+        Right: KhanSmile
+        Text: Hahaha no worries
+        Actions:
+            '*Leave*': Event16
+    Event16:
+        Image: Village
+        Right: CamillaIdle
+        Text: 'That orc seems to know a lot, and he is also well mannered'
+        Actions:
+            Yeah: Event17
+        Stats:
+            Strength: -50
+            Speed: -50
+    Event17:
+        Image: Nothing
+        Center: KhanIdle
+        Text: 'Heya, I want to speak with you a bit'
+        Actions:
+            'Wait, where am I?': Event18
+    Event18:
+        Center: KhanSmile
+        Text: >-
+            We're in your mind, and we're talking, that girl won't hear us here,  and
+            I won't hurt you not like I can anyways hahahaha
+        Actions:
+            What do want?: Event19
+    Event19:
+        Center: KhanIdle
+        Text: >-
+            I just want to tell you that we will meet again someday, and at that 
+            time, I would need your help. You're a kind lad so you'll understand
+        Actions:
+            What do you need help for?: Event20
+    Event20:
+        Center: KhanIdle
+        Text: >-
+            I'll explain to you when we meet, I have to bring you back to that girl, 
+            see ya
+        Actions:
+            Uhm... ok: Event21
+    Event21:
+        Image: Field
+        Center: CamillaIdle
+        Text: Hey!!! You just spaced out of a sudden. You're tired?
+        Actions:
+            I'm sorry: Event22
+    Event22:
+        Center: CamillaIdle
+        Text: Let's go back now
+        Actions:
+            Okay: Event23
+    Event23:
+        Image: Barracks%Fantasy%
+        Right: CamillaIdle
+        Center: TracieIdle
+        Left: FionaIdle
+        Text: "I'm glad you're safe, I was worried"
+        Actions:
+            Oh hi Tracie: Event24
+    Event24:
+        Image: Barracks%Fantasy%
+        Right: CamillaIdle
+        Left: TracieIdle
+        Center: FionaIdle
+        Text: 'See I told you, quit worrying about your boyfriend'
+        Actions:
+            ...: Event25
+    Event25:
+        Image: Barracks%Fantasy%
+        Right: CamillaIdle
+        Center: TracieIdle
+        Left: FionaIdle
+        Text: "Very funny Fiona, anyways let's go home now"
+        Actions:
+            Sure: Event25
+IntroDay3:
+    Event0:
+        Image: Barracks%Fantasy%
+        Center: TracieIdle
+        Text: >-
+            You probably didn't know but I hang out with Fiona a lot  before and she's
+            very kind
+        Actions:
+            Fiona? You mean?: Event1
+    Event1:
+        Center: TracieIdle
+        Text: 'Yes, the legendary Fiona who owns this place'
+        Actions:
+            I never knew that: Event2
+    Event2:
+        Right: FionaIdle
+        Center: TracieIdle
+        Text: 'Oh hi there Tracie, how can I help you?'
+        Actions:
+            "*That's the legendary Fiona*": Event3
+    Event3:
+        Center: FionaIdle
+        Left: TracieIdle
+        Text: >-
+            Tracie: Uhm yes actually, I want you to give him a job  as a patrol, he
+            needs a higher pay
+        Actions:
+            'Uhm, hi': Event4
+    Event4:
+        Center: FionaIdle
+        Left: TracieIdle
+        Text: >-
+            Fiona: Hmm, you doesn't look to be capable. Hahaha, don't  worry everyone
+            isn't capable in their first job, leave it to me  you'll become splendid
+            in time
+        Actions:
+            Thanks: Event5
+    Event5:
+        Center: FionaIdle
+        Left: TracieIdle
+        Text: >-
+            Fiona: Call me Captain now, I'll be providing you simple tasks  for now,
+            you'll take on heavier tasks the more you get better
+        Actions:
+            Ok: Event6
+    Event6:
+        Left: FionaIdle
+        Center: TracieIdle
+        Text: "Tracie: That's settled then, good luck. I'll be going now bye"
+        Actions:
+            Bye Tracie: Event7
+    Event7:
+        Center: FionaIdle
+        Text: >-
+            For now your tasks are supervised by someone I truly trust, treat  them
+            with upmost respect
+        Actions:
+            Yes Captain: Event8
+    Event8:
+        Center: FionaIdle
+        Text: "Wait for a bit, I'll find some tasks for you"
+        Actions:
+            Yes Captain: Event9
+    Event9:
+        Text: I wonder if I'll be okay
+        Actions:
+            '*Continue*': Event10
+    Event10:
+        Center: FionaIdle
+        Left: CamillaIdle
+        Text: "Sorry for the wait, meet Camilla, you'll be joining her retrieval task"
+        Actions:
+            Yes Captain: Event11
+    Event11:
+        Right: FionaIdle
+        Center: CamillaIdle
+        Text: "Nice to meet you, I'm Camilla"
+        Actions:
+            Nice to meet you as well: Event12
+    Event12:
+        Right: FionaIdle
+        Center: CamillaIdle
+        Text: >-
+            As you can see by my physique and clothes, I'm only a support and you'll 
+            be acting as my body
+        Actions:
+            Your body?: Event13
+    Event13:
+        Right: FionaIdle
+        Center: CamillaIdle
+        Text: >-
+            You'll be the one entering the action, I'll have your vision, I'll  use my
+            powers to make you temporarily stronger depending on the situation
+        Actions:
+            Oh I get it: Barracks%Fantasy%
+Day2Summary:
+    Event0:
+        Image: Nothing
+        Text: >-
+            Somehow the idea of earning money with Tracie makes me excited  for some
+            reason
+        Actions:
+            '*Wake Up*': Bedroom
+        Locations:
+            Bedroom: 2
+TracieDay2:
+    Event0:
+        Image: Kitchen
+        Center: TracieIdle
+        Text: >-
+            Huh? You're still wondering about my job?  Yes I do have lunch breaks but
+            I'm not as close to the  Shopping street I just finished my task there in
+            time for  lunch
+        Actions:
+            That makes me more confused: Event1
+    Event1:
+        Center: TracieIdle
+        Text: "Hahaha, jeez I can't even keep a secret now"
+        Actions:
+            Sorry it just bothers me: Event2
+    Event2:
+        Center: TracieIdle
+        Text: Of what? I don't seem to be sick now do I?
+        Actions:
+            You might be overexerting yourself: Event3
+    Event3:
+        Center: TracieSurprised
+        Text: >-
+            You're worried about that? Hmm I guess my actions do  make you worry that
+            much huh?
+        Actions:
+            I wish I could help: Event4
+    Event4:
+        Center: TracieIdle
+        Text: >-
+            Oh, you're already providing me a place to stay, and that is too  much I
+            could ask for, you did a lot already
+        Actions:
+            But I don't want to see you taking a lot of responsibilities: Event5
+    Event5:
+        Center: TracieIdle
+        Text: >-
+            I can assure you, I'm not overexerting myself, my job doesn't  tire me
+            than what Allan puts you through and it pays a lot
+        Actions:
+            So what's your job then: Event6
+    Event6:
+        Center: TracieWorried
+        Text: I.. I'm working at a maid cafe
+        Actions:
+            Wait what?!: Event7
+    Event7:
+        Center: TracieIdle
+        Text: >-
+            I.. it's not shady or anything, I work as a chef there, I was going  to
+            buy ingredients that afternoon but decided to eat first
+        Actions:
+            Why didn't you tell me that earlier?: Event8
+    Event8:
+        Center: TracieIdle
+        Text: >-
+            I can't have you visiting me everytime, and besides if I earn enough  I
+            can take a culinary course and work at a better place
+        Actions:
+            I want to help you earn faster: Event9
+    Event9:
+        Center: TracieIdle
+        Text: "You don't have to, you can keep the money yourself"
+        Actions:
+            Ok: Event10
+            But I insist: Event11
+        Locations:
+            House%EVE%: 3
+    Event10:
+        Center: TracieIdle
+        Text: "Don't worry, it'll be over soon just relax"
+        Actions:
+            Will do: House%EVE%
+    Event11:
+        Center: TracieIdle
+        Text: >-
+            *Sigh*, I can't stop you I guess, fine but you need  to work elsewhere
+            than Allan, I'm trying to save 50 bucks a day
+        Actions:
+            50 bucks huh: Event12
+    Event12:
+        Center: TracieIdle
+        Text: 'I have an idea and the place, though you need to be fast'
+        Actions:
+            What is it?: Event13
+    Event13:
+        Center: TracieIdle
+        Text: >-
+            You can work at the Barracks, I hear they pay  large even for beginners
+            because you would risk your life
+        Actions:
+            Are you sure about that?: Event14
+    Event14:
+        Center: TracieIdle
+        Text: >-
+            Yeah, I know someone to get you hired as fast and she even  assured that
+            beginners would be protected, you would only take  riskier jobs when
+            you're experienced, come with me tomorrow,  I'll get you started
+        Actions:
+            'Okay, but what about Allan?': Event15
+    Event15:
+        Center: TracieIdle
+        Text: "Oh don't worry, Steph is now working there, I'll talk to Allan about it"
+        Actions:
+            Thanks: House%EVE%
+        Chars:
+            Tracie: 2
+IntroBryan:
+    Event0:
+        Center: BryanWorried
+        Text: >-
+            Uhm, I'm looking for my daughter, have you  seen a small blonde girl with
+            twintails and blue eyes,  she's also wearing a green and yellow colored
+            clothes
+        Actions:
+            "Hmm, I haven't seen such yet": Event1
+    Event1:
+        Center: BryanWorried
+        Text: >-
+            Really, if you do find her, please contact this number,  I'll pay you 1000
+            bucks for the trouble
+        Actions:
+            1000 bucks? You sure: Event2
+    Event2:
+        Center: BryanWorried
+        Text: >-
+            Yes, I'm really worried now, I haven't seen her for 2  days now I'll pay
+            anything just to find her
+        Actions:
+            "Ok, I'll tell you if I found her": Event3
+    Event3:
+        Center: BryanWorried
+        Text: 'Thank you so much, sorry for disturbing you'
+        Actions:
+            It's alright: Downtown%EVE%
+        Locations:
+            Downtown%EVE%: 1
+        Chars:
+            Eli: 1
+        Map: 3
+IntroCarla:
+    Event0:
+        Center: CarlaIdle
+        Text: Oh don't be shy you may even have a dime or two to spare
+        Actions:
+            "Uhh, I don't have any to spare": Event1
+    Event1:
+        Center: CarlaIdle
+        Text: >-
+            That's too bad, but tell you what I'll give you a large discount  for your
+            first time, a blowjob for only need 10 bucks
+        Actions:
+            'I uhh, I need to go home now': Event2
+            It doesn't hurt to try I guess: Event3
+        Locations:
+            Mall%EVE%: 1
+            Downtown%EVE%: 0
+    Event2:
+        Center: CarlaIdle
+        Text: "That's fine, we'll see each other someday and I'll remember the discount"
+        Actions:
+            '*Go away*': Downtown%EVE%
+    Event3:
+        Image: Alley
+        Center: CarlaIdle
+        Text: You ready? It'll be worth your time
+        Actions:
+            Uhm...: Event4
+    Event4:
+        Center: CarlaBJ1
+        Text: '*My hands are fucking cold right now*'
+        Actions:
+            '*Continue*': Event5
+    Event5:
+        Center: CarlaBJ2
+        Text: '*Ugh, this feels good*'
+        Actions:
+            '*Continue*': Event6
+    Event6:
+        Center: CarlaBJ3
+        Text: '*Too good, this is way too good*'
+        Actions:
+            '*Continue*': Event7
+    Event7:
+        Center: CarlaBJ4
+        Text: '*Pant* *Pant*'
+        Actions:
+            '*Continue*': Event8
+    Event8:
+        Center: CarlaIdle
+        Text: That was pleasant for 10 bucks right?
+        Actions:
+            Yeah: Event9
+        Stats:
+            Money: -10
+    Event9:
+        Center: CarlaIdle
+        Text: >-
+            That was actually 50 bucks without the discount,  you can just meet me
+            here every night if you want some action
+        Actions:
+            Sure thing: Downtown%EVE%
+        Locations:
+            Downtown%EVE%: 2
+            House%EVE%: 1
+        Chars:
+            Carla: 1
+IntroJasonAlt:
+    Event0:
+        Image: Gym
+        Text: It's a good time to work out when I'm not tired  from work
+        Actions:
+            '*Start Lifting*': Event1
+    Event1:
+        Center: JasonIdle
+        Text: "Excuse me, you're done with those weights?"
+        Actions:
+            'Sure, you can take them': Event2
+        Stats:
+            Strength: 8
+            Money: -10
+    Event2:
+        Center: JasonIdle
+        Text: >-
+            Wow, these are heavier than I thought, I never  thought your physique can
+            lift this kind of weight
+        Actions:
+            I get that a lot: Event3
+    Event3:
+        Center: JasonIdle
+        Text: 'Say, can you spot me for a moment?'
+        Actions:
+            Sure thing: Event4
+        Locations:
+            Mall: 2
+            House: 3
+        Chars:
+            Sarah: 1
+    Event4:
+        Center: JasonIdle
+        Text: Thanks man
+        Actions:
+            You're welcome uhm...: Event5
+    Event5:
+        Center: JasonIdle
+        Text: "It's Jason, nice to meet you, oh before you go,  take this protein bar"
+        Actions:
+            Thanks: Mall%EVE%
+        Locations:
+            Mall%EVE%: 0
+            Downtown%EVE%: 1
+        Map: 3
+IntroSteph:
+    Event0:
+        Center: AllanIdle
+        Right: StephIdle
+        Text: 'Lad, let me introduce you to your new co-worker Steph'
+        Actions:
+            Nice to meet you Steph: Event1
+    Event1:
+        Center: StephIdle
+        Left: AllanIdle
+        Text: |-
+            Steph: Nice to meet you as well
+             Allan: Please guide her lad
+        Actions:
+            Okay Allan: Event2
+    Event2:
+        Left: StephIdle
+        Text: "It's lunch time now, you go first I'll wait for you"
+        Actions:
+            How about you? You can go first: Event3
+    Event3:
+        Left: StephIdle
+        Text: 'I uhh *grumbles*, uhhhh'
+        Actions:
+            You don't have lunch ready?: Event4
+    Event4:
+        Left: StephIdle
+        Text: "I actually left my wallet, I'm such an idiot"
+        Actions:
+            'Oh, you can have some of my lunch': Event5
+    Event5:
+        Center: TracieIdle
+        Left: StephIdle
+        Text: 'Heya! It seems you had a new co-worker, want to eat  lunch together?'
+        Actions:
+            Of course: Event6
+    Event6:
+        Left: StephIdle
+        Center: TracieIdle
+        Text: >-
+            Tracie: I see, so you left your wallet huh, we'll share  some food with
+            you Steph
+             Steph: Really?! thank you so much
+        Actions:
+            '*Start Eating*': Event7
+    Event7:
+        Center: StephIdle
+        Text: Your girlfriend is very kind
+        Actions:
+            She's not my girlfriend: Event8
+    Event8:
+        Center: StephIdle
+        Text: "Oh, I'm so sorry, anyways thank you for today"
+        Actions:
+            Bye: ShoppingStreet%TWI%
+        Locations:
+            ShoppingStreet%TWI%: 1
+            Mall%TWI%: 1
+            House%TWI%: 1
+            House%EVE%: 2
+            Downtown%TWI%: 1
+        Chars:
+            Steph: 1
+        Stats:
+            Money: 40
+        Map: 2
+IntroDay2:
+    Event0:
+        Center: TracieIdle
+        Text: "You're room had been noisy, I had to check on you"
+        Actions:
+            I've been having these dreams lately: Event1
+    Event1:
+        Center: TracieIdle
+        Text: >-
+            Poor thing, you must've been tired from work, just relax  I'll be doing
+            the chores as my way of staying here
+        Actions:
+            You're right: House
+        Locations:
+            House: 1
+            ShoppingStreet: 1
+        Map: 1
+MessengerDay2:
+    Event0:
+        Image: Nothing
+        Text: >-
+            13 days left, protect what you have, start earning, get stronger and
+            better
+        Actions:
+            It's you again: Event1
+    Event1:
+        Center: MessengerIdle
+        Text: >-
+            You won't take me seriously because I'm wearing a  magical girl outfit
+            right?
+        Actions:
+            I... uhm: Event2
+    Event2:
+        Center: MessengerIdle
+        Text: >-
+            That's alright, just heed my warnings I won't be disturbing  you ever
+            again
+        Actions:
+            "Wait, wouldn't you mind telling me what's gonna happen?": Event3
+    Event3:
+        Center: MessengerIdle
+        Text: >-
+            I don't know as well, I'm just a messenger sending messages the  author
+            would like to send
+        Actions:
+            Who is this author anyway?: Event4
+    Event4:
+        Text: You'll know if you succeeded
+        Actions:
+            Wait!!!: Bedroom
+        Locations:
+            Bedroom: 1
+        Stats:
+            Day: 1
+        Map: 0
+TracieDay1:
+    Event0:
+        Center: TracieIdle
+        Text: What is it?
+        Actions:
+            Mind telling me where you work now?: Event1
+    Event1:
+        Center: TracieIdle
+        Text: >-
+            Not yet, is it because you talked to Allan? That guy is such  a worrywart,
+            don't worry about me
+        Actions:
+            But...: Event2
+    Event2:
+        Center: TracieIdle
+        Text: >-
+            And besides, I'm not gonna do something shady or something,  just trust me
+            okay? Trust your best friend.
+        Actions:
+            'Okay, sorry for bringing that up': Event3
+    Event3:
+        Center: TracieIdle
+        Text: "Good, now sit down dinner's almost ready"
+        Actions:
+            Okay: House%EVE%
+        Locations:
+            Mall%EVE%: 1
+        Chars:
+            Tracie: 1
+        Map: 3
+IntroJason:
+    Event0:
+        Image: Gym
+        Text: 'Damn, this felt more heavy than before'
+        Actions:
+            I'm starting to regret my decision: Event1
+    Event1:
+        Center: JasonIdle
+        Text: "Hey, you don't seem to be in the condition to lift, need a spot?"
+        Actions:
+            I'd appreciate that: Event2
+    Event2:
+        Center: JasonIdle
+        Text: >-
+            Don't push yourself next time, I know you want to be buff  sooner but you
+            have to take time
+        Actions:
+            'Thanks, uhm': Event3
+        Stats:
+            Strength: 4
+            Money: -10
+    Event3:
+        Center: JasonIdle
+        Text: "Jason, it's Jason"
+        Actions:
+            Thanks Jason: Mall%EVE%
+        Map: 3
+        Route: 1
+IntroAllan:
+    BGM: Gymnopedie
+    Event0:
+        Left: AllanIdle
+        Text: So how's Tracie going?
+        Actions:
+            She's somewhat recovering I guess: Event1
+    Event1:
+        Left: AllanIdle
+        Text: >-
+            I can't help but feel bad for her, losing everything after her House
+            burned down
+        Actions:
+            'She had a pretty strong heart, even after such tragedy': Event2
+    Event2:
+        Left: AllanIdle
+        Text: >-
+            It's a good thing she had you, providing a House for her. I also offered
+            her to  work here but she declined saying that she needs a higher pay,
+            seems she doesn't want to  burden you for long
+        Actions:
+            She doesn't even want to tell me where she works: Event3
+    Event3:
+        Right: AllanIdle
+        Text: >-
+            Hahahaha, that's so Tracie, well you can tell her that she's always
+            welcome here
+        Actions:
+            Sure thing: ShoppingStreet%TWI%
+        Stats:
+            Money: 40
+        Map: 2
+IntroTracie:
+    Event0:
+        SFX: DoorOpen
+        Right: TracieIdle
+        Text: You alright? I took you home after fainting yesterday
+        Actions:
+            'Oh, is that so?': Event1
+    Event1:
+        Right: TracieIdle
+        Text: "Take care, I left you some breakfast I'll get to work now"
+        Actions:
+            Thanks Tracie: House
+        Map: 1
+Intro:
+    Event0:
+        Left: MessengerIdle
+        Text: >-
+            I'm the Author's messenger, you are tasked to survive in this world within
+            14 days
+        Actions:
+            What's going on?: Event1
+    Event1:
+        Left: MessengerIdle
+        Text: >-
+            I'll answer all your questions after 14 days and you'll remember
+            everything
+        Actions:
+            Why?: Event2
+    Event2:
+        Text: You'll see
+        Actions:
+            "Wait, I don't get you": Bedroom
+BuyPotions:
+    Event0:
+        Stats:
+            Charm: 1
+            Strength: 5
+            Speed: 5
+            Money: -40
