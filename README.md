@@ -10,7 +10,7 @@ Current Version: .05
 ></br>.05 is now done, I'll update the next changes while writing to see which parts I feel are missing
 
 **Planned changes completed  for v0.1:**
-- [ ] Default Music for every story becuz I'm too lazy to write the "BGM" key on every Location registered
+- [ ] Store previous BGM used to play
 - [ ] Transition System like an array of images to be registered in StoryData.id files, or probably a registered animation in the AnimationPlayer Node I already attached inside TopGUI Node, I can't decide which is better
 - [ ] Animation System, similar to Transition System but I think it's better fit to utilize an array of images instead
 - [x] Conditional Events like there are 2 "Event2" keys wherein 1 will override the default "Event2" key if being triggered
