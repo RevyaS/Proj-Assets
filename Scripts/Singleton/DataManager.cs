@@ -7,7 +7,7 @@ using YamlDotNet.RepresentationModel;
 public class DataManager : Node
 {
 //	Current Data being used by Game.cs
-	private Dictionary currData;
+	public Dictionary currData;
 
 	//Stroy flag
 	public int StoryFlag {
@@ -233,10 +233,11 @@ public class DataManager : Node
 	public Dictionary YamlToDict(YamlMappingNode yamlData)
 	{
 		Dictionary data = new Dictionary();
-		//GD.Print(yamlData.ToString());
-		foreach(YamlScalarNode key in yamlData.Children.Keys)
+		if(yamlData == null) return null;
+        //GD.Print(yamlData.ToString());
+        foreach(YamlScalarNode key in yamlData.Children.Keys)
 		{
-			object output = null;
+            object output = null;
 			if(yamlData.Children[key] is YamlMappingNode)
 				output = YamlToDict(yamlData.Children[key] as YamlMappingNode);
 			else 

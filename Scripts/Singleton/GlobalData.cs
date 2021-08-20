@@ -30,8 +30,17 @@ public class GlobalData : Node{
 	public static YamlMappingNode getGlobalData(string key)
 	{
 		String globalPath =  "res://GameData/GlobalData.id";
-		return getYamlData(key, globalPath);
+        return getYamlData(key, globalPath);
 	}
+
+
+	private static void getStories()
+	{
+		if(storyData != null) return;
+        YamlMappingNode storyList = getGlobalData("Stories");
+        storyData = dManager.YamlToDict(storyList);
+    }
+
 
 	//*	Gets the story data based from story flag
 	public static YamlMappingNode getStoryData(string key)
@@ -50,9 +59,7 @@ public class GlobalData : Node{
 		=> getStoryData("Locations");
 	
 	public static YamlMappingNode getStoryCharacters(int flag)
-	{
-		return getStoryData("Characters");
-	}
+		=> getStoryData("Characters");
 	
 	
 	//*	Gets the Dictionary data from Event
@@ -85,6 +92,7 @@ public class GlobalData : Node{
 		timer = new Timer();
 		AddChild(timer);
 		generateDirs();
+		getStories();
 	}
 	
 	
@@ -108,14 +116,11 @@ public class GlobalData : Node{
 	// References
 	public static DataManager dManager;
 
-	// StoryList
-	public static string[] stories = {
-		"14 Days",
-		"Aching Dreams",
-	};
+    // StoryList
+    public static Dictionary storyData;
 
-//	Pages
-	public static string optionPath = "res://Pages/GUI Components/Option.tscn";
+    //	Pages
+    public static string optionPath = "res://Pages/GUI Components/Option.tscn";
 	public static string gamePath = "res://Pages/Game.tscn";
 	
 //	Scenes
@@ -134,4 +139,9 @@ public class GlobalData : Node{
 	
 	//*	SFX
 	public static string sfxButton = "res://Assets/SFX/click.wav";
+
+    //Themes
+    public static string themeActionButton = "res://Resources/ActionButtonTheme.tres";
+    //Fonts
+    public static string fontAcme20 = "res://Resources/Acme20.tres";
 }

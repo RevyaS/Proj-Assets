@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/BG/Old Paper.png" type="Texture" id=1]
 [ext_resource path="res://Resources/TetsubinGothic50.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Resources/ActionButtonTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Resources/Acme20.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scripts/MainMenu.cs" type="Script" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="MainMenu" type="TextureRect"]
 anchor_right = 1.0
@@ -40,18 +42,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sides" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Tabs" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 134.0
+margin_right = 940.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Stories" type="Button" parent="VBoxContainer/Tabs"]
+visible = false
+margin_right = 310.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Stories"
+
+[node name="Load Game" type="Button" parent="VBoxContainer/Tabs"]
+margin_right = 468.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Load Game"
+
+[node name="Options" type="Button" parent="VBoxContainer/Tabs"]
+margin_left = 472.0
+margin_right = 940.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 3
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sides" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 188.0
 margin_right = 940.0
 margin_bottom = 510.0
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Sides"]
+[node name="Stories" type="VBoxContainer" parent="VBoxContainer/Sides"]
 margin_right = 300.0
-margin_bottom = 376.0
+margin_bottom = 322.0
 rect_min_size = Vector2( 300, 0 )
 
-[node name="Select a Story" type="Label" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="Select a Story" type="Label" parent="VBoxContainer/Sides/Stories"]
 margin_right = 300.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 50, 30 )
@@ -63,58 +103,112 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Author\'sLabrat" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Sides/Stories"]
 margin_top = 34.0
 margin_right = 300.0
-margin_bottom = 84.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 3
+
+[node name="BtnContainers" type="VBoxContainer" parent="VBoxContainer/Sides/Stories/ScrollContainer"]
+margin_right = 300.0
+margin_bottom = 288.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Author\'sLabrat" type="Button" parent="VBoxContainer/Sides/Stories/ScrollContainer/BtnContainers"]
+visible = false
+margin_right = 300.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
-hint_tooltip = "14 days. you will be in different situations no matter how uncomfortable and it's up to you to make a decision. The question is if you'll regret it or not"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
 text = "14 Days (In Progress)"
 
-[node name="AchingDreams" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 88.0
+[node name="Info" type="TabContainer" parent="VBoxContainer/Sides"]
+margin_left = 304.0
+margin_right = 604.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 300, 0 )
+custom_styles/panel = SubResource( 1 )
+tabs_visible = false
+
+[node name="Synopsis" type="VBoxContainer" parent="VBoxContainer/Sides/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Synopsis" type="Label" parent="VBoxContainer/Sides/Info/Synopsis"]
 margin_right = 300.0
-margin_bottom = 138.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 50, 30 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Synopsis:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Sides/Info/Synopsis"]
+margin_top = 34.0
+margin_right = 300.0
+margin_bottom = 322.0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "ASDASD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chapters" type="VBoxContainer" parent="VBoxContainer/Sides/Info"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chapters" type="Label" parent="VBoxContainer/Sides/Info/Chapters"]
+margin_right = 300.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 50, 30 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Select Chapter:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/Sides/Info/Chapters"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="AchingDreams" type="Button" parent="VBoxContainer/Sides/Info/Chapters/Container"]
+margin_top = 34.0
+margin_right = 300.0
+margin_bottom = 84.0
 rect_min_size = Vector2( 50, 50 )
 hint_tooltip = "Based on the original Aching Dreams game, have fun"
 theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
 disabled = true
-text = "Aching Dreams"
+text = "1 - Basic Vocabs"
 
-[node name="Load Game" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 142.0
-margin_right = 300.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 50, 50 )
-theme = ExtResource( 5 )
-custom_fonts/font = ExtResource( 6 )
-text = "Load Game"
-
-[node name="\?\?\?\?\?" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 196.0
-margin_right = 300.0
-margin_bottom = 246.0
-rect_min_size = Vector2( 50, 50 )
-theme = ExtResource( 5 )
-custom_fonts/font = ExtResource( 6 )
-text = "????????"
-
-[node name="Options" type="Button" parent="VBoxContainer/Sides/VBoxContainer"]
-margin_top = 250.0
-margin_right = 300.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 50, 50 )
-theme = ExtResource( 5 )
-custom_fonts/font = ExtResource( 6 )
-text = "Options"
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Sides"]
-margin_left = 304.0
+[node name="StoryCover" type="TextureRect" parent="VBoxContainer/Sides"]
+margin_left = 608.0
 margin_right = 940.0
-margin_bottom = 376.0
+margin_bottom = 322.0
 rect_min_size = Vector2( 50, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -125,7 +219,8 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Author'sLabrat" to="." method="newGame" binds= [ 0 ]]
-[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/AchingDreams" to="." method="newGame" binds= [ 1 ]]
-[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Load Game" to="." method="loadGame"]
-[connection signal="pressed" from="VBoxContainer/Sides/VBoxContainer/Options" to="." method="openOptions"]
+[connection signal="pressed" from="VBoxContainer/Tabs/Stories" to="." method="newGame" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Tabs/Load Game" to="." method="loadGame"]
+[connection signal="pressed" from="VBoxContainer/Tabs/Options" to="." method="openOptions"]
+[connection signal="pressed" from="VBoxContainer/Sides/Stories/ScrollContainer/BtnContainers/Author'sLabrat" to="." method="newGame" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Sides/Info/Chapters/Container/AchingDreams" to="." method="newGame" binds= [ 1 ]]

@@ -47,7 +47,7 @@ public class DataSlot : TextureButton
 		//Get data from story file
 		int storyVal = Convert.ToInt32(saveData["Story"]);
 		//Show story
-		title.Text = slot.ToString() + ". " + GlobalData.stories[storyVal];
+		title.Text = slot.ToString() + ". " + (GlobalData.storyData[storyVal.ToString()] as Dictionary)["Title"];
 		//Show Image
 		YamlMappingNode storyData = GlobalData.getStoryData(storyVal, "Locations");
 		String nodeTexLoc = storyData[ saveData["CurrNode"].ToString() ].ToString();
