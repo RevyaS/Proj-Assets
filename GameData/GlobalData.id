@@ -1,21 +1,42 @@
 # --- Global Data  ---
 
+Stories:
+    0: 
+        Title: 14 Days (In Progress)
+        Cover: res://Assets/GameBG/Field.png
+        Synopsis: >-
+            14 days. you will be in different situations no matter how 
+            uncomfortable and it's up to you to make a decision. The 
+            question is if you'll regret it or not
+    1: 
+        Title: Walk With Me (Eng to JP)
+        Synopsis: >-
+            Walk with me and learn a language just by being part of the world
+        Chapters:
+            1 - Basic Vocab:
+                Stats:
+                    Day: 3
+                Chars:
+                    Frey: 20
+                Route: 1
+                Map: 1
+        
 # Sound Effects
 SFX:
-    DoorOpen: 'res://Assets/SFX/doorOpen.ogg'
-    Sizzling: 'res://Assets/SFX/sizzling.wav'
+    DoorOpen: res://Assets/SFX/doorOpen.ogg
+    Sizzling: res://Assets/SFX/sizzling.wav
 
 # Background Music
 BGM:
-    Cattails: 'res://Assets/Music/Kevin MacLeodCattails.ogg'
-    Gymnopedie: 'res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg'
+    Cattails: res://Assets/Music/Kevin MacLeodCattails.ogg
+    Gymnopedie: res://Assets/Music/Erik Satie - Gymnopédie No.1.ogg
 
 # Puzzle game list
 Puzzles:
-    TowerOfHanoi: 'res://Pages/Puzzles/HanoiPuzzle.tscn'
-    LightsOut: 'res://Pages/Puzzles/LightsOut.tscn'
-    Maze: 'res://Pages/Puzzles/Maze.tscn'
-    SlidingPuzzle: 'res://Pages/Puzzles/SlidingPuzzle.tscn'
-    PegSolitaire: 'res://Pages/Puzzles/PegSolitaire.tscn'
-    HopOver: 'res://Pages/Puzzles/HopOver.tscn'
-    BalancePuzzle: 'res://Pages/Puzzles/WaterPuzzle.tscn'
+    TowerOfHanoi: res://Pages/Puzzles/HanoiPuzzle.tscn
+    LightsOut: res://Pages/Puzzles/LightsOut.tscn
+    Maze: res://Pages/Puzzles/Maze.tscn
+    SlidingPuzzle: res://Pages/Puzzles/SlidingPuzzle.tscn
+    PegSolitaire: res://Pages/Puzzles/PegSolitaire.tscn
+    HopOver: res://Pages/Puzzles/HopOver.tscn
+    BalancePuzzle: res://Pages/Puzzles/WaterPuzzle.tscn
