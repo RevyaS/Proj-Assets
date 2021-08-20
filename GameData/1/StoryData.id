@@ -1,0 +1,18 @@
+---
+BaseStats : 
+    Day: 1
+    Wit: 0
+    
+BaseChars :
+    Frey: 10
+Characters:
+
+Locations:
+    Nothing: res://Assets/BG/BGBlack.png
+    Downtown: res://Assets/GameBG/Downtown.png
+    
+Map0:
+    Nothing: []
+    
+Map1:
+    Downtown: []
